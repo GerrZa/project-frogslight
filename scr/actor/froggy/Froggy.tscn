@@ -1,0 +1,83 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://scr/actor/froggy/froggy_fsm.gd" type="Script" id=2]
+[ext_resource path="res://scr/actor/froggy/froggy.gd" type="Script" id=3]
+[ext_resource path="res://scr/actor/froggy/State/idle.gd" type="Script" id=4]
+[ext_resource path="res://scr/actor/froggy/State/move.gd" type="Script" id=5]
+[ext_resource path="res://scr/actor/froggy/State/opentongue.gd" type="Script" id=6]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 8, 8 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 8, 8 )
+
+[node name="Froggy" type="Area2D"]
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_group_": true
+}
+move_time = 0.2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 8, 8 )
+shape = SubResource( 1 )
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 8, 8 )
+scale = Vector2( 0.25, 0.25 )
+texture = ExtResource( 1 )
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 8, 8 )
+width = 2.0
+default_color = Color( 0.933333, 0.211765, 0.211765, 1 )
+
+[node name="tongue_tip" type="Area2D" parent="."]
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="tongue_tip"]
+position = Vector2( 8, 8 )
+shape = SubResource( 2 )
+
+[node name="wallchecker" type="Node2D" parent="."]
+position = Vector2( 8, 8 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="r_wall" type="RayCast2D" parent="wallchecker"]
+unique_name_in_owner = true
+enabled = true
+cast_to = Vector2( 16.5, 0 )
+
+[node name="l_wall" type="RayCast2D" parent="wallchecker"]
+unique_name_in_owner = true
+enabled = true
+cast_to = Vector2( -16.5, 0 )
+
+[node name="f_wall" type="RayCast2D" parent="wallchecker"]
+unique_name_in_owner = true
+enabled = true
+cast_to = Vector2( 0, -16.5 )
+
+[node name="b_wall" type="RayCast2D" parent="wallchecker"]
+unique_name_in_owner = true
+enabled = true
+cast_to = Vector2( 0, 16.5 )
+
+[node name="fsm" type="Node" parent="."]
+script = ExtResource( 2 )
+init_state = NodePath("idle")
+
+[node name="idle" type="Node" parent="fsm"]
+script = ExtResource( 4 )
+
+[node name="move" type="Node" parent="fsm"]
+script = ExtResource( 5 )
+
+[node name="opentongue" type="Node" parent="fsm"]
+script = ExtResource( 6 )
