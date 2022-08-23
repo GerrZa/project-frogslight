@@ -15,17 +15,17 @@ extents = Vector2( 208, 16 )
 [node name="world" type="Node2D"]
 
 [node name="Froggy" parent="." instance=ExtResource( 1 )]
-position = Vector2( 167, 80 )
+position = Vector2( 151, 80 )
 
 [node name="room" type="StaticBody2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="PrototypingRoom" type="Sprite" parent="room"]
 z_index = -2
 texture = ExtResource( 2 )
 centered = false
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room"]
 position = Vector2( 47, 112 )
