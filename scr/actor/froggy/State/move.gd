@@ -15,6 +15,12 @@ func enter(msg := {}):
 		else:
 			froggy.basic_light_left -= 1
 		
+		match move_direction:
+			Vector2.RIGHT: froggy.animtree.travel("move_right")
+			Vector2.LEFT: froggy.animtree.travel("move_left")
+			Vector2.UP: froggy.animtree.travel("move_up")
+			Vector2.DOWN: froggy.animtree.travel("move_down")
+		
 		yield(tween,"finished")
 		
 		state_machine.transition_to("idle")

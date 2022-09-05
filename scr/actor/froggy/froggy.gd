@@ -9,6 +9,8 @@ export var max_extra_light : int
 var basic_light_left = 0
 var extra_light_left = 0
 
+onready var animtree = $forggy_spr/AnimationTree.get("parameters/playback")
+
 func _ready():
 	basic_light_left = max_basic_light
 
@@ -21,6 +23,6 @@ func _physics_process(delta):
 	
 	$"%tongue_tip".visible = not tongue_match
 	
-	$tongue_line.set_point_position(1,$"%tongue_tip".position + Vector2(8,8))
+	$tongue_line.set_point_position(0,$"%tongue_tip".position + Vector2(8,8))
 	
 	

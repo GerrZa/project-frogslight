@@ -5,6 +5,9 @@ func enter(msg := {}):
 	if msg.has("pullback"):
 		
 		pass #Put pull back animation yield here
+	else:
+		froggy.animtree.travel("idle")
+	
 
 func unhandled_input(event):
 	
