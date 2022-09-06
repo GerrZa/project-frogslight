@@ -9,7 +9,7 @@ export var max_extra_light : int
 var basic_light_left = 0
 var extra_light_left = 0
 
-onready var animtree = $forggy_spr/AnimationTree.get("parameters/playback")
+onready var animtree = $froggy_spr/AnimationTree.get("parameters/playback")
 
 func _ready():
 	basic_light_left = max_basic_light
@@ -26,3 +26,10 @@ func _physics_process(delta):
 	$tongue_line.set_point_position(0,$"%tongue_tip".position + Vector2(8,8))
 	
 	
+
+func add_light(extra_light:bool):
+	
+	if extra_light:
+		extra_light_left += 4
+	elif extra_light == false:
+		basic_light_left += 3

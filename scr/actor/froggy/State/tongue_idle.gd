@@ -1,10 +1,11 @@
+#TONGUE IDLE
 extends FroggyState
 
 func enter(msg := {}):
 	
 	if msg.has("open_tongue"):
 		
-		pass #Put the animation yield here
+		froggy.animtree.travel("tongue_open")
 	
 
 func unhandled_input(event):

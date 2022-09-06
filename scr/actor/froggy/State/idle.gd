@@ -1,12 +1,16 @@
+#IDLE STATE
 extends FroggyState
+
+signal enter_fin
 
 func enter(msg := {}):
 	
 	if msg.has("pullback"):
 		
-		pass #Put pull back animation yield here
+		emit_signal("enter_fin")
 	else:
 		froggy.animtree.travel("idle")
+		emit_signal("enter_fin")
 	
 
 func unhandled_input(event):

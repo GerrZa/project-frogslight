@@ -1,3 +1,4 @@
+#TONGUE MOVE
 extends FroggyState
 
 var move_direction = Vector2.ZERO

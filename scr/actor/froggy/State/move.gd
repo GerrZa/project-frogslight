@@ -1,3 +1,4 @@
+#MOVE STATE
 extends FroggyState
 
 var move_direction
@@ -23,4 +24,7 @@ func enter(msg := {}):
 		
 		yield(tween,"finished")
 		
-		state_machine.transition_to("idle")
+		if $"%consume_hitbox".get_overlapping_areas().empty() == true:
+			state_machine.transition_to("idle")
+		else:
+			state_machine.transition_to("eat")
