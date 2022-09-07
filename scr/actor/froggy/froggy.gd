@@ -25,7 +25,12 @@ func _physics_process(delta):
 	
 	$tongue_line.set_point_position(0,$"%tongue_tip".position + Vector2(8,8))
 	
-	
+	if basic_light_left + extra_light_left > 1:
+		$froggy_spr/Light2D.texture_scale = 0.1 + (((basic_light_left + extra_light_left)-1) * 0.1)
+	elif basic_light_left + extra_light_left == 1:
+		$froggy_spr/Light2D.texture_scale = 0.1
+	else:
+		$froggy_spr/Light2D.texture_scale = 0
 
 func add_light(extra_light:bool):
 	

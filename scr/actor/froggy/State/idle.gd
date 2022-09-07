@@ -7,6 +7,7 @@ func enter(msg := {}):
 	
 	if msg.has("pullback"):
 		
+		froggy.animtree.travel("idle")
 		emit_signal("enter_fin")
 	else:
 		froggy.animtree.travel("idle")
