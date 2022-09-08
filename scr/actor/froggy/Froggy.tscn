@@ -13,6 +13,39 @@
 [ext_resource path="res://asset/actor/froggy/tongue_tex.png" type="Texture" id=11]
 [ext_resource path="res://asset/fx/visual_fx/light_texture.png" type="Texture" id=12]
 
+[sub_resource type="Animation" id=42]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=43]
+resource_name = "normal"
+length = 0.4
+loop = true
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.24, 0.4 ),
+"transitions": PoolRealArray( 0.34151, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 1.018, 1.018 ), Vector2( 1, 1 ) ]
+}
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
 
@@ -105,18 +138,6 @@ tracks/0/keys = {
 resource_name = "move_down"
 length = 0.2
 step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.05, 0.15, 0.2 ),
-"transitions": PoolRealArray( 0.241484, 1, 0.210224, 1 ),
-"update": 0,
-"values": [ Vector2( 8, 16 ), Vector2( 8, 17 ), Vector2( 8, 17 ), Vector2( 8, 16 ) ]
-}
 
 [sub_resource type="Animation" id=11]
 resource_name = "move_left"
@@ -130,9 +151,9 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.05, 0.15, 0.2 ),
-"transitions": PoolRealArray( 0.165782, 1, 0.217638, 1 ),
+"transitions": PoolRealArray( 0.517632, 1, 0.517632, 1 ),
 "update": 0,
-"values": [ 0.0, -10.9, -10.9, 0.0 ]
+"values": [ 0.0, 8.0, 8.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -147,9 +168,9 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.05, 0.15, 0.2 ),
-"transitions": PoolRealArray( 0.165782, 1, 0.217638, 1 ),
+"transitions": PoolRealArray( 0.517632, 1, 0.517632, 1 ),
 "update": 0,
-"values": [ 0.0, 10.9, 10.9, 0.0 ]
+"values": [ 0.0, -8.0, -8.0, 0.0 ]
 }
 
 [sub_resource type="Animation" id=13]
@@ -279,39 +300,6 @@ graph_offset = Vector2( -291, -8 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
-[sub_resource type="Animation" id=42]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=43]
-resource_name = "normal"
-length = 0.19
-loop = true
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.11, 0.19 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.018, 1.018 ), Vector2( 1, 1 ) ]
-}
-
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 8 )
 
@@ -325,6 +313,17 @@ __meta__ = {
 }
 move_time = 0.2
 max_basic_light = 3
+
+[node name="Light2D" type="Light2D" parent="."]
+position = Vector2( 8, 8 )
+texture = ExtResource( 12 )
+color = Color( 1, 0.937255, 0.764706, 1 )
+mode = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Light2D"]
+autoplay = "normal"
+anims/RESET = SubResource( 42 )
+anims/normal = SubResource( 43 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 8, 8 )
@@ -356,18 +355,6 @@ tree_root = SubResource( 4 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/playback = SubResource( 5 )
-
-[node name="Light2D" type="Light2D" parent="froggy_spr"]
-position = Vector2( 0, -8 )
-texture = ExtResource( 12 )
-texture_scale = 0.2
-color = Color( 1, 0.937255, 0.764706, 1 )
-mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="froggy_spr/Light2D"]
-autoplay = "normal"
-anims/RESET = SubResource( 42 )
-anims/normal = SubResource( 43 )
 
 [node name="tongue_line" type="Line2D" parent="."]
 unique_name_in_owner = true

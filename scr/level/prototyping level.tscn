@@ -53,4 +53,4 @@ position = Vector2( 199, 224 )
 shape = SubResource( 3 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color( 0.105882, 0.105882, 0.156863, 1 )
+color = Color( 0.117647, 0.117647, 0.227451, 1 )
