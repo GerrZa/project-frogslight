@@ -36,14 +36,9 @@ func _physics_process(delta):
 	
 	$tongue_line.set_point_position(0,$"%tongue_tip".position + Vector2(8,8))
 	
-	if total_light > 0:
-		light_sb_size = (total_light * 0.1) + 0.1
-	else:
-		light_sb_size = 0
-	
 	if last_total_light != total_light:
 		if total_light > 0:
-			emit_signal("light_change",(total_light * 0.1) + 0.1)
+			emit_signal("light_change",(total_light * 0.06) + 0.06)
 		elif total_light == 0:
 			emit_signal("light_change",0)
 		last_total_light = total_light
