@@ -4,7 +4,6 @@ extends Area2D
 export var move_time : float
 
 export var max_basic_light : int
-export var max_extra_light : int
 
 var basic_light_left = 0
 var extra_light_left = 0
@@ -26,22 +25,26 @@ func _ready():
 
 func _physics_process(delta):
 	
+	print(basic_light_left)
+	
 	total_light = basic_light_left + extra_light_left
 	
 	$Label.text = String(basic_light_left + extra_light_left)
 	
 	var tongue_match = $"%tongue_tip".global_position == global_position
-	
 	$"%tongue_tip".visible = not tongue_match
 	
 	$tongue_line.set_point_position(0,$"%tongue_tip".position + Vector2(8,8))
 	
-	if last_total_light != total_light:
-		if total_light > 0:
-			emit_signal("light_change",(total_light * 0.06) + 0.06)
-		elif total_light == 0:
-			emit_signal("light_change",0)
-		last_total_light = total_light
+#	if basic_light_left > 3:
+#		basic_light_left = 3
+#
+#	if last_total_light != total_light:
+#		if total_light > 0:
+#			emit_signal("light_change",(total_light * 0.06) + 0.06)
+#		elif total_light == 0:
+#			emit_signal("light_change",0)
+#		last_total_light = total_light
 	
 
 func add_light(extra_light:bool):
