@@ -13,7 +13,7 @@ func enter(msg := {}):
 	yield(tween,"finished")
 	
 	if $"%consume_hitbox".get_overlapping_areas().empty() == false:
-		state_machine.transition_to("eat")
+		state_machine.transition_to("eat",{"close_ui" : true})
 	else:
 		state_machine.transition_to("idle",{"pullback" : true})
 

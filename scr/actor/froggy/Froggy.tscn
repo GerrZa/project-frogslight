@@ -313,6 +313,8 @@ __meta__ = {
 }
 move_time = 0.2
 max_basic_light = 3
+basic_light_color = Color( 1, 0.937255, 0.764706, 1 )
+extra_light_color = Color( 0.584314, 0.992157, 0.984314, 1 )
 
 [node name="Light2D" type="Light2D" parent="."]
 position = Vector2( 8, 8 )

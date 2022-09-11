@@ -6,6 +6,7 @@ func enter(msg := {}):
 	if msg.has("open_tongue"):
 		
 		froggy.animtree.travel("tongue_open")
+		get_tree().current_scene.emit_signal("tongue",true)
 	
 
 func unhandled_input(event):

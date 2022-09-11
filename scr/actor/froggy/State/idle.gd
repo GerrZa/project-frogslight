@@ -8,10 +8,9 @@ func enter(msg := {}):
 	if msg.has("pullback"):
 		
 		froggy.animtree.travel("idle")
-		emit_signal("enter_fin")
+		get_tree().current_scene.emit_signal("tongue",false)
 	else:
 		froggy.animtree.travel("idle")
-		emit_signal("enter_fin")
 	
 
 func unhandled_input(event):
