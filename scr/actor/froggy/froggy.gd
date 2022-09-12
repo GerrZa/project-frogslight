@@ -34,15 +34,10 @@ func _physics_process(delta):
 	
 	total_light = basic_light_left + extra_light_left
 	
-	$Label.text = String(basic_light_left + extra_light_left)
-	
 	var tongue_match = $"%tongue_tip".global_position == global_position
 	$"%tongue_tip".visible = not tongue_match
 	
 	$tongue_line.set_point_position(0,$"%tongue_tip".position + Vector2(8,8))
-	
-	if basic_light_left > 3:
-		basic_light_left = 3
 	
 	if last_total_light != total_light:
 		if total_light > 0:
@@ -67,12 +62,10 @@ func add_light(extra_light:bool):
 		get_tree().current_scene.emit_signal("froggy_eat",true)
 		
 	elif extra_light == false:
-		basic_light_left += 3
-		for light in range(3):
-			if light_array.size() < 3:
-				light_array.append(false)
-			else:
-				break
+		for i in range(3):
+			
+			if basic_light_left < 3:
+				pass
 		
 		get_tree().current_scene.emit_signal("froggy_eat",false)
 

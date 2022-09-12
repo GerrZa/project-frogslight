@@ -532,10 +532,10 @@ max_basic_light = 100
 position = Vector2( 215, 128 )
 
 [node name="fireflies2" parent="fireflies_grouper" instance=ExtResource( 3 )]
-position = Vector2( 167, 80 )
+position = Vector2( 151, 80 )
 
 [node name="extraflies" parent="fireflies_grouper" instance=ExtResource( 6 )]
-position = Vector2( 167, 64 )
+position = Vector2( 167, 80 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.270588, 0.270588, 0.447059, 1 )
