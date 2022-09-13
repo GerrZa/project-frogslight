@@ -29,7 +29,6 @@ func appear_light_icon(is_extra_light):
 	else:
 		for i in range(3):
 			if current_light < 3:
-				print("add")
 				current_light += 1
 				get_node("li_frame/li_icon" + String(current_light) + "/AnimationPlayer").play("basic")
 		
@@ -42,9 +41,9 @@ func decrease_icon():
 	current_light -= 1
 	
 
-func replace_light():
-	for i in range(3):
-		get_node("li_frame/li_icon" + String(i+1_)).frame = 3
+func replace_light(index):
+		get_node("li_frame/li_icon" + String(index)).frame = 3
+		print("replaced")
 
-func _physics_process(delta):
-	print(current_light)
+#func _physics_process(delta):
+#	print(current_light)

@@ -5,18 +5,15 @@ extends Area2D
 
 export var move_time : float
 
-export var max_basic_light : int
+export var start_light : int
 
-var basic_light_left = 0
-var extra_light_left = 0
-
-var total_light
+var total_light : int
 var last_total_light
 
 var light_sb_size # light texture standby size
 signal light_change(target_size)
 
-var light_array := [false,false,false] # For checking light type and ui animation
+var light_array := [] # For checking light type and ui animation
 
 export var basic_light_color : Color
 export var extra_light_color : Color
@@ -24,15 +21,19 @@ export var extra_light_color : Color
 onready var animtree = $froggy_spr/AnimationTree.get("parameters/playback")
 
 func _ready():
-	basic_light_left = max_basic_light
 	
-	last_total_light = total_light
+	for i in range(start_light):
+		if i < 3 :light_array.append(false)
+		else: light_array.append(true)
+	
+	total_light = start_light
 	
 	self.connect("light_change",self,"on_light_change")
 
 func _physics_process(delta):
 	
-	total_light = basic_light_left + extra_light_left
+	print(light_array)
+	print(".")
 	
 	var tongue_match = $"%tongue_tip".global_position == global_position
 	$"%tongue_tip".visible = not tongue_match
@@ -55,17 +56,34 @@ func _physics_process(delta):
 func add_light(extra_light:bool):
 	
 	if extra_light == true:
-		extra_light_left += 4
+		total_light += 4
 		for light in range(4):
 			light_array.append(true)
 		
 		get_tree().current_scene.emit_signal("froggy_eat",true)
 		
 	elif extra_light == false:
+		
+		print("basic addded")
+		if light_array[0] == true:
+			get_tree().current_scene.emit_signal("light_replaced",1)
+		if light_array[1] == true:
+			get_tree().current_scene.emit_signal("light_replaced",2)
+		if light_array[1] == true:
+			get_tree().current_scene.emit_signal("light_replaced",3)
+		
 		for i in range(3):
 			
-			if basic_light_left < 3:
-				pass
+			if total_light < 3:
+				light_array.append(false)
+				total_light += 1
+		
+		for i in range(3):
+			if light_array.size() - 1 >= i:
+				light_array[i] = false
+			else:
+				light_array.append(false)
+			print("light array replaced")
 		
 		get_tree().current_scene.emit_signal("froggy_eat",false)
 
