@@ -9,10 +9,7 @@ func enter(msg:={}):
 		move_direction = msg["direction"]
 		
 		#If extra light still left, decrease the extra light first
-		if froggy.extra_light_left > 0:
-			froggy.extra_light_left -= 1
-		else:
-			froggy.basic_light_left -= 1
+		froggy.total_light -= 1
 		
 		#Tween the tongue in the calculated position
 		var new_tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)

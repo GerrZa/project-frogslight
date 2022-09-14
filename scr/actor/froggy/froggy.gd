@@ -32,8 +32,8 @@ func _ready():
 
 func _physics_process(delta):
 	
-	print(light_array)
-	print(".")
+#	print(light_array)
+#	print(".")
 	
 	var tongue_match = $"%tongue_tip".global_position == global_position
 	$"%tongue_tip".visible = not tongue_match
@@ -65,12 +65,15 @@ func add_light(extra_light:bool):
 	elif extra_light == false:
 		
 		print("basic addded")
-		if light_array[0] == true:
-			get_tree().current_scene.emit_signal("light_replaced",1)
-		if light_array[1] == true:
-			get_tree().current_scene.emit_signal("light_replaced",2)
-		if light_array[1] == true:
-			get_tree().current_scene.emit_signal("light_replaced",3)
+		if range(light_array.size()).has(0):
+			if light_array[0] == true:
+				get_tree().current_scene.emit_signal("light_replaced",1)
+		if range(light_array.size()).has(1):
+			if light_array[1] == true:
+				get_tree().current_scene.emit_signal("light_replaced",2)
+		if range(light_array.size()).has(2):
+			if light_array[2] == true:
+				get_tree().current_scene.emit_signal("light_replaced",3)
 		
 		for i in range(3):
 			
