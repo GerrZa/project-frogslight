@@ -22,6 +22,8 @@ onready var animtree = $froggy_spr/AnimationTree.get("parameters/playback")
 
 func _ready():
 	
+	set_process_unhandled_input(true)
+	
 	for i in range(start_light):
 		if i < 3 :light_array.append(false)
 		else: light_array.append(true)
@@ -31,9 +33,6 @@ func _ready():
 	self.connect("light_change",self,"on_light_change")
 
 func _physics_process(delta):
-	
-#	print(light_array)
-#	print(".")
 	
 	var tongue_match = $"%tongue_tip".global_position == global_position
 	$"%tongue_tip".visible = not tongue_match
@@ -64,7 +63,6 @@ func add_light(extra_light:bool):
 		
 	elif extra_light == false:
 		
-		print("basic addded")
 		if range(light_array.size()).has(0):
 			if light_array[0] == true:
 				get_tree().current_scene.emit_signal("light_replaced",1)
@@ -86,7 +84,6 @@ func add_light(extra_light:bool):
 				light_array[i] = false
 			else:
 				light_array.append(false)
-			print("light array replaced")
 		
 		get_tree().current_scene.emit_signal("froggy_eat",false)
 

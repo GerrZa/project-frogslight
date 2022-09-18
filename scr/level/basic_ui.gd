@@ -43,7 +43,4 @@ func decrease_icon():
 
 func replace_light(index):
 		get_node("li_frame/li_icon" + String(index)).frame = 3
-		print("replaced")
 
-#func _physics_process(delta):
-#	print(current_light)

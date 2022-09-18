@@ -12,6 +12,8 @@ func enter(msg := {}):
 	else:
 		froggy.animtree.travel("idle")
 	
+	if $"%burn_zone".get_overlapping_areas().empty() == false:
+		set_process_unhandled_input(false)
 
 func unhandled_input(event):
 	
@@ -24,8 +26,9 @@ func unhandled_input(event):
 			state_machine.transition_to("move",{"direction" : Vector2.DOWN})
 		elif Input.is_action_just_pressed("ui_up") and $"%f_wall".is_colliding() == false:
 			state_machine.transition_to("move",{"direction" : Vector2.UP})
-	else:
-		pass
+	elif (froggy.total_light >= 0 and (Input.is_action_just_pressed("ui_right") or Input.is_action_just_pressed("ui_left")
+		or Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"))):
+			get_tree().current_scene.normal_gameover(froggy.get_node("froggy_spr").global_position, froggy.get_node("froggy_spr").offset)
 	
 	if Input.is_action_just_pressed("ui_tongue"):
 		state_machine.transition_to("tongue_idle",{"open_tongue" : true})
