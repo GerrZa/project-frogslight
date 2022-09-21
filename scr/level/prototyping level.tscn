@@ -473,6 +473,7 @@ blend_mode = 1
 [node name="world" type="Node2D"]
 script = ExtResource( 10 )
 froggy_spr_hframe = 21.0
+flame_exist = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

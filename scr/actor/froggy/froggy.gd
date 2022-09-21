@@ -22,8 +22,6 @@ onready var animtree = $froggy_spr/AnimationTree.get("parameters/playback")
 
 func _ready():
 	
-	set_process_unhandled_input(true)
-	
 	for i in range(start_light):
 		if i < 3 :light_array.append(false)
 		else: light_array.append(true)

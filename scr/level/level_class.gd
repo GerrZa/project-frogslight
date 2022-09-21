@@ -51,6 +51,14 @@ func normal_gameover(frog_global_pos,frog_offset):
 	
 	var canvas_modulate = CanvasModulate.new()
 	
+
+func burned_gameover():
+	
+	yield(get_tree().create_timer(2.75),"timeout")
+	
+	for node in get_children():
+		node.queue_free() 
+	
 	
 
 func on_froggy_move():
