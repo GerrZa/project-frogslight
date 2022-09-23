@@ -314,6 +314,7 @@ extents = Vector2( 7, 7 )
 extents = Vector2( 8, 8 )
 
 [node name="froggy" type="Area2D"]
+collision_mask = 16
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_group_": true

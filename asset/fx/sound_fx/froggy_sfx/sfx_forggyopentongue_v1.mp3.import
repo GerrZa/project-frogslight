@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sfx_forggyopentongue_v1.mp3-28c52e600b2cfe387bd7e2a7055867cf.mp3str"
+
+[deps]
+
+source_file="res://asset/fx/sound_fx/froggy_sfx/sfx_forggyopentongue_v1.mp3"
+dest_files=[ "res://.import/sfx_forggyopentongue_v1.mp3-28c52e600b2cfe387bd7e2a7055867cf.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

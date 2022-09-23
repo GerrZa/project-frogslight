@@ -2,5 +2,4 @@ extends FroggyState
 
 
 func enter(msg := {}):
-	
-	pass
+	get_tree().current_scene.burned_gameover()

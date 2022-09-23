@@ -7,10 +7,14 @@ export var froggy_spr_hframe : float
 var gameover_spr_f : SpriteFrames = preload("res://scr/ui/gameover/gameover_spr_frame.tres")
 var nolight_mat = preload("res://scr/ui/nolight_fx.tres")
 
+var burned_spr_f : SpriteFrames = preload("res://scr/ui/gameover/burned_gameover_spr_frame.tres")
+
 var flame = preload("res://scr/obj/fire.tscn")
 export var flame_exist : bool = false
 var flame_start_pos = Vector2(279,192)
 var flame_spawned = false
+
+var overlay_menu = preload("res://scr/ui/gameover/gameover_overlay_menu/gameover_overlay_menu.tscn")
 
 signal tongue(is_active)
 signal froggy_eat(is_extra)
@@ -25,7 +29,7 @@ func _ready():
 func normal_gameover(frog_global_pos,frog_offset):
 	
 	for node in get_tree().current_scene.get_children():
-		if node.name != "colorrect_zindex" and node.get_class() != "CanvasModulate" :
+		if node.name != "gameover_bg_zindex" and node.get_class() != "CanvasModulate" :
 			node.queue_free()
 	
 	var frog_spr = Sprite.new()
@@ -51,13 +55,39 @@ func normal_gameover(frog_global_pos,frog_offset):
 	
 	var canvas_modulate = CanvasModulate.new()
 	
+	yield(get_tree().create_timer(0.8),"timeout")
+	
+	var canvas_layer = CanvasLayer.new()
+	var overlay_ins = overlay_menu.instance()
+	
+	add_child(canvas_layer)
+	canvas_layer.add_child(overlay_ins)
+	
+	
 
 func burned_gameover():
 	
-	yield(get_tree().create_timer(2.75),"timeout")
+	yield(get_tree().create_timer(1),"timeout")
 	
 	for node in get_children():
 		node.queue_free() 
+	
+	var gameover_sprite = AnimatedSprite.new()
+	
+	add_child(gameover_sprite)
+	gameover_sprite.global_position = Vector2.ZERO
+	gameover_sprite.frames = burned_spr_f
+	gameover_sprite.centered = false
+	gameover_sprite.playing = true
+	gameover_sprite.z_index = 50
+	
+	yield(get_tree().create_timer(0.8),"timeout")
+	
+	var canvas_layer = CanvasLayer.new()
+	var overlay_ins = overlay_menu.instance()
+	
+	add_child(canvas_layer)
+	canvas_layer.add_child(overlay_ins)
 	
 	
 
@@ -72,8 +102,6 @@ func on_froggy_move():
 		flame_ins.global_position = flame_start_pos
 		flame_ins.start_flame_tween()
 		
-		print("flame_added")
-
 
 
 

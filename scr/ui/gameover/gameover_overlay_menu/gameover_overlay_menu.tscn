@@ -1,0 +1,101 @@
+[gd_scene load_steps=20 format=2]
+
+[ext_resource path="res://scr/ui/gameover/gameover_overlay_menu/gameover_overlay_menu.gd" type="Script" id=1]
+[ext_resource path="res://scr/ui/gameover/gameover_overlay_menu/retry_button.gd" type="Script" id=2]
+[ext_resource path="res://asset/ui/button/overlay_gameover/spr_overlayindicator_v1.png" type="Texture" id=3]
+[ext_resource path="res://asset/ui/button/overlay_gameover/spr_retry_v1.png" type="Texture" id=4]
+[ext_resource path="res://scr/ui/gameover/gameover_overlay_menu/back_to_menu.gd" type="Script" id=5]
+[ext_resource path="res://asset/ui/button/overlay_gameover/spr_backtomenu_v1.png" type="Texture" id=6]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 11, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 22, 0, 11, 7 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 3 )
+region = Rect2( 33, 0, 11, 7 )
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ) ],
+"loop": true,
+"name": "default",
+"speed": 10.0
+} ]
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 47, 15 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 47, 0, 47, 15 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 4 )
+region = Rect2( 94, 0, 47, 15 )
+
+[sub_resource type="SpriteFrames" id=9]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 6 )
+region = Rect2( 0, 0, 98, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 6 )
+region = Rect2( 98, 0, 98, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 6 )
+region = Rect2( 196, 0, 98, 16 )
+
+[sub_resource type="SpriteFrames" id=13]
+animations = [ {
+"frames": [ SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[node name="overlay_menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 1 )
+start_button = NodePath("retry")
+indicator_nodepath = NodePath("select_indicator")
+
+[node name="select_indicator" type="AnimatedSprite" parent="."]
+position = Vector2( 313, 164 )
+frames = SubResource( 5 )
+centered = false
+offset = Vector2( -13, 2 )
+
+[node name="retry" type="AnimatedSprite" parent="."]
+position = Vector2( 313, 164 )
+frames = SubResource( 9 )
+centered = false
+script = ExtResource( 2 )
+up_neighbor = NodePath("../back_to_menu")
+down_neighbor = NodePath("../back_to_menu")
+
+[node name="back_to_menu" type="AnimatedSprite" parent="."]
+position = Vector2( 288, 192 )
+frames = SubResource( 13 )
+centered = false
+script = ExtResource( 5 )
+up_neighbor = NodePath("../retry")
+down_neighbor = NodePath("../retry")

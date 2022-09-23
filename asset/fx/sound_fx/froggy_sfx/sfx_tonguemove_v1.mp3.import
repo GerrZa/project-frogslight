@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sfx_tonguemove_v1.mp3-1bbe7c47cdb9d6d075f5b3c163ce08b9.mp3str"
+
+[deps]
+
+source_file="res://asset/fx/sound_fx/froggy_sfx/sfx_tonguemove_v1.mp3"
+dest_files=[ "res://.import/sfx_tonguemove_v1.mp3-1bbe7c47cdb9d6d075f5b3c163ce08b9.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

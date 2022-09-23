@@ -9,6 +9,16 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "AnimatedSprite",
+"class": "ButtonClass",
+"language": "GDScript",
+"path": "res://scr/ui/button/Button_class.gd"
+}, {
+"base": "Control",
+"class": "ButtonIndicator",
+"language": "GDScript",
+"path": "res://scr/ui/button/ButtonIndicator_class.gd"
+}, {
 "base": "Area2D",
 "class": "Froggy",
 "language": "GDScript",
@@ -35,6 +45,8 @@ _global_script_classes=[ {
 "path": "res://scr/actor/StateMachine.gd"
 } ]
 _global_script_class_icons={
+"ButtonClass": "",
+"ButtonIndicator": "",
 "Froggy": "",
 "FroggyState": "",
 "Level": "",

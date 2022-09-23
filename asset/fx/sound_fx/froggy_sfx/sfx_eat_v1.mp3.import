@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sfx_eat_v1.mp3-836b4ec193956b9886d9b64794cb1ee0.mp3str"
+
+[deps]
+
+source_file="res://asset/fx/sound_fx/froggy_sfx/sfx_eat_v1.mp3"
+dest_files=[ "res://.import/sfx_eat_v1.mp3-836b4ec193956b9886d9b64794cb1ee0.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
