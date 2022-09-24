@@ -1,0 +1,172 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scr/ui/openup_level/openup_level.gd" type="Script" id=1]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 224 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 100, 224 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 122, 224 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect4:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 208, 224 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect5:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 268, 224 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "open_level"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3, 0.85 ),
+"transitions": PoolRealArray( 1, -2.54912, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, 224 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.45, 0.9 ),
+"transitions": PoolRealArray( 1, -2.54912, 1 ),
+"update": 0,
+"values": [ Vector2( 100, 0 ), Vector2( 100, 0 ), Vector2( 100, 224 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.8 ),
+"transitions": PoolRealArray( 1, -2.54912, 1 ),
+"update": 0,
+"values": [ Vector2( 122, 0 ), Vector2( 122, 0 ), Vector2( 122, 224 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect4:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.35, 0.65 ),
+"transitions": PoolRealArray( 1, -2.54912, 1 ),
+"update": 0,
+"values": [ Vector2( 208, 0 ), Vector2( 208, 0 ), Vector2( 208, 224 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect5:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.25, 0.9 ),
+"transitions": PoolRealArray( 1, -2.54912, 1 ),
+"update": 0,
+"values": [ Vector2( 268, 0 ), Vector2( 268, 0 ), Vector2( 268, 224 ) ]
+}
+
+[node name="Open_level" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 224.0
+margin_right = 113.0
+margin_bottom = 448.001
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 100.0
+margin_top = 224.0
+margin_right = 129.0
+margin_bottom = 448.0
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 122.0
+margin_top = 224.0
+margin_right = 219.0
+margin_bottom = 448.0
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = 208.0
+margin_top = 224.0
+margin_right = 305.0
+margin_bottom = 448.001
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="ColorRect5" type="ColorRect" parent="."]
+margin_left = 268.0
+margin_top = 224.0
+margin_right = 398.0
+margin_bottom = 448.0
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "open_level"
+anims/RESET = SubResource( 1 )
+anims/open_level = SubResource( 2 )

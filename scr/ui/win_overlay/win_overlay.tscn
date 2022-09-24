@@ -1,0 +1,227 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://asset/ui/win/yay-text.png" type="Texture" id=1]
+[ext_resource path="res://scr/ui/win_overlay/win_overlay.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 136, 53 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 136, 0, 136, 53 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 272, 0, 136, 53 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 224 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 114, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 239, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect4:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 285, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("yay3:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 128, 85 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "text_up_anim"
+length = 1.914
+step = 0.066
+tracks/0/type = "value"
+tracks/0/path = NodePath("ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.32, 1.65 ),
+"transitions": PoolRealArray( 1, -2.73208, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 224 ), Vector2( 0, 224 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ColorRect2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.386, 1.584 ),
+"transitions": PoolRealArray( 1, -2.73208, 1 ),
+"update": 0,
+"values": [ Vector2( 114, 224 ), Vector2( 114, 224 ), Vector2( 114, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ColorRect3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 1.188, 1.65 ),
+"transitions": PoolRealArray( 1, -2.73208, 1 ),
+"update": 0,
+"values": [ Vector2( 239, 224 ), Vector2( 239, 224 ), Vector2( 239, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ColorRect4:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1.452, 1.716 ),
+"transitions": PoolRealArray( 1, -2.73208, 1 ),
+"update": 0,
+"values": [ Vector2( 285, 224 ), Vector2( 285, 224 ), Vector2( 285, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("yay1:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.33, 0.594, 0.726 ),
+"transitions": PoolRealArray( -1.56917, -2.46229, -2.37841, 1 ),
+"update": 0,
+"values": [ Vector2( 128, 224 ), Vector2( 128, 81 ), Vector2( 128, 88 ), Vector2( 128, 85 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("yay2:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.066, 0.396, 0.66, 0.792 ),
+"transitions": PoolRealArray( -1.56917, -1.56917, -2.46229, -2.37841, 1 ),
+"update": 0,
+"values": [ Vector2( 128, 224 ), Vector2( 128, 224 ), Vector2( 128, 81 ), Vector2( 128, 88 ), Vector2( 128, 85 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("yay3:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.132, 0.462, 0.726, 0.858 ),
+"transitions": PoolRealArray( -1.56917, -1.56917, -2.46229, -2.37841, 1 ),
+"update": 0,
+"values": [ Vector2( 128, 224 ), Vector2( 128, 224 ), Vector2( 128, 81 ), Vector2( 128, 88 ), Vector2( 128, 85 ) ]
+}
+
+[node name="win_overlay" type="CanvasLayer"]
+layer = 2
+script = ExtResource( 2 )
+
+[node name="yay3" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.972549, 0.364706, 0.160784, 1 )
+position = Vector2( 128, 85 )
+frames = SubResource( 4 )
+centered = false
+
+[node name="yay2" type="AnimatedSprite" parent="."]
+self_modulate = Color( 0.913725, 0.764706, 0.188235, 1 )
+position = Vector2( 128, 224 )
+frames = SubResource( 4 )
+centered = false
+
+[node name="yay1" type="AnimatedSprite" parent="."]
+position = Vector2( 128, 224 )
+frames = SubResource( 4 )
+centered = false
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_top = 224.0
+margin_right = 114.0
+margin_bottom = 532.0
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+margin_left = 114.0
+margin_right = 264.0
+margin_bottom = 308.0
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+margin_left = 239.0
+margin_right = 289.0
+margin_bottom = 308.0
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="ColorRect4" type="ColorRect" parent="."]
+margin_left = 285.0
+margin_right = 398.0
+margin_bottom = 308.0
+rect_scale = Vector2( 1.0042, 0.976555 )
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "text_up_anim"
+anims/RESET = SubResource( 5 )
+anims/text_up_anim = SubResource( 6 )

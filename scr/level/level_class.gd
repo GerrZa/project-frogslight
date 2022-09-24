@@ -1,8 +1,10 @@
 class_name Level
 extends Node2D
 
+var level_opener = preload("res://scr/ui/openup_level/openup_level.tscn")
+
 var froggy_tex = preload("res://asset/actor/froggy/spr_froggy_v1.png")
-export var froggy_spr_hframe : float
+export var froggy_spr_hframe : int = 21
 
 var gameover_spr_f : SpriteFrames = preload("res://scr/ui/gameover/gameover_spr_frame.tres")
 var nolight_mat = preload("res://scr/ui/nolight_fx.tres")
@@ -16,6 +18,9 @@ var flame_spawned = false
 
 var overlay_menu = preload("res://scr/ui/gameover/gameover_overlay_menu/gameover_overlay_menu.tscn")
 
+var winning = false #is winning animation playing
+var win_overlay = preload("res://scr/ui/win_overlay/win_overlay.tscn")
+
 signal tongue(is_active)
 signal froggy_eat(is_extra)
 signal froggy_move
@@ -23,8 +28,19 @@ signal light_replaced(index)
 
 signal test_froggy_move
 
+export var level_number : int
+
 func _ready():
 	connect("froggy_move",self,"on_froggy_move")
+	
+	Global.current_level = level_number
+	
+	add_child(level_opener.instance())
+
+func _process(delta):
+	if get_node_or_null("fireflies_grouper") != null:
+		if get_node("fireflies_grouper").get_children().empty() and winning == false:
+			win()
 
 func normal_gameover(frog_global_pos,frog_offset):
 	
@@ -103,7 +119,13 @@ func on_froggy_move():
 		flame_ins.start_flame_tween()
 		
 
-
+func win():
+	
+	winning = true
+	
+	var win_overlay_ins = win_overlay.instance()
+	
+	add_child(win_overlay_ins)
 
 
 
