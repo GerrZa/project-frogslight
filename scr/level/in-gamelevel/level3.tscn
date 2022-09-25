@@ -650,7 +650,6 @@ blend_mode = 1
 
 [node name="level3" type="Node2D"]
 script = SubResource( 1 )
-froggy_spr_hframe = 21.0
 flame_exist = true
 level_number = 3
 

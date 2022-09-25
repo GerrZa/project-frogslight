@@ -649,7 +649,6 @@ blend_mode = 1
 
 [node name="level2" type="Node2D"]
 script = SubResource( 1 )
-froggy_spr_hframe = 21.0
 level_number = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
