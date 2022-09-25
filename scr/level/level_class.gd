@@ -4,7 +4,7 @@ extends Node2D
 var level_opener = preload("res://scr/ui/openup_level/openup_level.tscn")
 
 var froggy_tex = preload("res://asset/actor/froggy/spr_froggy_v1.png")
-export var froggy_spr_hframe : int = 21
+export var froggy_spr_hframe : int = 40
 
 var gameover_spr_f : SpriteFrames = preload("res://scr/ui/gameover/gameover_spr_frame.tres")
 var nolight_mat = preload("res://scr/ui/nolight_fx.tres")
@@ -68,8 +68,6 @@ func normal_gameover(frog_global_pos,frog_offset):
 	gameover_sprite.playing = true
 	gameover_sprite.z_index = 50
 	gameover_sprite.material = nolight_mat
-	
-	var canvas_modulate = CanvasModulate.new()
 	
 	yield(get_tree().create_timer(0.8),"timeout")
 	

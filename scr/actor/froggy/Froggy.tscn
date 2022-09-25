@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://asset/actor/froggy/tongue_tip.png" type="Texture" id=1]
 [ext_resource path="res://scr/actor/froggy/State/eat.gd" type="Script" id=2]
@@ -13,6 +13,8 @@
 [ext_resource path="res://asset/actor/froggy/tongue_tex.png" type="Texture" id=11]
 [ext_resource path="res://asset/fx/visual_fx/light_texture.png" type="Texture" id=12]
 [ext_resource path="res://scr/actor/froggy/State/burned.gd" type="Script" id=13]
+[ext_resource path="res://scr/actor/froggy/jump_in.gd" type="Script" id=14]
+[ext_resource path="res://scr/actor/froggy/jump_out.gd" type="Script" id=15]
 
 [sub_resource type="Animation" id=42]
 length = 0.001
@@ -135,6 +137,40 @@ tracks/0/keys = {
 "values": [ 0 ]
 }
 
+[sub_resource type="Animation" id=45]
+resource_name = "jump_in"
+length = 0.715
+step = 0.065
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.065, 0.13, 0.195, 0.26, 0.325, 0.39, 0.455, 0.52, 0.585, 0.65 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31 ]
+}
+
+[sub_resource type="Animation" id=46]
+resource_name = "jump_out"
+length = 0.52
+step = 0.065
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.065, 0.13, 0.195, 0.26, 0.325, 0.39, 0.455 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 32, 33, 34, 35, 36, 37, 38, 39 ]
+}
+
 [sub_resource type="Animation" id=12]
 resource_name = "move_down"
 length = 0.2
@@ -230,6 +266,12 @@ animation = "eat"
 [sub_resource type="AnimationNodeAnimation" id=14]
 animation = "idle"
 
+[sub_resource type="AnimationNodeAnimation" id=47]
+animation = "jump_in"
+
+[sub_resource type="AnimationNodeAnimation" id=48]
+animation = "jump_out"
+
 [sub_resource type="AnimationNodeAnimation" id=35]
 animation = "move_down"
 
@@ -278,11 +320,21 @@ switch_mode = 2
 
 [sub_resource type="AnimationNodeStateMachineTransition" id=40]
 
+[sub_resource type="AnimationNodeStateMachineTransition" id=49]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=50]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id=51]
+
 [sub_resource type="AnimationNodeStateMachine" id=4]
 states/eat/node = SubResource( 32 )
 states/eat/position = Vector2( 163.444, 335.889 )
 states/idle/node = SubResource( 14 )
-states/idle/position = Vector2( 228.778, 142.852 )
+states/idle/position = Vector2( 236.278, 141.602 )
+states/jump_in/node = SubResource( 47 )
+states/jump_in/position = Vector2( -12.75, -6.75002 )
+states/jump_out/node = SubResource( 48 )
+states/jump_out/position = Vector2( 182.18, -6.75002 )
 states/move_down/node = SubResource( 35 )
 states/move_down/position = Vector2( 394.222, 359 )
 states/move_left/node = SubResource( 16 )
@@ -292,26 +344,26 @@ states/move_right/position = Vector2( 440.998, 219.148 )
 states/move_up/node = SubResource( 36 )
 states/move_up/position = Vector2( 418.667, -66.1852 )
 states/tongue_idle/node = SubResource( 27 )
-states/tongue_idle/position = Vector2( 33.1056, 201.333 )
+states/tongue_idle/position = Vector2( 17.0361, 219.539 )
 states/tongue_open/node = SubResource( 28 )
-states/tongue_open/position = Vector2( 33, 59 )
-transitions = [ "idle", "move_left", SubResource( 20 ), "idle", "move_right", SubResource( 21 ), "move_right", "idle", SubResource( 24 ), "move_left", "idle", SubResource( 25 ), "idle", "tongue_open", SubResource( 29 ), "tongue_open", "tongue_idle", SubResource( 30 ), "tongue_idle", "idle", SubResource( 31 ), "idle", "eat", SubResource( 33 ), "eat", "idle", SubResource( 34 ), "move_down", "idle", SubResource( 37 ), "idle", "move_down", SubResource( 38 ), "move_up", "idle", SubResource( 39 ), "idle", "move_up", SubResource( 40 ) ]
+states/tongue_open/position = Vector2( 18, 129 )
+transitions = [ "idle", "move_left", SubResource( 20 ), "idle", "move_right", SubResource( 21 ), "move_right", "idle", SubResource( 24 ), "move_left", "idle", SubResource( 25 ), "idle", "tongue_open", SubResource( 29 ), "tongue_open", "tongue_idle", SubResource( 30 ), "tongue_idle", "idle", SubResource( 31 ), "idle", "eat", SubResource( 33 ), "eat", "idle", SubResource( 34 ), "move_down", "idle", SubResource( 37 ), "idle", "move_down", SubResource( 38 ), "move_up", "idle", SubResource( 39 ), "idle", "move_up", SubResource( 40 ), "idle", "jump_in", SubResource( 49 ), "jump_in", "jump_out", SubResource( 50 ), "jump_out", "idle", SubResource( 51 ) ]
 start_node = "idle"
-graph_offset = Vector2( -291, -8 )
+graph_offset = Vector2( -528, -143 )
 
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 8, 8 )
 
-[sub_resource type="RectangleShape2D" id=45]
-extents = Vector2( 8, 8 )
-
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 7, 7 )
 
 [sub_resource type="RectangleShape2D" id=44]
-extents = Vector2( 8, 8 )
+extents = Vector2( 6, 6 )
+
+[sub_resource type="RectangleShape2D" id=52]
+extents = Vector2( 6, 6 )
 
 [node name="froggy" type="Area2D"]
 collision_mask = 16
@@ -344,16 +396,19 @@ shape = SubResource( 1 )
 position = Vector2( 8, 16 )
 texture = ExtResource( 9 )
 centered = false
-offset = Vector2( -10, -29 )
-hframes = 21
+offset = Vector2( -12, -40 )
+hframes = 40
 __meta__ = {
 "_edit_group_": true
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="froggy_spr"]
+unique_name_in_owner = true
 anims/RESET = SubResource( 6 )
 anims/eat = SubResource( 9 )
 anims/idle = SubResource( 3 )
+anims/jump_in = SubResource( 45 )
+anims/jump_out = SubResource( 46 )
 anims/move_down = SubResource( 12 )
 anims/move_left = SubResource( 11 )
 anims/move_right = SubResource( 10 )
@@ -369,6 +424,7 @@ parameters/playback = SubResource( 5 )
 
 [node name="tongue_line" type="Line2D" parent="."]
 unique_name_in_owner = true
+z_index = 4
 points = PoolVector2Array( 8, 8, 8, 8 )
 width = 4.0
 default_color = Color( 1, 1, 1, 1 )
@@ -377,6 +433,7 @@ texture_mode = 1
 
 [node name="tongue_tip" type="Area2D" parent="."]
 unique_name_in_owner = true
+z_index = 4
 collision_layer = 0
 collision_mask = 2
 __meta__ = {
@@ -390,19 +447,6 @@ shape = SubResource( 2 )
 [node name="Sprite" type="Sprite" parent="tongue_tip"]
 position = Vector2( 8, 8 )
 texture = ExtResource( 1 )
-
-[node name="tongue_burn_zone" type="Area2D" parent="tongue_tip"]
-unique_name_in_owner = true
-collision_layer = 0
-collision_mask = 16
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="tongue_tip/tongue_burn_zone"]
-visible = false
-position = Vector2( 8, 8 )
-shape = SubResource( 45 )
 
 [node name="tongue_wall" type="Node2D" parent="tongue_tip"]
 position = Vector2( 8, 8 )
@@ -454,25 +498,25 @@ __meta__ = {
 unique_name_in_owner = true
 enabled = true
 cast_to = Vector2( 16.5, 0 )
-collision_mask = 4
+collision_mask = 132
 
 [node name="l_wall" type="RayCast2D" parent="wallchecker"]
 unique_name_in_owner = true
 enabled = true
 cast_to = Vector2( -16.5, 0 )
-collision_mask = 4
+collision_mask = 132
 
 [node name="f_wall" type="RayCast2D" parent="wallchecker"]
 unique_name_in_owner = true
 enabled = true
 cast_to = Vector2( 0, -16.5 )
-collision_mask = 4
+collision_mask = 132
 
 [node name="b_wall" type="RayCast2D" parent="wallchecker"]
 unique_name_in_owner = true
 enabled = true
 cast_to = Vector2( 0, 16.5 )
-collision_mask = 4
+collision_mask = 132
 
 [node name="fsm" type="Node" parent="."]
 script = ExtResource( 10 )
@@ -500,6 +544,12 @@ eat_anim_duration = 0.78
 [node name="burned" type="Node" parent="fsm"]
 script = ExtResource( 13 )
 
+[node name="jump_in" type="Node" parent="fsm"]
+script = ExtResource( 14 )
+
+[node name="jump_out" type="Node" parent="fsm"]
+script = ExtResource( 15 )
+
 [node name="burn_zone" type="Area2D" parent="."]
 unique_name_in_owner = true
 collision_layer = 0
@@ -512,3 +562,15 @@ __meta__ = {
 visible = false
 position = Vector2( 8, 8 )
 shape = SubResource( 44 )
+
+[node name="hole_check" type="Area2D" parent="."]
+unique_name_in_owner = true
+collision_layer = 0
+collision_mask = 256
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="hole_check"]
+position = Vector2( 8, 8 )
+shape = SubResource( 52 )

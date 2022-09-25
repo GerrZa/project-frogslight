@@ -14,6 +14,9 @@ func enter(msg := {}):
 	
 	if $"%burn_zone".get_overlapping_areas().empty() == false:
 		state_machine.transition_to("burned")
+	
+	if $"%hole_check".get_overlapping_areas().empty() == false:
+		state_machine.transition_to("jump_in")
 
 func unhandled_input(event):
 	

@@ -57,7 +57,7 @@ _global_script_class_icons={
 [application]
 
 config/name="frogslight"
-run/main_scene="res://scr/level/prototyping level.tscn"
+run/main_scene="res://scr/level/in-gamelevel/level1.tscn"
 config/icon="res://icon.png"
 
 [autoload]
@@ -139,6 +139,8 @@ ui_tongue={
 2d_physics/layer_2="pickable"
 2d_physics/layer_3="wall"
 2d_physics/layer_5="fire"
+2d_physics/layer_8="pit"
+2d_physics/layer_9="hole"
 
 [physics]
 

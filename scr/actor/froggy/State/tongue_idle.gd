@@ -8,7 +8,7 @@ func enter(msg := {}):
 		froggy.animtree.travel("tongue_open")
 		get_tree().current_scene.emit_signal("tongue",true)
 	
-	if $"%burn_zone".get_overlapping_areas().empty() == false or $"%tongue_burn_zone".get_overlapping_areas().empty() == false:
+	if $"%burn_zone".get_overlapping_areas().empty() == false:
 		set_process_unhandled_input(false)
 	
 
