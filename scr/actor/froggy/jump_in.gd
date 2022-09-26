@@ -2,6 +2,8 @@ extends FroggyState
 
 func enter(msg := {}):
 	
+	get_tree().root.set_disable_input(true)
+	
 	froggy.animtree.travel("jump_in")
 	
 	$"%hole_check".get_overlapping_areas()[0].jump_play_anim()
