@@ -354,7 +354,7 @@ graph_offset = Vector2( -528, -143 )
 [sub_resource type="AnimationNodeStateMachinePlayback" id=5]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8, 8 )
+extents = Vector2( 6, 6 )
 
 [sub_resource type="RectangleShape2D" id=41]
 extents = Vector2( 7, 7 )

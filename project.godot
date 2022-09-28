@@ -63,6 +63,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://scr/tool/singletons/global.gd"
+Saveload="*res://scr/tool/saveload/saveload.gd"
 
 [display]
 
