@@ -24,6 +24,8 @@ func enter(msg := {}):
 		
 		yield(tween,"finished")
 		
+		$"%hole_check".get_child(0).disabled = false
+		
 		if $"%consume_hitbox".get_overlapping_areas().empty() == true:
 			state_machine.transition_to("idle")
 		else:

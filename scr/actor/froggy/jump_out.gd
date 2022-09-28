@@ -13,6 +13,7 @@ func enter(msg := {}):
 	
 	get_tree().root.set_disable_input(false)
 	
+	$"%hole_check".get_child(0).disabled = true
 
 func unhandled_input(event):
 	
