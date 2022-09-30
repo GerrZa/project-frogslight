@@ -1,0 +1,208 @@
+[gd_scene load_steps=29 format=2]
+
+[ext_resource path="res://scr/level/mainmenu/menu_buttons.gd" type="Script" id=1]
+[ext_resource path="res://asset/level/prototyping_level/prototype_room_border.png" type="Texture" id=2]
+[ext_resource path="res://asset/level/prototyping_level/prototype_room.png" type="Texture" id=3]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/i.png" type="Texture" id=4]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/F.png" type="Texture" id=5]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/s.png" type="Texture" id=6]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/creator_name.png" type="Texture" id=7]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/L.png" type="Texture" id=8]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/r.png" type="Texture" id=9]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/g.png" type="Texture" id=10]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/o.png" type="Texture" id=11]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/apostrophe.png" type="Texture" id=12]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/h.png" type="Texture" id=13]
+[ext_resource path="res://asset/ui/mainmenu/logo/logo_letter/T.png" type="Texture" id=14]
+[ext_resource path="res://scr/level/mainmenu/startgame.gd" type="Script" id=15]
+[ext_resource path="res://asset/ui/mainmenu/button/start_game.png" type="Texture" id=16]
+[ext_resource path="res://asset/ui/mainmenu/button/option.png" type="Texture" id=17]
+[ext_resource path="res://asset/ui/mainmenu/button/credits.png" type="Texture" id=18]
+[ext_resource path="res://asset/ui/mainmenu/button/quit.png" type="Texture" id=19]
+[ext_resource path="res://asset/ui/mainmenu/button/frog_indicator.png" type="Texture" id=20]
+[ext_resource path="res://scr/level/mainmenu/option.gd" type="Script" id=21]
+[ext_resource path="res://scr/level/mainmenu/credits.gd" type="Script" id=22]
+[ext_resource path="res://scr/level/mainmenu/quit.gd" type="Script" id=23]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 16 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 17 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 18 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=5]
+animations = [ {
+"frames": [ ExtResource( 20 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="menu" type="Node2D"]
+
+[node name="border_extend" type="Sprite" parent="."]
+scale = Vector2( 1.66327, 1 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0.443, 0, 98.557, 224 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="border" type="Sprite" parent="border_extend"]
+position = Vector2( 57.7178, 0 )
+scale = Vector2( 0.601227, 1 )
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 302, 224 )
+
+[node name="room_bg" type="Sprite" parent="border_extend"]
+position = Vector2( 57.7178, 0 )
+scale = Vector2( 0.601227, 1 )
+texture = ExtResource( 3 )
+centered = false
+
+[node name="logo" type="Node2D" parent="."]
+position = Vector2( 13, 50 )
+
+[node name="F" type="Sprite" parent="logo"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="R" type="Sprite" parent="logo"]
+position = Vector2( 39, 26 )
+texture = ExtResource( 9 )
+centered = false
+
+[node name="O" type="Sprite" parent="logo"]
+position = Vector2( 61, 30 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="G" type="Sprite" parent="logo"]
+position = Vector2( 102, 25 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="Apostrophe" type="Sprite" parent="logo"]
+position = Vector2( 138, 25 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="S" type="Sprite" parent="logo"]
+position = Vector2( 146, 28 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="L" type="Sprite" parent="logo"]
+position = Vector2( 8, 57 )
+texture = ExtResource( 8 )
+centered = false
+
+[node name="I" type="Sprite" parent="logo"]
+position = Vector2( 54, 66 )
+texture = ExtResource( 4 )
+centered = false
+
+[node name="G2" type="Sprite" parent="logo"]
+position = Vector2( 74, 75 )
+texture = ExtResource( 10 )
+centered = false
+
+[node name="H" type="Sprite" parent="logo"]
+position = Vector2( 106, 67 )
+texture = ExtResource( 13 )
+centered = false
+
+[node name="T" type="Sprite" parent="logo"]
+position = Vector2( 135, 68 )
+texture = ExtResource( 14 )
+centered = false
+
+[node name="CreatorName" type="Sprite" parent="logo"]
+position = Vector2( 34, 116 )
+texture = ExtResource( 7 )
+centered = false
+
+[node name="ButtonIndicator" type="Control" parent="."]
+margin_right = 40.0
+margin_bottom = 40.0
+script = ExtResource( 1 )
+start_button = NodePath("startgame")
+indicator_nodepath = NodePath("froggy_indi")
+
+[node name="startgame" type="AnimatedSprite" parent="ButtonIndicator"]
+position = Vector2( 231, 80 )
+frames = SubResource( 1 )
+centered = false
+offset = Vector2( 3, 2 )
+script = ExtResource( 15 )
+down_neighbor = NodePath("../option")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/startgame"]
+
+[node name="option" type="AnimatedSprite" parent="ButtonIndicator"]
+position = Vector2( 263, 96 )
+frames = SubResource( 2 )
+centered = false
+offset = Vector2( 2, 2 )
+script = ExtResource( 21 )
+up_neighbor = NodePath("../startgame")
+down_neighbor = NodePath("../credits")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/option"]
+
+[node name="credits" type="AnimatedSprite" parent="ButtonIndicator"]
+position = Vector2( 263, 112 )
+frames = SubResource( 3 )
+centered = false
+offset = Vector2( 3, 3 )
+script = ExtResource( 22 )
+up_neighbor = NodePath("../option")
+down_neighbor = NodePath("../quit")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/credits"]
+
+[node name="quit" type="AnimatedSprite" parent="ButtonIndicator"]
+position = Vector2( 263, 128 )
+frames = SubResource( 4 )
+centered = false
+offset = Vector2( 10, 2 )
+script = ExtResource( 23 )
+up_neighbor = NodePath("../credits")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/quit"]
+
+[node name="froggy_indi" type="AnimatedSprite" parent="ButtonIndicator"]
+position = Vector2( 231, 80 )
+frames = SubResource( 5 )
+centered = false
+offset = Vector2( -16, 0 )

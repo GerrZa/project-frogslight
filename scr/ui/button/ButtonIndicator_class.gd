@@ -35,7 +35,7 @@ func _input(event):
 
 func change_button(new_button):
 	
-	if button != null:
+	if new_button != null:
 		
 		button = new_button
 		

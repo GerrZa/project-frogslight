@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_warphole1_prototype.png-b5ff27affa20cde52a06d35632072c69.stex"
+path="res://.import/spr_warphole_v1.png-a17b9b873b8ea4a896933eb64c76b23e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/obj/spr_warphole1_prototype.png"
-dest_files=[ "res://.import/spr_warphole1_prototype.png-b5ff27affa20cde52a06d35632072c69.stex" ]
+source_file="res://asset/ui/gameover/obj/spr_warphole_v1.png"
+dest_files=[ "res://.import/spr_warphole_v1.png-a17b9b873b8ea4a896933eb64c76b23e.stex" ]
 
 [params]
 

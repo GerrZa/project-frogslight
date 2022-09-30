@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_firetorch_v1.png-eff58bdad36421be19aba58a2a0f470f.stex"
+path="res://.import/r.png-00a4372166c16ed87513bd7bc53fa7bb.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/obj/spr_firetorch_v1.png"
-dest_files=[ "res://.import/spr_firetorch_v1.png-eff58bdad36421be19aba58a2a0f470f.stex" ]
+source_file="res://asset/ui/mainmenu/logo/logo_letter/r.png"
+dest_files=[ "res://.import/r.png-00a4372166c16ed87513bd7bc53fa7bb.stex" ]
 
 [params]
 
