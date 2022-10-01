@@ -1,0 +1,119 @@
+[gd_scene load_steps=63 format=2]
+
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight5.png" type="Texture" id=1]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight7.png" type="Texture" id=2]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight6.png" type="Texture" id=3]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight8.png" type="Texture" id=4]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight4.png" type="Texture" id=5]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight16.png" type="Texture" id=6]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight15.png" type="Texture" id=7]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight10.png" type="Texture" id=8]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight9.png" type="Texture" id=9]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight11.png" type="Texture" id=10]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight1.png" type="Texture" id=11]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight2.png" type="Texture" id=12]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight3.png" type="Texture" id=13]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight13.png" type="Texture" id=14]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight14.png" type="Texture" id=15]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight12.png" type="Texture" id=16]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight35.png" type="Texture" id=17]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight19.png" type="Texture" id=18]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight57.png" type="Texture" id=19]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight27.png" type="Texture" id=20]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight23.png" type="Texture" id=21]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight24.png" type="Texture" id=22]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight25.png" type="Texture" id=23]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight33.png" type="Texture" id=24]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight37.png" type="Texture" id=25]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight41.png" type="Texture" id=26]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight22.png" type="Texture" id=27]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight58.png" type="Texture" id=28]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight56.png" type="Texture" id=29]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight20.png" type="Texture" id=30]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight29.png" type="Texture" id=31]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight50.png" type="Texture" id=32]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight51.png" type="Texture" id=33]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight47.png" type="Texture" id=34]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight21.png" type="Texture" id=35]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight17.png" type="Texture" id=36]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight49.png" type="Texture" id=37]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight53.png" type="Texture" id=38]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight43.png" type="Texture" id=39]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight40.png" type="Texture" id=40]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight45.png" type="Texture" id=41]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight18.png" type="Texture" id=42]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight44.png" type="Texture" id=43]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight39.png" type="Texture" id=44]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight26.png" type="Texture" id=45]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight32.png" type="Texture" id=46]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight48.png" type="Texture" id=47]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight55.png" type="Texture" id=48]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight31.png" type="Texture" id=49]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight36.png" type="Texture" id=50]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight34.png" type="Texture" id=51]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight46.png" type="Texture" id=52]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight42.png" type="Texture" id=53]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight30.png" type="Texture" id=54]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight28.png" type="Texture" id=55]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight52.png" type="Texture" id=56]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight54.png" type="Texture" id=57]
+[ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight38.png" type="Texture" id=58]
+[ext_resource path="res://scr/ui/splash_screen/splash_screen.gd" type="Script" id=59]
+
+[sub_resource type="SpriteFrames" id=1]
+animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 12 ), ExtResource( 13 ), ExtResource( 5 ), ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ), ExtResource( 4 ), ExtResource( 9 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 16 ), ExtResource( 14 ), ExtResource( 15 ), ExtResource( 7 ), ExtResource( 6 ), ExtResource( 36 ), ExtResource( 42 ), ExtResource( 18 ), ExtResource( 30 ), ExtResource( 35 ), ExtResource( 27 ), ExtResource( 21 ), ExtResource( 22 ), ExtResource( 23 ), ExtResource( 45 ), ExtResource( 20 ), ExtResource( 55 ), ExtResource( 31 ), ExtResource( 54 ), ExtResource( 49 ), ExtResource( 46 ), ExtResource( 24 ), ExtResource( 51 ), ExtResource( 17 ), ExtResource( 50 ), ExtResource( 25 ), ExtResource( 58 ), ExtResource( 44 ), ExtResource( 40 ), ExtResource( 26 ), ExtResource( 53 ), ExtResource( 39 ), ExtResource( 43 ), ExtResource( 41 ), ExtResource( 52 ), ExtResource( 34 ), ExtResource( 47 ), ExtResource( 37 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 56 ), ExtResource( 38 ), ExtResource( 57 ), ExtResource( 48 ), ExtResource( 29 ), ExtResource( 19 ), ExtResource( 28 ) ],
+"loop": false,
+"name": "default",
+"speed": 15.0
+} ]
+
+[sub_resource type="Animation" id=3]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("trizg_logo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "default"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/path = NodePath("trizg_logo:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 3.73213, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, -224 ) ]
+}
+
+[node name="splash_screen" type="Node2D"]
+script = ExtResource( 59 )
+
+[node name="zindex_manager" type="Node2D" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="zindex_manager"]
+margin_right = 398.0
+margin_bottom = 224.0
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="trizg_logo" type="AnimatedSprite" parent="."]
+frames = SubResource( 1 )
+frame = 57
+centered = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 3 )
+anims/default = SubResource( 2 )

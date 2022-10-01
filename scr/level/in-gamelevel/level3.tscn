@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=19 format=2]
 
 [ext_resource path="res://asset/level/prototyping_level/prototype_room.png" type="Texture" id=1]
 [ext_resource path="res://asset/level/tileset/prototype_tileset/prototype_tileset.png" type="Texture" id=2]
@@ -8,6 +8,7 @@
 [ext_resource path="res://scr/actor/firefly/extra_flies/extrafly.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scr/actor/firefly/regular_flies/firefly.tscn" type="PackedScene" id=7]
 [ext_resource path="res://asset/level/tileset/pit_tileset/spr_pittileset_v1.png" type="Texture" id=8]
+[ext_resource path="res://scr/tool/fireflies_particle/ff_spawner.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Level
@@ -656,6 +657,8 @@ level_number = 3
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="basic_ui" parent="CanvasLayer" instance=ExtResource( 3 )]
+
+[node name="spawner" parent="CanvasLayer" instance=ExtResource( 9 )]
 
 [node name="pit_tile" type="TileMap" parent="."]
 position = Vector2( 7, 0 )
