@@ -12,6 +12,7 @@ var last_total_light
 
 var light_sb_size # light texture standby size
 signal light_change(target_size)
+var light_target_size
 
 var light_array := [] # For checking light type and ui animation
 
@@ -31,6 +32,8 @@ func _ready():
 	self.connect("light_change",self,"on_light_change")
 
 func _physics_process(delta):
+	
+	print(light_target_size)
 	
 	var tongue_match = $"%tongue_tip".global_position == global_position
 	$"%tongue_tip".visible = not tongue_match
@@ -86,16 +89,18 @@ func add_light(extra_light:bool):
 		get_tree().current_scene.emit_signal("froggy_eat",false)
 
 func on_light_change(target_size):
+	light_target_size = target_size
 	if target_size > 0:
 		$Light2D.enabled = true
 		
 		var tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
-		tween.tween_property($Light2D,"texture_scale",target_size,0.15)
+		tween.tween_property($"%Light2D","texture_scale",light_target_size,0.15)
+		
 	else:
 		var tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
 		tween.tween_property($Light2D,"texture_scale",0.01,0.15)
 		
-		yield(get_tree().create_timer(0.13),"timeout")
+		yield(tween,"finished")
 		
 		$Light2D.enabled = false
 	

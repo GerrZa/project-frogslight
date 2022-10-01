@@ -9,6 +9,11 @@ func enter(msg := {}):
 	
 	froggy.global_position = warp_hole
 	
+	$"%Light2D".enabled = true
+	
+	var tween = create_tween().set_trans(Tween.TRANS_QUINT).set_ease(Tween.EASE_IN_OUT)
+	tween.tween_property($"%Light2D","texture_scale",froggy.light_target_size,0.5)
+	
 	yield(get_tree().create_timer($"%AnimationPlayer".get_animation("jump_out").length),"timeout")
 	
 	get_tree().root.set_disable_input(false)
