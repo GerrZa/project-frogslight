@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sfx_eat_v1.mp3-836b4ec193956b9886d9b64794cb1ee0.mp3s
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

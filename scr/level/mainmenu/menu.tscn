@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=53 format=2]
 
 [ext_resource path="res://scr/level/mainmenu/menu_buttons.gd" type="Script" id=1]
 [ext_resource path="res://asset/level/prototyping_level/prototype_room_border.png" type="Texture" id=2]
@@ -18,16 +18,18 @@
 [ext_resource path="res://asset/ui/mainmenu/button/start_game.png" type="Texture" id=16]
 [ext_resource path="res://asset/ui/mainmenu/button/option.png" type="Texture" id=17]
 [ext_resource path="res://asset/ui/mainmenu/button/credits.png" type="Texture" id=18]
-[ext_resource path="res://asset/ui/mainmenu/button/quit.png" type="Texture" id=19]
 [ext_resource path="res://asset/ui/mainmenu/button/frog_indicator.png" type="Texture" id=20]
 [ext_resource path="res://scr/level/mainmenu/option.gd" type="Script" id=21]
 [ext_resource path="res://scr/level/mainmenu/credits.gd" type="Script" id=22]
-[ext_resource path="res://scr/level/mainmenu/quit.gd" type="Script" id=23]
 [ext_resource path="res://asset/fx/visual_fx/light_texture.png" type="Texture" id=24]
 [ext_resource path="res://scr/ui/nolight_fx.tres" type="Material" id=25]
 [ext_resource path="res://scr/tool/fireflies_particle/ff_spawner.tscn" type="PackedScene" id=26]
 [ext_resource path="res://asset/ui/mainmenu/logo/title_logo.png" type="Texture" id=27]
 [ext_resource path="res://scr/level/mainmenu/menu.gd" type="Script" id=28]
+[ext_resource path="res://asset/ui/mainmenu/button/twitter_button.png" type="Texture" id=29]
+[ext_resource path="res://asset/ui/mainmenu/button/yt_button.png" type="Texture" id=30]
+[ext_resource path="res://scr/level/mainmenu/yt.gd" type="Script" id=31]
+[ext_resource path="res://scr/level/mainmenu/twitter.gd" type="Script" id=32]
 
 [sub_resource type="Animation" id=9]
 length = 0.001
@@ -526,15 +528,15 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ) ]
 }
 
-[sub_resource type="SpriteFrames" id=4]
+[sub_resource type="SpriteFrames" id=24]
 animations = [ {
-"frames": [ ExtResource( 19 ) ],
+"frames": [ ExtResource( 29 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="Animation" id=18]
+[sub_resource type="Animation" id=20]
 length = 0.001
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:modulate")
@@ -549,7 +551,46 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=19]
+[sub_resource type="Animation" id=21]
+resource_name = "selected"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=25]
+animations = [ {
+"frames": [ ExtResource( 30 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=22]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=23]
 resource_name = "selected"
 length = 0.8
 tracks/0/type = "value"
@@ -882,25 +923,39 @@ centered = false
 offset = Vector2( 3, 3 )
 script = ExtResource( 22 )
 up_neighbor = NodePath("../option")
-down_neighbor = NodePath("../quit")
+down_neighbor = NodePath("../twitter")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/credits"]
 anims/RESET = SubResource( 16 )
 anims/selected = SubResource( 17 )
 
-[node name="quit" type="AnimatedSprite" parent="ButtonIndicator"]
+[node name="twitter" type="AnimatedSprite" parent="ButtonIndicator"]
 material = ExtResource( 25 )
-position = Vector2( 263, 128 )
+position = Vector2( 247, 144 )
 z_index = 1
-frames = SubResource( 4 )
+frames = SubResource( 24 )
 centered = false
-offset = Vector2( 10, 2 )
-script = ExtResource( 23 )
+script = ExtResource( 32 )
+right_neighbor = NodePath("../yt")
 up_neighbor = NodePath("../credits")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/quit"]
-anims/RESET = SubResource( 18 )
-anims/selected = SubResource( 19 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/twitter"]
+anims/RESET = SubResource( 20 )
+anims/selected = SubResource( 21 )
+
+[node name="yt" type="AnimatedSprite" parent="ButtonIndicator"]
+material = ExtResource( 25 )
+position = Vector2( 327, 144 )
+z_index = 1
+frames = SubResource( 25 )
+centered = false
+script = ExtResource( 31 )
+left_neighbor = NodePath("../twitter")
+up_neighbor = NodePath("../credits")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/yt"]
+anims/RESET = SubResource( 22 )
+anims/selected = SubResource( 23 )
 
 [node name="froggy_indi" type="AnimatedSprite" parent="ButtonIndicator"]
 position = Vector2( 231, 80 )
@@ -927,7 +982,6 @@ color = Color( 0.239216, 0.239216, 0.443137, 1 )
 
 [node name="room_bg" type="Sprite" parent="."]
 position = Vector2( 96.0003, 224 )
-scale = Vector2( 1, 1 )
 z_index = -1
 texture = ExtResource( 3 )
 centered = false

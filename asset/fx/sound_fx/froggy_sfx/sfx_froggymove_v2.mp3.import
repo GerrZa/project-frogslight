@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sfx_froggymove_v2.mp3-53b4e54addd07177af53cfbfce1639a2.mp3str"
+
+[deps]
+
+source_file="res://asset/fx/sound_fx/froggy_sfx/sfx_froggymove_v2.mp3"
+dest_files=[ "res://.import/sfx_froggymove_v2.mp3-53b4e54addd07177af53cfbfce1639a2.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

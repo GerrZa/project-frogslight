@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=2]
+[gd_scene load_steps=64 format=2]
 
 [ext_resource path="res://asset/actor/froggy/tongue_tip.png" type="Texture" id=1]
 [ext_resource path="res://scr/actor/froggy/State/eat.gd" type="Script" id=2]
@@ -15,6 +15,8 @@
 [ext_resource path="res://scr/actor/froggy/State/burned.gd" type="Script" id=13]
 [ext_resource path="res://scr/actor/froggy/jump_in.gd" type="Script" id=14]
 [ext_resource path="res://scr/actor/froggy/jump_out.gd" type="Script" id=15]
+[ext_resource path="res://asset/fx/sound_fx/froggy_sfx/sfx_eat_v2.wav" type="AudioStream" id=16]
+[ext_resource path="res://asset/fx/sound_fx/froggy_sfx/sfx_eat_v3.wav" type="AudioStream" id=17]
 
 [sub_resource type="Animation" id=42]
 length = 0.001
@@ -106,7 +108,7 @@ tracks/3/keys = {
 [sub_resource type="Animation" id=9]
 resource_name = "eat"
 length = 0.91
-step = 0.065
+step = 0.01
 tracks/0/type = "value"
 tracks/0/path = NodePath(".:frame")
 tracks/0/interp = 1
@@ -118,6 +120,32 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("../AudioStreamPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.45 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ ExtResource( 17 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath("../AudioStreamPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.45 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [sub_resource type="Animation" id=3]
@@ -366,6 +394,7 @@ extents = Vector2( 6, 6 )
 extents = Vector2( 6, 6 )
 
 [node name="froggy" type="Area2D"]
+z_index = 3
 collision_mask = 16
 script = ExtResource( 3 )
 __meta__ = {
@@ -575,3 +604,9 @@ __meta__ = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hole_check"]
 position = Vector2( 8, 8 )
 shape = SubResource( 52 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+stream = ExtResource( 16 )
+volume_db = -6.5
+bus = "Sfx"

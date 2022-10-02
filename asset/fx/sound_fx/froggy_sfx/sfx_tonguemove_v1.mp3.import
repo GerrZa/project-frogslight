@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sfx_tonguemove_v1.mp3-1bbe7c47cdb9d6d075f5b3c163ce08
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

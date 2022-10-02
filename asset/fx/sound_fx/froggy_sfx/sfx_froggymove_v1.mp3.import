@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sfx_froggymove_v1.mp3-4b5171cf793a1963fa4d62117a5f59
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

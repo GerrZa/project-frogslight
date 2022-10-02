@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sfx_forggyopentongue_v1.mp3-28c52e600b2cfe387bd7e2a7
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

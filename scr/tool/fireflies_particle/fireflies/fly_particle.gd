@@ -29,8 +29,6 @@ func _ready():
 		1:
 			$normal.visible = false
 			$extra.visible = true
-	
-	print(type)
 
 func _physics_process(delta):
 	global_position += direction * speed * delta
