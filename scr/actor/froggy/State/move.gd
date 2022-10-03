@@ -4,7 +4,7 @@ extends FroggyState
 var move_direction
 
 var move_particle = preload("res://scr/actor/froggy/dust_paricle/dust_particle.tscn")
-var move_sfx = preload("res://asset/fx/sound_fx/froggy_sfx/sfx_froggymove_v2.mp3")
+var move_sfx = preload("res://asset/fx/sound_fx/froggy_sfx/sfx_froggymove_v3.wav")
 
 func enter(msg := {}):
 	
