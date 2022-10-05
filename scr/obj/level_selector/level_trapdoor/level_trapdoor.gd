@@ -1,16 +1,18 @@
-extends Sprite
+extends Area2D
 
+var left_neighbor = null
+var right_neighbor = null
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var level_indicator : int
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+	
+	print($ray_left.get_collider()[0])
+	
+	left_neighbor = $ray_left.get_collider()
+	right_neighbor = $ray_right.get_collider()
+	
+	var door_name_spilt = name.rsplit("_",true)
+	
+	$level_number.frame = int(door_name_spilt[2])
+	

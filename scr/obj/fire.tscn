@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=2]
 
-[ext_resource path="res://asset/ui/gameover/obj/spr_fire-fx_v1.png" type="Texture" id=1]
+[ext_resource path="res://asset/obj/spr_fire-fx_v1.png" type="Texture" id=1]
 [ext_resource path="res://asset/fx/visual_fx/light_texture.png" type="Texture" id=2]
 [ext_resource path="res://scr/obj/fire.gd" type="Script" id=3]
 

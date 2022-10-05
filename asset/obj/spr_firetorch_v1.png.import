@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_fire-fx_v1.png-6923660e1e6cf3a2e9aba56eba58a914.stex"
+path="res://.import/spr_firetorch_v1.png-eff58bdad36421be19aba58a2a0f470f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/ui/gameover/obj/spr_fire-fx_v1.png"
-dest_files=[ "res://.import/spr_fire-fx_v1.png-6923660e1e6cf3a2e9aba56eba58a914.stex" ]
+source_file="res://asset/obj/spr_firetorch_v1.png"
+dest_files=[ "res://.import/spr_firetorch_v1.png-eff58bdad36421be19aba58a2a0f470f.stex" ]
 
 [params]
 

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/spr_firetorch_v1.png-541a39b9c6531e610d2668b509fa9637.stex"
+path="res://.import/spr_text_masking_tex.png-5da7d673d67e463eb785c6498bb884ca.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://asset/ui/gameover/obj/spr_firetorch_v1.png"
-dest_files=[ "res://.import/spr_firetorch_v1.png-541a39b9c6531e610d2668b509fa9637.stex" ]
+source_file="res://asset/ui/level_select/level_number/spr_text_masking_tex.png"
+dest_files=[ "res://.import/spr_text_masking_tex.png-5da7d673d67e463eb785c6498bb884ca.stex" ]
 
 [params]
 

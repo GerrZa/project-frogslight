@@ -1,8 +1,7 @@
 [gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scr/obj/warp_hole.gd" type="Script" id=1]
-[ext_resource path="res://asset/ui/gameover/obj/spr_warphole_v1.png" type="Texture" id=2]
-
+[ext_resource path="res://asset/obj/spr_warphole_v1.png" type="Texture" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 8, 8 )
