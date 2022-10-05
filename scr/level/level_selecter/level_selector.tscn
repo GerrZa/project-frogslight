@@ -1,3 +1,31 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://asset/ui/level_select/level_selector_border.png" type="Texture" id=1]
+[ext_resource path="res://asset/ui/level_select/level_selector_bg.png" type="Texture" id=2]
 
 [node name="level_select" type="Node2D"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="levelselector_border" type="Sprite" parent="CanvasLayer"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="levelselector_bg" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+centered = false
+
+[node name="levelselector_bg2" type="Sprite" parent="."]
+position = Vector2( 160, 0 )
+texture = ExtResource( 2 )
+centered = false
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color( 0.239216, 0.239216, 0.443137, 1 )
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 199, 136 )
+limit_left = 0
+limit_top = 0
+limit_bottom = 224
+editor_draw_limits = true
