@@ -37,6 +37,7 @@ func _ready():
 	
 	add_child(level_opener.instance())
 
+
 func _process(delta):
 	if get_node_or_null("fireflies_grouper") != null:
 		if get_node("fireflies_grouper").get_children().empty() and winning == false:

@@ -12,5 +12,5 @@ func on_button_clicked():
 	
 	yield(changer_ins,"finish_transition")
 	
-	get_tree().change_scene("res://scr/level/in-gamelevel/level1.tscn")
+	get_tree().change_scene("res://scr/level/level_selecter/level_selector.tscn")
 	

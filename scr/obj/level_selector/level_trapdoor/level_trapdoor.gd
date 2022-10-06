@@ -3,16 +3,46 @@ extends Area2D
 var left_neighbor = null
 var right_neighbor = null
 
-var level_indicator : int
+var selector = null
 
-func _ready():
+var level_status_ui_frame = 0
+
+func _process(delta):
 	
-	print($ray_left.get_collider()[0])
+	if$right_ray.is_colliding():
+		right_neighbor = $right_ray.get_collider()
+	else: right_neighbor = null
+	if$left_ray.is_colliding():
+		left_neighbor = $left_ray.get_collider()
+	else: left_neighbor = null
 	
-	left_neighbor = $ray_left.get_collider()
-	right_neighbor = $ray_right.get_collider()
+	var splited_name = name.rsplit("_",true)
+	var level_number = int(splited_name[2])
 	
-	var door_name_spilt = name.rsplit("_",true)
+	$number_indicator.frame = level_number
 	
-	$level_number.frame = int(door_name_spilt[2])
+	match Global.level_unlocked[level_number]:
+		0:
+			$status_icon.visible = true
+			$trapdoor_sprite.modulate = Color(0.2,0.2,0.2,1)
+			level_status_ui_frame = 1
+		1:
+			$status_icon.visible = false
+			$trapdoor_sprite.modulate = Color(1,1,1,1)
+			level_status_ui_frame = 0
 	
+	
+
+func choose_level():
+	
+	var splited_name = name.rsplit("_",true)
+	var level_number = int(splited_name[2])
+	
+	if Global.level_unlocked[level_number] == 1:
+		get_tree().current_scene.play_anim(level_number)
+		$trapdoor_sprite/AnimationPlayer.play("activate_hole")
+		selector.get_in_hole()
+		$number_indicator/AnimationPlayer.play("selected")
+		get_tree().root.set_disable_input(false)
+	else:
+		pass

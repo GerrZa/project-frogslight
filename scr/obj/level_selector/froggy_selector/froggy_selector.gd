@@ -1,10 +1,10 @@
-extends Sprite
+extends Node2D
 
 func play_anim(is_right : bool):
 	if is_right:
-		$AnimationPlayer.play("move_right")
+		$selector/AnimationPlayer.play("#move_left")
 	else:
-		$AnimationPlayer.play("move_left")
+		$selector/AnimationPlayer.play("#move_left")
 
 func get_in_hole():
-	$AnimationPlayer.play("jump_in")
+	$selector/AnimationPlayer.play("jump_in")

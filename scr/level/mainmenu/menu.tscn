@@ -709,7 +709,7 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 1.6 ),
-"transitions": PoolRealArray( 0.637281, 1 ),
+"transitions": PoolRealArray( 0.554785, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 224 ), Vector2( 0, 0 ) ]
 }
@@ -721,7 +721,7 @@ tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
 "times": PoolRealArray( 0, 1.6 ),
-"transitions": PoolRealArray( 0.637281, 1 ),
+"transitions": PoolRealArray( 0.554785, 1 ),
 "update": 0,
 "values": [ Vector2( 96.0003, 224 ), Vector2( 96.0003, 0 ) ]
 }
@@ -733,7 +733,7 @@ tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
 "times": PoolRealArray( 0, 1.6 ),
-"transitions": PoolRealArray( 0.637281, 1 ),
+"transitions": PoolRealArray( 0.554785, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 224 ), Vector2( 0, 0 ) ]
 }
@@ -745,7 +745,7 @@ tracks/3/imported = false
 tracks/3/enabled = true
 tracks/3/keys = {
 "times": PoolRealArray( 0, 1.6 ),
-"transitions": PoolRealArray( 0.637281, 1 ),
+"transitions": PoolRealArray( 0.554785, 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ), Vector2( 0, -223 ) ]
 }
@@ -872,6 +872,7 @@ z_index = 1
 z_index = -5
 
 [node name="ColorRect" type="ColorRect" parent="CanvasLayer/zindex_manager"]
+light_mask = 0
 margin_right = 398.0
 margin_bottom = 224.0
 color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
