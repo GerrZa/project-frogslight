@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_pulltongue_v1.wav-c0ddbcd0ef73864301698a8dbc32104d.sample"
+
+[deps]
+
+source_file="res://asset/fx/sound_fx/froggy_sfx/sfx_pulltongue_v1.wav"
+dest_files=[ "res://.import/sfx_pulltongue_v1.wav-c0ddbcd0ef73864301698a8dbc32104d.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

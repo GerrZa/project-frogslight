@@ -1,6 +1,14 @@
 extends Node2D
 
+var menu = preload("res://scr/level/mainmenu/menu.tscn")
+
+signal start
+
 func _ready():
+	yield(self,"start")
+	
+	$audio_controller.play("start")
+	
 	$trizg_logo.visible = false
 	
 	yield(get_tree().create_timer(0.3),"timeout")
@@ -28,9 +36,11 @@ func _ready():
 	
 	yield($AnimationPlayer,"animation_finished")
 	
-	get_tree().change_scene("res://scr/level/mainmenu/menu.tscn")
+	get_tree().change_scene_to(menu)
 
 func _input(event):
 	if event.is_action_pressed("skip_splash"):
-		get_tree().change_scene("res://scr/level/mainmenu/menu.tscn")
+		get_tree().change_scene_to(menu)
+	if event.is_action_pressed("ui_tongue"):
+		emit_signal("start")
 	

@@ -1,13 +1,18 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=109 format=2]
 
+[ext_resource path="res://asset/fx/sound_fx/splash_sfx/rect_rotate.wav" type="AudioStream" id=1]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight7.png" type="Texture" id=2]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight6.png" type="Texture" id=3]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight8.png" type="Texture" id=4]
+[ext_resource path="res://asset/fx/sound_fx/splash_sfx/rect_slideup.wav" type="AudioStream" id=5]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight16.png" type="Texture" id=6]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight15.png" type="Texture" id=7]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight10.png" type="Texture" id=8]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight9.png" type="Texture" id=9]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight11.png" type="Texture" id=10]
+[ext_resource path="res://asset/fx/sound_fx/splash_sfx/sword_slash.wav" type="AudioStream" id=11]
+[ext_resource path="res://asset/fx/sound_fx/splash_sfx/godot_wink.wav" type="AudioStream" id=12]
+[ext_resource path="res://asset/fx/sound_fx/splash_sfx/trizg_text.wav" type="AudioStream" id=13]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight13.png" type="Texture" id=14]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight14.png" type="Texture" id=15]
 [ext_resource path="res://asset/ui/splash_screen/trizg_intro_froglight12.png" type="Texture" id=16]
@@ -82,7 +87,10 @@
 [ext_resource path="res://asset/ui/splash_screen/godot/godot_splash_screen18.png" type="Texture" id=85]
 [ext_resource path="res://asset/ui/splash_screen/godot/godot_splash_screen19.png" type="Texture" id=86]
 [ext_resource path="res://asset/ui/splash_screen/godot/godot_splash_screen20.png" type="Texture" id=87]
+[ext_resource path="res://asset/fx/sound_fx/splash_sfx/triangle_disappear.wav" type="AudioStream" id=88]
 [ext_resource path="res://asset/ui/splash_screen/godot/godot_splash_screen36.png" type="Texture" id=90]
+[ext_resource path="res://asset/fx/sound_fx/splash_sfx/trizg_click.wav" type="AudioStream" id=91]
+[ext_resource path="res://asset/fx/sound_fx/splash_sfx/punch_godot.wav" type="AudioStream" id=92]
 [ext_resource path="res://asset/ui/splash_screen/godot/godot_splash_screen32.png" type="Texture" id=94]
 [ext_resource path="res://asset/ui/splash_screen/godot/godot_splash_screen38.png" type="Texture" id=95]
 [ext_resource path="res://asset/ui/splash_screen/godot/godot_splash_screen31.png" type="Texture" id=96]
@@ -123,6 +131,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [ Vector2( 0, 224 ) ]
 }
+tracks/1/type = "value"
+tracks/1/path = NodePath("AudioStreamPlayer:stream")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ null ]
+}
 
 [sub_resource type="Animation" id=2]
 resource_name = "default"
@@ -159,6 +179,7 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=5]
 resource_name = "wipe_godot_out"
 length = 0.6
+step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("trizg_logo:position")
 tracks/0/interp = 1
@@ -167,9 +188,79 @@ tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.6 ),
-"transitions": PoolRealArray( 2.07053, 1 ),
+"transitions": PoolRealArray( 2.54912, 1 ),
 "update": 0,
-"values": [ Vector2( 0, -224 ), Vector2( 0, -396 ) ]
+"values": [ Vector2( 0, -224 ), Vector2( 0, -448 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayer:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ ExtResource( 5 ) ]
+}
+
+[sub_resource type="Animation" id=7]
+resource_name = "start"
+length = 20.0
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("AudioStreamPlayer:stream")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.5, 1.05, 1.65, 2.05, 3.35, 3.75, 4.65, 5.65, 6.95 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 88 ), ExtResource( 13 ), ExtResource( 91 ), ExtResource( 5 ), ExtResource( 92 ), ExtResource( 12 ) ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("AudioStreamPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.5, 1.05, 1.65, 2.05, 3.35, 3.75, 4.65, 5.65, 6.95 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+}, {
+"args": [ 0.0 ],
+"method": "play"
+} ]
 }
 
 [node name="splash_screen" type="Node2D"]
@@ -189,7 +280,7 @@ frames = SubResource( 1 )
 centered = false
 
 [node name="godot_logo" type="AnimatedSprite" parent="trizg_logo"]
-position = Vector2( 0, 225 )
+position = Vector2( 0, 224 )
 frames = SubResource( 4 )
 centered = false
 
@@ -198,3 +289,12 @@ anims/RESET = SubResource( 3 )
 anims/default = SubResource( 2 )
 anims/riseup_trizg = SubResource( 6 )
 anims/wipe_godot_out = SubResource( 5 )
+
+[node name="audio_controller" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 8 )
+anims/start = SubResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -3.586
+bus = "Sfx"

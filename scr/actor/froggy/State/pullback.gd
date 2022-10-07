@@ -3,12 +3,18 @@ extends FroggyState
 
 var tween_time_divider = 300
 
+var sfx_pulltongue = preload("res://asset/fx/sound_fx/froggy_sfx/sfx_pulltongue_v2.wav")
+
 func enter(msg := {}):
 	
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	tween.tween_property($"%tongue_tip","position",Vector2.ZERO,
 		$"%tongue_tip".global_position.distance_to(froggy.global_position)/tween_time_divider)
+	
+	$"%AudioStreamPlayer".stream = sfx_pulltongue
+	$"%AudioStreamPlayer".play()
+	
 	
 	yield(tween,"finished")
 	

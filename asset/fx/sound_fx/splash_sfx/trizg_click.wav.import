@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/trizg_click.wav-ffb1b84b6fe4af486a8137cc402a6f68.sample"
+
+[deps]
+
+source_file="res://asset/fx/sound_fx/splash_sfx/trizg_click.wav"
+dest_files=[ "res://.import/trizg_click.wav-ffb1b84b6fe4af486a8137cc402a6f68.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

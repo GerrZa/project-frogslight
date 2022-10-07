@@ -8,6 +8,7 @@ export var froggy_spr_hframe : int = 40
 
 var gameover_spr_f : SpriteFrames = preload("res://scr/ui/gameover/gameover_spr_frame.tres")
 var nolight_mat = preload("res://scr/ui/nolight_fx.tres")
+var normal_gameover_sfx = preload("res://asset/fx/sound_fx/sfx_gameover_v1.wav")
 
 var burned_spr_f : SpriteFrames = preload("res://scr/ui/gameover/burned_gameover_spr_frame.tres")
 
@@ -70,6 +71,13 @@ func normal_gameover(frog_global_pos,frog_offset):
 	gameover_sprite.z_index = 50
 	gameover_sprite.material = nolight_mat
 	
+	var ap = AudioStreamPlayer.new()
+	add_child(ap)
+	ap.volume_db = -3.45
+	ap.bus = "Sfx"
+	ap.stream = normal_gameover_sfx
+	ap.play()
+	
 	yield(get_tree().create_timer(0.8),"timeout")
 	
 	var canvas_layer = CanvasLayer.new()
@@ -125,6 +133,8 @@ func win():
 	var win_overlay_ins = win_overlay.instance()
 	
 	add_child(win_overlay_ins)
+	
+	Global.level_unlocked[level_number]
 
 
 

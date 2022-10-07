@@ -1,6 +1,8 @@
 #TONGUE MOVE
 extends FroggyState
 
+var tongue_move_sfx = preload("res://asset/fx/sound_fx/froggy_sfx/sfx_tonguemove_v5.wav")
+
 var move_direction = Vector2.ZERO
 func enter(msg:={}):
 	
@@ -17,6 +19,9 @@ func enter(msg:={}):
 		
 		get_tree().current_scene.emit_signal("froggy_move")
 		froggy.light_array.remove(froggy.light_array.size() - 1)
+		
+		$"%AudioStreamPlayer".stream = tongue_move_sfx
+		$"%AudioStreamPlayer".play()
 		
 		yield(new_tween,"finished")
 		
