@@ -9,6 +9,8 @@ onready var button = null
 export var indicator_nodepath = NodePath()
 onready var selector : Object = null
 
+var indicator_tween_time = 0.1
+
 signal button_change
 
 func _ready():

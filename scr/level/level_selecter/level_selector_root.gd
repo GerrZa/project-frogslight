@@ -3,16 +3,17 @@ extends Node2D
 var hovering_level = null
 
 var tween_time = 0.2
-
 var enable_unhandled = false
 
+signal change_hovering
+
 func _ready():
+	connect("change_hovering",self,"on_hovering_change")
+	
 	hovering_level = $levelselector_bg/trapdoor/trapdoor_level_0
 	
 	for node in $levelselector_bg/trapdoor.get_children():
 		node.selector = $levelselector_bg/selector_root
-	
-	
 
 func _process(delta):
 	$CanvasLayer/levelselector_border/level_status_ui.frame = hovering_level.level_status_ui_frame
@@ -37,3 +38,6 @@ func tween_selector():
 	tween.tween_property($levelselector_bg/selector_root,"global_position",hovering_level.global_position,tween_time)
 	
 	$Timer.start(tween_time)
+
+func on_hovering_change():
+	pass

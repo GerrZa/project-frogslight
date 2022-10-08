@@ -219,7 +219,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0.5, 1.05, 1.65, 2.05, 3.35, 3.75, 4.65, 5.65, 6.95 ),
+"times": PoolRealArray( 0.5, 1.05, 1.65, 2.05, 3.35, 3.75, 4.5, 5.6, 6.95 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 1,
 "values": [ ExtResource( 5 ), ExtResource( 1 ), ExtResource( 11 ), ExtResource( 88 ), ExtResource( 13 ), ExtResource( 91 ), ExtResource( 5 ), ExtResource( 92 ), ExtResource( 12 ) ]
@@ -231,7 +231,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0.5, 1.05, 1.65, 2.05, 3.35, 3.75, 4.65, 5.65, 6.95 ),
+"times": PoolRealArray( 0.5, 1.05, 1.65, 2.05, 3.35, 3.75, 4.5, 5.6, 6.95 ),
 "transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "values": [ {
 "args": [ 0.0 ],
