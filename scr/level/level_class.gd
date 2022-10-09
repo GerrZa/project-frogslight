@@ -112,7 +112,6 @@ func burned_gameover():
 	add_child(canvas_layer)
 	canvas_layer.add_child(overlay_ins)
 	
-	
 
 func on_froggy_move():
 	if flame_exist == true and flame_spawned == false:
@@ -134,7 +133,7 @@ func win():
 	
 	add_child(win_overlay_ins)
 	
-	Global.level_unlocked[level_number]
+	Global.level_unlocked[level_number] = 1
 
 
 

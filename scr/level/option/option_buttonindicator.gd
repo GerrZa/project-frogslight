@@ -1,16 +1,14 @@
 extends ButtonIndicator
 
-
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	
+	indicator_tween_time = 0.05
+	
+	yield($"%eyereveal_anim","animation_finished")
+	
+	get_tree().root.set_disable_input(false)
+	
+	selector = get_node(indicator_nodepath)
+	button = get_node(start_button)
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass

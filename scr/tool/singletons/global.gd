@@ -48,4 +48,13 @@ var default_level_unlocked  = [ #current level count : 20
 	0,
 ]
 
-var setting = {"fullscreen" : false}
+var setting = {
+	"fullscreen" : false,
+	"sfx" : true,
+	"music" : true
+	}
+
+func _process(delta):
+	AudioServer.set_bus_mute(2,!setting["sfx"])
+	AudioServer.set_bus_mute(1,!setting["music"])
+	
