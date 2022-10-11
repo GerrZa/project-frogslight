@@ -135,7 +135,7 @@ tracks/0/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ 1 ]
+"values": [ 0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("../button_indicator/sfx/sfx_spr:position")
@@ -147,7 +147,7 @@ tracks/1/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 142, 96 ) ]
+"values": [ Vector2( 0, 18 ) ]
 }
 tracks/2/type = "value"
 tracks/2/path = NodePath("../button_indicator/music/music_spr:position")
@@ -159,7 +159,7 @@ tracks/2/keys = {
 "times": PoolRealArray( 0 ),
 "transitions": PoolRealArray( 1 ),
 "update": 0,
-"values": [ Vector2( 216, 96 ) ]
+"values": [ Vector2( 0, 18 ) ]
 }
 tracks/3/type = "value"
 tracks/3/path = NodePath("../mouth:position")
@@ -269,7 +269,7 @@ script = ExtResource( 7 )
 right_neighbor = NodePath("../music")
 
 [node name="sfx_spr" type="Sprite" parent="CanvasLayer/button_indicator/sfx"]
-position = Vector2( 142, 96 )
+position = Vector2( 0, 18 )
 texture = ExtResource( 4 )
 centered = false
 hframes = 2
@@ -291,7 +291,7 @@ script = ExtResource( 6 )
 left_neighbor = NodePath("../sfx")
 
 [node name="music_spr" type="Sprite" parent="CanvasLayer/button_indicator/music"]
-position = Vector2( 216, 96 )
+position = Vector2( 0, 18 )
 texture = ExtResource( 5 )
 centered = false
 hframes = 2
@@ -320,7 +320,6 @@ z_index = 1
 texture = ExtResource( 3 )
 centered = false
 hframes = 7
-frame = 1
 
 [node name="mouth" type="Sprite" parent="CanvasLayer"]
 position = Vector2( 180, 149 )
