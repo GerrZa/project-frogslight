@@ -169,5 +169,6 @@ margin_bottom = 448.0
 color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "startup"
 anims/RESET = SubResource( 2 )
 anims/startup = SubResource( 1 )

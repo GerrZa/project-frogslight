@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=60 format=2]
 
 [ext_resource path="res://scr/level/mainmenu/menu_buttons.gd" type="Script" id=1]
 [ext_resource path="res://asset/level/prototyping_level/prototype_room_border.png" type="Texture" id=2]
@@ -18,9 +18,11 @@
 [ext_resource path="res://asset/ui/mainmenu/button/start_game.png" type="Texture" id=16]
 [ext_resource path="res://asset/ui/mainmenu/button/option.png" type="Texture" id=17]
 [ext_resource path="res://asset/ui/mainmenu/button/credits.png" type="Texture" id=18]
+[ext_resource path="res://scr/level/mainmenu/quit.gd" type="Script" id=19]
 [ext_resource path="res://asset/ui/mainmenu/button/frog_indicator.png" type="Texture" id=20]
 [ext_resource path="res://scr/level/mainmenu/option.gd" type="Script" id=21]
 [ext_resource path="res://scr/level/mainmenu/credits.gd" type="Script" id=22]
+[ext_resource path="res://asset/ui/mainmenu/button/quit.png" type="Texture" id=23]
 [ext_resource path="res://asset/fx/visual_fx/light_texture.png" type="Texture" id=24]
 [ext_resource path="res://scr/ui/nolight_fx.tres" type="Material" id=25]
 [ext_resource path="res://scr/tool/fireflies_particle/ff_spawner.tscn" type="PackedScene" id=26]
@@ -224,6 +226,191 @@ tracks/15/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 12.9 ]
+}
+
+[sub_resource type="Animation" id=35]
+resource_name = "default_pos"
+length = 0.001
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("logo/F:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("logo/R:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 39, 26 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("logo/G:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 102, 25 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("logo/Apostrophe:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 138, 25 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("logo/S:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 146, 28 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("logo/L:position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 8, 57 ) ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("logo/I:position")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 54, 66 ) ]
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("logo/G2:position")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 74, 75 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("logo/H:position")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 106, 67 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("logo/T:position")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 135, 68 ) ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("logo/O:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 43 ]
+}
+tracks/11/type = "value"
+tracks/11/path = NodePath("logo/O2:frame")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 43 ]
+}
+tracks/12/type = "value"
+tracks/12/path = NodePath("logo/O2:position")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 57, 22 ) ]
+}
+tracks/13/type = "value"
+tracks/13/path = NodePath("logo/CreatorName:position")
+tracks/13/interp = 1
+tracks/13/loop_wrap = true
+tracks/13/imported = false
+tracks/13/enabled = true
+tracks/13/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 34, 116 ) ]
+}
+tracks/14/type = "value"
+tracks/14/path = NodePath("logo/CreatorName:rotation_degrees")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
 }
 
 [sub_resource type="Animation" id=8]
@@ -528,6 +715,45 @@ tracks/0/keys = {
 "values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ) ]
 }
 
+[sub_resource type="SpriteFrames" id=38]
+animations = [ {
+"frames": [ ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Animation" id=36]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=37]
+resource_name = "selected"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
+"transitions": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ) ]
+}
+
 [sub_resource type="SpriteFrames" id=24]
 animations = [ {
 "frames": [ ExtResource( 29 ) ],
@@ -647,132 +873,6 @@ tracks/0/keys = {
 "values": [ Vector2( 1, 1 ), Vector2( 1.018, 1.018 ), Vector2( 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=26]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=27]
-resource_name = "selected"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ) ]
-}
-
-[sub_resource type="Animation" id=28]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=29]
-resource_name = "selected"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ) ]
-}
-
-[sub_resource type="Animation" id=30]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=31]
-resource_name = "selected"
-length = 0.8
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7 ),
-"transitions": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0 ),
-"update": 0,
-"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0.576471 ) ]
-}
-
-[sub_resource type="Animation" id=32]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ) ]
-}
-
-[sub_resource type="Animation" id=33]
-resource_name = "normal"
-length = 0.4
-loop = true
-step = 0.01
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:scale")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.24, 0.4 ),
-"transitions": PoolRealArray( 0.34151, 1, 1 ),
-"update": 0,
-"values": [ Vector2( 1, 1 ), Vector2( 1.018, 1.018 ), Vector2( 1, 1 ) ]
-}
-
 [sub_resource type="Animation" id=11]
 length = 0.001
 tracks/0/type = "value"
@@ -822,6 +922,58 @@ tracks/3/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ Vector2( 0, 0 ) ]
+}
+
+[sub_resource type="Animation" id=34]
+resource_name = "default_pos"
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/menu_gui:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("room_bg:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 96, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ButtonIndicator:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/zindex_manager:position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, -224 ) ]
 }
 
 [sub_resource type="Animation" id=10]
@@ -996,6 +1148,7 @@ centered = false
 unique_name_in_owner = true
 autoplay = "riseup"
 anims/RESET = SubResource( 9 )
+anims/default_pos = SubResource( 35 )
 anims/riseup = SubResource( 8 )
 
 [node name="spawner" parent="CanvasLayer/menu_gui" instance=ExtResource( 26 )]
@@ -1063,6 +1216,20 @@ down_neighbor = NodePath("../twitter")
 anims/RESET = SubResource( 16 )
 anims/selected = SubResource( 17 )
 
+[node name="quit" type="AnimatedSprite" parent="ButtonIndicator"]
+material = ExtResource( 25 )
+position = Vector2( 263, 128 )
+z_index = 1
+frames = SubResource( 38 )
+centered = false
+offset = Vector2( 11, 2 )
+script = ExtResource( 19 )
+down_neighbor = NodePath("../twitter")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/quit"]
+anims/RESET = SubResource( 36 )
+anims/selected = SubResource( 37 )
+
 [node name="twitter" type="AnimatedSprite" parent="ButtonIndicator"]
 material = ExtResource( 25 )
 position = Vector2( 247, 144 )
@@ -1071,7 +1238,7 @@ frames = SubResource( 24 )
 centered = false
 script = ExtResource( 32 )
 right_neighbor = NodePath("../yt")
-up_neighbor = NodePath("../credits")
+up_neighbor = NodePath("../quit")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/twitter"]
 anims/RESET = SubResource( 20 )
@@ -1085,7 +1252,7 @@ frames = SubResource( 25 )
 centered = false
 script = ExtResource( 31 )
 left_neighbor = NodePath("../twitter")
-up_neighbor = NodePath("../credits")
+up_neighbor = NodePath("../quit")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/yt"]
 anims/RESET = SubResource( 22 )
@@ -1111,78 +1278,6 @@ autoplay = "normal"
 anims/RESET = SubResource( 6 )
 anims/normal = SubResource( 7 )
 
-[node name="Option_indicator" type="Control" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_top = 224.0
-margin_bottom = 224.0
-script = ExtResource( 1 )
-start_button = NodePath("sfx")
-indicator_nodepath = NodePath("froggy_indi")
-
-[node name="sfx" type="AnimatedSprite" parent="Option_indicator"]
-material = ExtResource( 25 )
-position = Vector2( 231, 80 )
-z_index = 1
-frames = SubResource( 1 )
-centered = false
-offset = Vector2( 3, 2 )
-script = ExtResource( 15 )
-down_neighbor = NodePath("../music")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Option_indicator/sfx"]
-anims/RESET = SubResource( 26 )
-anims/selected = SubResource( 27 )
-
-[node name="music" type="AnimatedSprite" parent="Option_indicator"]
-material = ExtResource( 25 )
-position = Vector2( 263, 96 )
-z_index = 1
-frames = SubResource( 2 )
-centered = false
-offset = Vector2( 2, 2 )
-script = ExtResource( 21 )
-up_neighbor = NodePath("../sfx")
-down_neighbor = NodePath("../credits")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Option_indicator/music"]
-anims/RESET = SubResource( 28 )
-anims/selected = SubResource( 29 )
-
-[node name="credits" type="AnimatedSprite" parent="Option_indicator"]
-material = ExtResource( 25 )
-position = Vector2( 263, 112 )
-z_index = 1
-frames = SubResource( 3 )
-centered = false
-offset = Vector2( 3, 3 )
-script = ExtResource( 22 )
-up_neighbor = NodePath("../music")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Option_indicator/credits"]
-anims/RESET = SubResource( 30 )
-anims/selected = SubResource( 31 )
-
-[node name="froggy_indi" type="AnimatedSprite" parent="Option_indicator"]
-position = Vector2( 231, 80 )
-z_index = 1
-frames = SubResource( 5 )
-centered = false
-offset = Vector2( -16, 0 )
-
-[node name="Light2D" type="Light2D" parent="Option_indicator/froggy_indi"]
-position = Vector2( -8, 8 )
-texture = ExtResource( 24 )
-texture_scale = 0.24
-color = Color( 1, 0.937255, 0.764706, 1 )
-mode = 2
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Option_indicator/froggy_indi/Light2D"]
-autoplay = "normal"
-anims/RESET = SubResource( 32 )
-anims/normal = SubResource( 33 )
-
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.239216, 0.239216, 0.443137, 1 )
 
@@ -1193,14 +1288,6 @@ texture = ExtResource( 3 )
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "rising_intro"
 anims/RESET = SubResource( 11 )
+anims/default_pos = SubResource( 34 )
 anims/rising_intro = SubResource( 10 )
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2( 199, 112 )
-current = true
-limit_left = 0
-limit_top = 0
-limit_bottom = 224
-editor_draw_limits = true

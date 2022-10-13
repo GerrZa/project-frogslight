@@ -54,6 +54,8 @@ var setting = {
 	"music" : true
 	}
 
+var first_start = true
+
 func _process(delta):
 	AudioServer.set_bus_mute(2,!setting["sfx"])
 	AudioServer.set_bus_mute(1,!setting["music"])

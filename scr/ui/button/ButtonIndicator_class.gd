@@ -19,6 +19,10 @@ func _ready():
 	button = get_node(start_button)
 	
 	selector.playing = true
+	
+	for node in get_children():
+		if node is ButtonClass:
+			node.controller = self
 
 func _input(event):
 	

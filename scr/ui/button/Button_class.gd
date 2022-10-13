@@ -11,6 +11,8 @@ onready var left_button = null
 onready var up_button = null
 onready var down_button = null
 
+var controller = null
+
 func _ready():
 	playing = true
 	
