@@ -1210,7 +1210,7 @@ centered = false
 offset = Vector2( 3, 3 )
 script = ExtResource( 22 )
 up_neighbor = NodePath("../option")
-down_neighbor = NodePath("../twitter")
+down_neighbor = NodePath("../quit")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/credits"]
 anims/RESET = SubResource( 16 )
@@ -1224,6 +1224,7 @@ frames = SubResource( 38 )
 centered = false
 offset = Vector2( 11, 2 )
 script = ExtResource( 19 )
+up_neighbor = NodePath("../credits")
 down_neighbor = NodePath("../twitter")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="ButtonIndicator/quit"]

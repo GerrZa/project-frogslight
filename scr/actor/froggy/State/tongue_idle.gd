@@ -27,6 +27,6 @@ func unhandled_input(event):
 		or Input.is_action_just_pressed("ui_up") or Input.is_action_just_pressed("ui_down"))):
 			get_tree().current_scene.normal_gameover(froggy.get_node("froggy_spr").global_position, froggy.get_node("froggy_spr").offset)
 	
-	if Input.is_action_just_pressed("ui_tongue"):
+	if Input.is_action_just_pressed("ui_tongue") and get_tree().current_scene.is_paused == false:
 		state_machine.transition_to("pullback")
 

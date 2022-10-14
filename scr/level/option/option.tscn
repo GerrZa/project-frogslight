@@ -11,7 +11,7 @@
 [ext_resource path="res://asset/ui/option/bird_mouth.png" type="Texture" id=9]
 [ext_resource path="res://asset/ui/option/option_eye_blink.png" type="Texture" id=10]
 [ext_resource path="res://asset/ui/option/option_back_selected_border.png" type="Texture" id=11]
-[ext_resource path="res://scr/level/option/back.gd" type="Script" id=12]
+[ext_resource path="res://scr/level/option/back_button.gd" type="Script" id=12]
 [ext_resource path="res://asset/ui/option/option_back.png" type="Texture" id=13]
 
 [sub_resource type="Animation" id=7]

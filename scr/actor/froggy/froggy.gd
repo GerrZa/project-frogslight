@@ -19,9 +19,13 @@ var light_array := [] # For checking light type and ui animation
 export var basic_light_color : Color
 export var extra_light_color : Color
 
+onready var fsm = null
+
 onready var animtree = $froggy_spr/AnimationTree.get("parameters/playback")
 
 func _ready():
+	
+	fsm = $fsm
 	
 	for i in range(start_light):
 		if i < 3 :light_array.append(false)

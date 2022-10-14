@@ -1,6 +1,7 @@
 extends ButtonClass
 
 var changer = preload("res://scr/tool/scene_changer/scene_changer.tscn")
+var level_selector = preload("res://scr/level/level_selecter/level_selector.tscn")
 
 func on_button_clicked():
 	$AnimationPlayer.play("selected")
@@ -12,5 +13,5 @@ func on_button_clicked():
 	
 	yield(changer_ins,"finish_transition")
 	
-	get_tree().change_scene("res://scr/level/level_selecter/level_selector.tscn")
+	get_tree().change_scene_to(level_selector)
 	

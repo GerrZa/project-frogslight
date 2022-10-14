@@ -1,12 +1,300 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=55 format=2]
 
 [ext_resource path="res://scr/ui/ingame_option/ingame_menu.gd" type="Script" id=1]
+[ext_resource path="res://asset/ui/option/ingame_option/option_bg_frame.png" type="Texture" id=2]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_resume_v1.png" type="Texture" id=3]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_ingameoption_v1.png" type="Texture" id=4]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_quitmenu_v1.png" type="Texture" id=5]
+[ext_resource path="res://scr/ui/ingame_option/ingamemenu_canvas.gd" type="Script" id=6]
+[ext_resource path="res://scr/ui/ingame_option/resume.gd" type="Script" id=7]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_sfx.png" type="Texture" id=8]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_music.png" type="Texture" id=9]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_back.png" type="Texture" id=10]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_on.png" type="Texture" id=11]
+[ext_resource path="res://asset/ui/option/ingame_option/colon.png" type="Texture" id=12]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_off.png" type="Texture" id=13]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_arrowindicator.png" type="Texture" id=14]
+[ext_resource path="res://scr/ui/ingame_option/option.gd" type="Script" id=15]
+[ext_resource path="res://scr/ui/ingame_option/ingame_menu_back.gd" type="Script" id=16]
+[ext_resource path="res://scr/ui/ingame_option/sfx.gd" type="Script" id=17]
+[ext_resource path="res://scr/ui/ingame_option/music.gd" type="Script" id=18]
+[ext_resource path="res://scr/ui/ingame_option/quitmenu.gd" type="Script" id=19]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 69, 13 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 3 )
+region = Rect2( 69, 0, 69, 13 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 3 )
+region = Rect2( 138, 0, 69, 13 )
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 54, 11 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 4 )
+region = Rect2( 54, 0, 54, 11 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 4 )
+region = Rect2( 108, 0, 54, 11 )
+
+[sub_resource type="SpriteFrames" id=8]
+animations = [ {
+"frames": [ SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 107, 13 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 5 )
+region = Rect2( 107, 0, 107, 13 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 214, 0, 107, 13 )
+
+[sub_resource type="SpriteFrames" id=12]
+animations = [ {
+"frames": [ SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 8 )
+region = Rect2( 0, 0, 33, 12 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 8 )
+region = Rect2( 33, 0, 33, 12 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 8 )
+region = Rect2( 66, 0, 33, 12 )
+
+[sub_resource type="SpriteFrames" id=16]
+animations = [ {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 13 )
+region = Rect2( 0, 0, 28, 14 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 13 )
+region = Rect2( 28, 0, 28, 14 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 13 )
+region = Rect2( 56, 0, 28, 14 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 11 )
+region = Rect2( 0, 0, 25, 13 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 11 )
+region = Rect2( 25, 0, 25, 13 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 11 )
+region = Rect2( 50, 0, 25, 13 )
+
+[sub_resource type="SpriteFrames" id=28]
+animations = [ {
+"frames": [ SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "off",
+"speed": 12.0
+}, {
+"frames": [ SubResource( 25 ), SubResource( 26 ), SubResource( 27 ) ],
+"loop": true,
+"name": "on",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 9 )
+region = Rect2( 0, 0, 44, 14 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 9 )
+region = Rect2( 44, 0, 44, 14 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 9 )
+region = Rect2( 88, 0, 44, 14 )
+
+[sub_resource type="SpriteFrames" id=20]
+animations = [ {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 10 )
+region = Rect2( 0, 0, 46, 15 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 10 )
+region = Rect2( 46, 0, 46, 15 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 10 )
+region = Rect2( 92, 0, 46, 15 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 14 )
+region = Rect2( 0, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 14 )
+region = Rect2( 9, 0, 9, 11 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 14 )
+region = Rect2( 18, 0, 9, 11 )
+
+[sub_resource type="SpriteFrames" id=35]
+animations = [ {
+"frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
 
 [node name="ingame_menu" type="CanvasLayer"]
+pause_mode = 2
+layer = 2
+script = ExtResource( 6 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 0.392157 )
+
+[node name="OptionBgFrame" type="Sprite" parent="."]
+position = Vector2( 192, 112 )
+texture = ExtResource( 2 )
 
 [node name="ingame_menu" type="Control" parent="."]
 margin_right = 40.0
 margin_bottom = 40.0
 script = ExtResource( 1 )
+start_button = NodePath("menu/resume")
+indicator_nodepath = NodePath("arrow_indicator")
 
-[node name="resume" type="AnimatedSprite" parent="ingame_menu"]
+[node name="menu" type="Node2D" parent="ingame_menu"]
+unique_name_in_owner = true
+
+[node name="resume" type="AnimatedSprite" parent="ingame_menu/menu"]
+unique_name_in_owner = true
+position = Vector2( 157, 83 )
+frames = SubResource( 4 )
+centered = false
+script = ExtResource( 7 )
+down_neighbor = NodePath("../option")
+
+[node name="option" type="AnimatedSprite" parent="ingame_menu/menu"]
+position = Vector2( 164, 105 )
+frames = SubResource( 8 )
+centered = false
+script = ExtResource( 15 )
+up_neighbor = NodePath("../resume")
+down_neighbor = NodePath("../quitmenu")
+
+[node name="quitmenu" type="AnimatedSprite" parent="ingame_menu/menu"]
+position = Vector2( 138, 124 )
+frames = SubResource( 12 )
+centered = false
+script = ExtResource( 19 )
+up_neighbor = NodePath("../option")
+
+[node name="option" type="Node2D" parent="ingame_menu"]
+unique_name_in_owner = true
+visible = false
+
+[node name="sfx" type="AnimatedSprite" parent="ingame_menu/option"]
+unique_name_in_owner = true
+position = Vector2( 158, 83 )
+frames = SubResource( 16 )
+centered = false
+script = ExtResource( 17 )
+down_neighbor = NodePath("../music")
+
+[node name="colon" type="Sprite" parent="ingame_menu/option/sfx"]
+position = Vector2( 38, 3 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="status" type="AnimatedSprite" parent="ingame_menu/option/sfx"]
+position = Vector2( 44, 0 )
+frames = SubResource( 28 )
+animation = "on"
+centered = false
+
+[node name="music" type="AnimatedSprite" parent="ingame_menu/option"]
+position = Vector2( 148, 105 )
+frames = SubResource( 20 )
+centered = false
+script = ExtResource( 18 )
+up_neighbor = NodePath("../sfx")
+down_neighbor = NodePath("../back")
+
+[node name="colon" type="Sprite" parent="ingame_menu/option/music"]
+position = Vector2( 48, 4 )
+texture = ExtResource( 12 )
+centered = false
+
+[node name="status" type="AnimatedSprite" parent="ingame_menu/option/music"]
+position = Vector2( 54, 1 )
+frames = SubResource( 28 )
+animation = "on"
+centered = false
+
+[node name="back" type="AnimatedSprite" parent="ingame_menu/option"]
+position = Vector2( 167, 130 )
+frames = SubResource( 24 )
+centered = false
+script = ExtResource( 16 )
+up_neighbor = NodePath("../music")
+
+[node name="arrow_indicator" type="AnimatedSprite" parent="ingame_menu"]
+position = Vector2( 157, 83 )
+frames = SubResource( 35 )
+centered = false
+offset = Vector2( -11, 1 )

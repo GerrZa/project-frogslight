@@ -22,6 +22,9 @@ var overlay_menu = preload("res://scr/ui/gameover/gameover_overlay_menu/gameover
 var winning = false #is winning animation playing
 var win_overlay = preload("res://scr/ui/win_overlay/win_overlay.tscn")
 
+var ingame_menu = preload("res://scr/ui/ingame_option/ingame_option.tscn")
+var is_paused = false
+
 signal tongue(is_active)
 signal froggy_eat(is_extra)
 signal froggy_move
@@ -37,7 +40,12 @@ func _ready():
 	Global.current_level = level_number
 	
 	add_child(level_opener.instance())
+	
+	Global.level_unlocked[level_number] = 1
 
+func _input(event):
+	if Input.is_action_just_pressed("ui_esc"):
+		get_tree().current_scene.add_child(ingame_menu.instance())
 
 func _process(delta):
 	if get_node_or_null("fireflies_grouper") != null:
@@ -132,8 +140,6 @@ func win():
 	var win_overlay_ins = win_overlay.instance()
 	
 	add_child(win_overlay_ins)
-	
-	Global.level_unlocked[level_number] = 1
 
 
 
