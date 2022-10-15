@@ -714,7 +714,7 @@ shape = SubResource( 54 )
 
 [node name="froggy" parent="." instance=ExtResource( 5 )]
 unique_name_in_owner = true
-position = Vector2( 199, 112 )
+position = Vector2( 199, 128 )
 scale = Vector2( 1.00217, 1 )
 
 [node name="fireflies_grouper" type="Node2D" parent="."]
@@ -724,13 +724,13 @@ scale = Vector2( 1.00217, 1 )
 position = Vector2( 198.569, 144 )
 
 [node name="fireflies2" parent="fireflies_grouper" instance=ExtResource( 7 )]
-position = Vector2( 198.569, 64 )
+position = Vector2( 198.569, 48 )
 
 [node name="fireflies3" parent="fireflies_grouper" instance=ExtResource( 7 )]
-position = Vector2( 166.638, 80 )
+position = Vector2( 150.673, 64 )
 
 [node name="fireflies4" parent="fireflies_grouper" instance=ExtResource( 7 )]
-position = Vector2( 166.638, 144 )
+position = Vector2( 166.638, 96 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.239216, 0.239216, 0.443137, 1 )
