@@ -25,6 +25,8 @@ var win_overlay = preload("res://scr/ui/win_overlay/win_overlay.tscn")
 var ingame_menu = preload("res://scr/ui/ingame_option/ingame_option.tscn")
 var is_paused = false
 
+var changer = preload("res://scr/tool/scene_changer/scene_changer.tscn")
+
 signal tongue(is_active)
 signal froggy_eat(is_extra)
 signal froggy_move
@@ -46,6 +48,21 @@ func _ready():
 func _input(event):
 	if Input.is_action_just_pressed("ui_esc"):
 		get_tree().current_scene.add_child(ingame_menu.instance())
+	
+	if Input.is_action_just_pressed("ui_retry"):
+		
+		var changer_ins = changer.instance()
+		
+		var ui_layer = get_node_or_null("CanvasLayer")
+		
+		if ui_layer != null:
+			ui_layer.add_child(changer_ins)
+		
+		yield(changer_ins,"finish_transition")
+		
+		get_tree().reload_current_scene()
+
+	
 
 func _process(delta):
 	if get_node_or_null("fireflies_grouper") != null:

@@ -5,7 +5,11 @@ var tween_time_divider = 300
 
 var sfx_pulltongue = preload("res://asset/fx/sound_fx/froggy_sfx/sfx_pulltongue_v2.wav")
 
+var triggered_fly = []
+
 func enter(msg := {}):
+	
+	triggered_fly = $"%tongue_tip".get_overlapping_areas()
 	
 	var tween = create_tween()
 	tween.set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
@@ -24,6 +28,6 @@ func enter(msg := {}):
 		state_machine.transition_to("idle",{"pullback" : true})
 
 func physics_update(delta):
+	for fly in triggered_fly:
+		fly.global_position = $"%tongue_tip".global_position
 	
-	if $"%tongue_tip".get_overlapping_areas().empty() == false:
-		$"%tongue_tip".get_overlapping_areas()[0].global_position = $"%tongue_tip".global_position

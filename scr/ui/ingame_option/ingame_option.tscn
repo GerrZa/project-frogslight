@@ -1,4 +1,4 @@
-[gd_scene load_steps=55 format=2]
+[gd_scene load_steps=61 format=2]
 
 [ext_resource path="res://scr/ui/ingame_option/ingame_menu.gd" type="Script" id=1]
 [ext_resource path="res://asset/ui/option/ingame_option/option_bg_frame.png" type="Texture" id=2]
@@ -19,6 +19,8 @@
 [ext_resource path="res://scr/ui/ingame_option/sfx.gd" type="Script" id=17]
 [ext_resource path="res://scr/ui/ingame_option/music.gd" type="Script" id=18]
 [ext_resource path="res://scr/ui/ingame_option/quitmenu.gd" type="Script" id=19]
+[ext_resource path="res://asset/ui/option/ingame_option/spr_retry.png" type="Texture" id=20]
+[ext_resource path="res://scr/ui/ingame_option/retry.gd" type="Script" id=21]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -35,6 +37,26 @@ region = Rect2( 138, 0, 69, 13 )
 [sub_resource type="SpriteFrames" id=4]
 animations = [ {
 "frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ) ],
+"loop": true,
+"name": "default",
+"speed": 12.0
+} ]
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 20 )
+region = Rect2( 0, 0, 46, 12 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 20 )
+region = Rect2( 46, 0, 46, 12 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 20 )
+region = Rect2( 92, 0, 46, 12 )
+
+[sub_resource type="SpriteFrames" id=39]
+animations = [ {
+"frames": [ SubResource( 36 ), SubResource( 37 ), SubResource( 38 ) ],
 "loop": true,
 "name": "default",
 "speed": 12.0
@@ -227,18 +249,26 @@ position = Vector2( 157, 83 )
 frames = SubResource( 4 )
 centered = false
 script = ExtResource( 7 )
+down_neighbor = NodePath("../retry")
+
+[node name="retry" type="AnimatedSprite" parent="ingame_menu/menu"]
+position = Vector2( 167, 100 )
+frames = SubResource( 39 )
+centered = false
+script = ExtResource( 21 )
+up_neighbor = NodePath("../resume")
 down_neighbor = NodePath("../option")
 
 [node name="option" type="AnimatedSprite" parent="ingame_menu/menu"]
-position = Vector2( 164, 105 )
+position = Vector2( 164, 116 )
 frames = SubResource( 8 )
 centered = false
 script = ExtResource( 15 )
-up_neighbor = NodePath("../resume")
+up_neighbor = NodePath("../retry")
 down_neighbor = NodePath("../quitmenu")
 
 [node name="quitmenu" type="AnimatedSprite" parent="ingame_menu/menu"]
-position = Vector2( 138, 124 )
+position = Vector2( 138, 130 )
 frames = SubResource( 12 )
 centered = false
 script = ExtResource( 19 )
