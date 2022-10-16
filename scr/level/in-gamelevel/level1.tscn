@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://asset/level/prototyping_level/prototype_room.png" type="Texture" id=1]
 [ext_resource path="res://asset/level/tileset/prototype_tileset/prototype_tileset.png" type="Texture" id=2]
@@ -8,6 +8,9 @@
 [ext_resource path="res://scr/tool/fireflies_particle/ff_spawner.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scr/actor/firefly/regular_flies/firefly.tscn" type="PackedScene" id=7]
 [ext_resource path="res://asset/level/tileset/pit_tileset/spr_pittileset_v1.png" type="Texture" id=8]
+[ext_resource path="res://asset/ui/hint/space_bar.png" type="Texture" id=9]
+[ext_resource path="res://asset/ui/hint/wasd.png" type="Texture" id=10]
+[ext_resource path="res://asset/ui/hint/arrow.png" type="Texture" id=11]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Level
@@ -648,6 +651,70 @@ extents = Vector2( 208, 16 )
 [sub_resource type="CanvasItemMaterial" id=55]
 blend_mode = 1
 
+[sub_resource type="Animation" id=60]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=61]
+resource_name = "idle"
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
+[sub_resource type="Animation" id=63]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0 ]
+}
+
+[sub_resource type="Animation" id=62]
+resource_name = "idle"
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 0, 1 ]
+}
+
 [node name="level2" type="Node2D"]
 script = SubResource( 1 )
 level_number = 1
@@ -757,3 +824,32 @@ __meta__ = {
 margin_right = 398.0
 margin_bottom = 224.0
 color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="wasd" type="Sprite" parent="."]
+position = Vector2( 106, 44 )
+z_index = 1
+texture = ExtResource( 10 )
+centered = false
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="wasd"]
+autoplay = "idle"
+anims/RESET = SubResource( 60 )
+anims/idle = SubResource( 61 )
+
+[node name="Sprite" type="Sprite" parent="wasd"]
+position = Vector2( 32, 8 )
+texture = ExtResource( 11 )
+centered = false
+
+[node name="SpaceBar" type="Sprite" parent="."]
+position = Vector2( 156, 49 )
+z_index = 1
+texture = ExtResource( 9 )
+centered = false
+hframes = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SpaceBar"]
+autoplay = "idle"
+anims/RESET = SubResource( 63 )
+anims/idle = SubResource( 62 )
