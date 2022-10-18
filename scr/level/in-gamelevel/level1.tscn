@@ -826,7 +826,7 @@ margin_bottom = 224.0
 color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
 
 [node name="wasd" type="Sprite" parent="."]
-position = Vector2( 106, 44 )
+position = Vector2( 159, 44 )
 z_index = 1
 texture = ExtResource( 10 )
 centered = false
@@ -838,12 +838,12 @@ anims/RESET = SubResource( 60 )
 anims/idle = SubResource( 61 )
 
 [node name="Sprite" type="Sprite" parent="wasd"]
-position = Vector2( 32, 8 )
+position = Vector2( -18, 8 )
 texture = ExtResource( 11 )
 centered = false
 
 [node name="SpaceBar" type="Sprite" parent="."]
-position = Vector2( 156, 49 )
+position = Vector2( 105, 49 )
 z_index = 1
 texture = ExtResource( 9 )
 centered = false
