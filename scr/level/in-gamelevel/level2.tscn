@@ -718,6 +718,7 @@ scale = Vector2( 1.00217, 1 )
 
 [node name="fireflies_grouper" type="Node2D" parent="."]
 scale = Vector2( 1.00217, 1 )
+z_index = 5
 
 [node name="fireflies4" parent="fireflies_grouper" instance=ExtResource( 7 )]
 position = Vector2( 166.638, 96 )
@@ -730,7 +731,7 @@ color = Color( 0.239216, 0.239216, 0.443137, 1 )
 
 [node name="border" type="Sprite" parent="."]
 light_mask = 0
-z_index = 7
+z_index = 8
 texture = ExtResource( 4 )
 centered = false
 __meta__ = {
