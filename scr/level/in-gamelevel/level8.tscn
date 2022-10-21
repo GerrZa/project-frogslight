@@ -666,7 +666,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 128
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 10, 1, 196608, 11, 1, 196609, 12, 1, 196609, 13, 1, 196610, 327687, 1, 196608, 327688, 1, 196609, 327689, 1, 196609, 327690, 1, 196609, 327691, 1, 196609, 327692, 1, 196609, 327693, 1, 196610 )
+tile_data = PoolIntArray( 10, 1, 196608, 11, 1, 196609, 12, 1, 196609, 13, 1, 196610 )
 
 [node name="wall_tile" type="TileMap" parent="."]
 position = Vector2( 7, 0 )
