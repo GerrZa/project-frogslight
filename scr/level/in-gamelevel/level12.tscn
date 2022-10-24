@@ -401,10 +401,16 @@ scale = Vector2( 1.00217, 1 )
 z_index = 5
 
 [node name="fireflies" parent="fireflies_grouper" instance=ExtResource( 5 )]
-position = Vector2( 182.604, 80 )
+position = Vector2( 182.604, 64 )
+
+[node name="fireflies2" parent="fireflies_grouper" instance=ExtResource( 5 )]
+position = Vector2( 134.708, 80 )
 
 [node name="extraflies" parent="fireflies_grouper" instance=ExtResource( 9 )]
-position = Vector2( 134.708, 96 )
+position = Vector2( 166.638, 112 )
+
+[node name="extraflies2" parent="fireflies_grouper" instance=ExtResource( 9 )]
+position = Vector2( 182.604, 80 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.239216, 0.239216, 0.443137, 1 )

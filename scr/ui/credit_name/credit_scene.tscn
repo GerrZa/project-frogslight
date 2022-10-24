@@ -52,7 +52,7 @@ nattanan lertwannawit
 
 [shake rate = 35]level design[/shake]
 trizg_
-nattanan  lertwannawit
+nattanan lertwannawit
 
 
 developing since
@@ -65,7 +65,12 @@ minijam 106[/wave]
 
 
 
+
+
 yeah that's all, it's quite a small game so there's only me and my friend here
+
+
+
 
 
 
@@ -108,7 +113,7 @@ nattanan lertwannawit
 
 level design
 trizg_
-nattanan  lertwannawit
+nattanan lertwannawit
 
 
 developing since
@@ -121,7 +126,12 @@ minijam 106
 
 
 
+
+
 yeah that's all, it's quite a small game so there's only me and my friend here
+
+
+
 
 
 
@@ -139,6 +149,6 @@ fit_content_height = true
 scroll_active = false
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="text_holder"]
-position = Vector2( 209, 1729 )
+position = Vector2( 209, 1840 )
 
 [connection signal="screen_entered" from="text_holder/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]

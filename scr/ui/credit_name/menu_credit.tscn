@@ -1,0 +1,233 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://asset/ui/Mystery Font.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://asset/ui/font/froggyfontv2.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scr/ui/credit_name/menu_credit.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 8
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2]
+extra_spacing_bottom = 5
+font_data = ExtResource( 2 )
+
+[sub_resource type="Animation" id=4]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RichTextLabel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Label:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 0.0588235, 0.0666667, 0.172549, 1 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "start"
+length = 12.447
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath("RichTextLabel:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 0.8, 2.1, 2.4, 2.5, 2.8, 4.1, 4.4, 4.5, 4.8, 6.1, 6.4, 6.5, 6.8, 8.1, 8.4, 8.5, 8.8, 9.8, 10.1, 10.2, 10.5, 11.5, 11.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("RichTextLabel:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 2.45, 4.45, 6.45, 8.45, 10.15 ),
+"transitions": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ),
+"update": 0,
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -163 ), Vector2( 0, -332 ), Vector2( 0, -513 ), Vector2( 0, -675 ), Vector2( 0, -849 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 12.3 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [  ],
+"method": "quit_menu"
+} ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Label:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.35 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.0588235, 0.0666667, 0.172549, 0 ), Color( 0.0588235, 0.0666667, 0.172549, 1 ) ]
+}
+
+[node name="menu_credit" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 375.0
+margin_bottom = 224.0
+rect_scale = Vector2( 1.06108, 1 )
+color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 0.0588235, 0.0666667, 0.172549, 1 )
+margin_left = 3.0
+margin_top = 3.0
+margin_right = 183.0
+margin_bottom = 19.0
+rect_scale = Vector2( 1, 1.0096 )
+custom_fonts/font = SubResource( 1 )
+text = "press \"ESC\" or start button to back to menu"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_right = 398.0
+margin_bottom = 1508.0
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+bbcode_text = "
+
+[center]
+
+[shake rate=30 level=10]programming[/shake]
+trizg_
+
+
+
+
+[wave amp=20 freq=5]art[/wave]
+trizg_
+
+
+
+
+[shake rate=3 level=20]design[/shake]
+trizg_
+nattanan lertwannawit
+
+
+
+
+[shake rate = 35]level design[/shake]
+trizg_
+nattanan lertwannawit
+
+
+
+
+developing since
+early august 2022
+
+
+
+
+[wave]based on
+frog's light from
+minijam 106[/wave]
+
+
+
+
+
+
+
+"
+text = "
+
+
+
+programming
+trizg_
+
+
+
+
+art
+trizg_
+
+
+
+
+design
+trizg_
+nattanan lertwannawit
+
+
+
+
+level design
+trizg_
+nattanan lertwannawit
+
+
+
+
+developing since
+early august 2022
+
+
+
+
+based on
+frog's light from
+minijam 106
+
+
+
+
+
+
+
+"
+fit_content_height = true
+scroll_active = false
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "start"
+anims/RESET = SubResource( 4 )
+anims/start = SubResource( 3 )

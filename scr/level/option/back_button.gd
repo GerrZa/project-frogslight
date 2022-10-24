@@ -13,7 +13,7 @@ func _ready():
 	visible = true
 
 func on_button_clicked():
-	
+	Saveload.save_game()
 	
 	var changer_ins = changer.instance()
 	$"%CanvasLayer".add_child(changer_ins)

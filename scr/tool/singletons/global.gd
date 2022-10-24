@@ -56,7 +56,23 @@ var setting = {
 
 var first_start = true
 
+func _ready():
+	Saveload.load_game()
+
 func _process(delta):
 	AudioServer.set_bus_mute(2,!setting["sfx"])
 	AudioServer.set_bus_mute(1,!setting["music"])
 	
+
+func global_save():
+	var save_dic = {
+		"setting" : setting,
+		"level_unlock" : level_unlocked
+	}
+	
+	return save_dic
+
+func global_load(load_dic):
+	setting = load_dic["setting"]
+	level_unlocked = load_dic["level_unlock"]
+

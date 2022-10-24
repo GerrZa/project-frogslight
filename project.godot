@@ -58,6 +58,8 @@ _global_script_class_icons={
 
 config/name="frogslight"
 run/main_scene="res://scr/ui/splash_screen/splash_screen.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="frogs_light"
 config/icon="res://icon.png"
 
 [autoload]

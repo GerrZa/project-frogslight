@@ -22,10 +22,11 @@ func appear_light_icon(is_extra_light):
 	
 	if is_extra_light:
 		for i in range(4):
-			added_index = i + 1
-			get_node("li_frame/li_icon" + String(current_light + i + 1) + "/AnimationPlayer").play("extra")
-			
-		current_light += added_index
+			if current_light < 6:
+				added_index = i + 1
+				get_node("li_frame/li_icon" + String(current_light + 1) + "/AnimationPlayer").play("extra")
+				
+				current_light += 1
 	else:
 		for i in range(3):
 			if current_light < 3:

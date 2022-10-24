@@ -1,16 +1,17 @@
 extends ButtonClass
 
+var changer = preload("res://scr/tool/scene_changer/scene_changer.tscn")
+var credit_scene = preload("res://scr/ui/credit_name/menu_credit.tscn")
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func on_button_clicked():
+	$AnimationPlayer.play("selected")
+	
+	yield($AnimationPlayer,"animation_finished")
+	
+	var changer_ins = changer.instance()
+	$"%CanvasLayer".add_child(changer_ins)
+	
+	yield(changer_ins,"finish_transition")
+	
+	get_tree().change_scene_to(credit_scene)
+	

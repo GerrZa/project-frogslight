@@ -44,6 +44,7 @@ func _ready():
 	add_child(level_opener.instance())
 	
 	Global.level_unlocked[level_number] = 1
+	Saveload.save_game()
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_esc"):

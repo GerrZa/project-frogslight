@@ -2,6 +2,13 @@ extends Node2D
 
 var base_level_preloader = "res://scr/level/in-gamelevel/level"
 
+func _ready():
+	get_tree().root.set_disable_input(true)
+	
+	yield($AnimationPlayer,"animation_finished")
+	
+	get_tree().root.set_disable_input(false)
+
 func play_anim(to_change_level):
 	$AnimationPlayer.play("circle_close")
 	yield($AnimationPlayer,"animation_finished")
