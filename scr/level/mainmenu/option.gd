@@ -4,6 +4,7 @@ var changer = preload("res://scr/tool/scene_changer/scene_changer.tscn")
 
 func on_button_clicked():
 	$AnimationPlayer.play("selected")
+	controller.get_node("click_asp").play()
 	
 	yield($AnimationPlayer,"animation_finished")
 	

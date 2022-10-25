@@ -5,8 +5,6 @@ var menu = preload("res://scr/level/mainmenu/menu.tscn")
 signal start
 
 func _ready():
-	yield(self,"start")
-	
 	$audio_controller.play("start")
 	
 	$trizg_logo.visible = false

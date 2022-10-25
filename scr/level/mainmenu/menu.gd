@@ -37,3 +37,6 @@ func _process(delta):
 
 func on_restore_def():
 	$CanvasLayer/label_zindex/AnimationPlayer.play("restored")
+
+func restored_sfx():
+	$CanvasLayer/label_zindex/restored_asp.play()

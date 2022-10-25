@@ -5,6 +5,7 @@ var credit_scene = preload("res://scr/ui/credit_name/menu_credit.tscn")
 
 func on_button_clicked():
 	$AnimationPlayer.play("selected")
+	controller.get_node("click_asp").play()
 	
 	yield($AnimationPlayer,"animation_finished")
 	
