@@ -8,9 +8,11 @@ export var froggy_spr_hframe : int = 40
 
 var gameover_spr_f : SpriteFrames = preload("res://scr/ui/gameover/gameover_spr_frame.tres")
 var nolight_mat = preload("res://scr/ui/nolight_fx.tres")
-var normal_gameover_sfx = preload("res://asset/fx/sound_fx/sfx_gameover_v1.wav")
+var normal_gameover_sfx = preload("res://asset/fx/sound_fx/gameover/sfx_gameover_v2.wav")
 
 var burned_spr_f : SpriteFrames = preload("res://scr/ui/gameover/burned_gameover_spr_frame.tres")
+var burned_sfx = preload("res://asset/fx/sound_fx/gameover/sfx_gameover_microwave.wav")
+var burned_riser = preload("res://asset/fx/sound_fx/gameover/sfx_burned_riser_v1.wav")
 
 var flame = preload("res://scr/obj/fire.tscn")
 export var flame_exist : bool = false
@@ -99,7 +101,7 @@ func normal_gameover(frog_global_pos,frog_offset):
 	
 	var ap = AudioStreamPlayer.new()
 	add_child(ap)
-	ap.volume_db = -3.45
+	ap.volume_db = -1.45
 	ap.bus = "Sfx"
 	ap.stream = normal_gameover_sfx
 	ap.play()
@@ -116,10 +118,25 @@ func normal_gameover(frog_global_pos,frog_offset):
 
 func burned_gameover():
 	
+	var ap = AudioStreamPlayer.new()
+	add_child(ap)
+	ap.volume_db = -1.45
+	ap.bus = "Sfx"
+	ap.stream = burned_riser
+	ap.play()
+	
+	
 	yield(get_tree().create_timer(1),"timeout")
 	
 	for node in get_children():
 		node.queue_free() 
+	
+	var burned_ap = AudioStreamPlayer.new()
+	add_child(burned_ap)
+	burned_ap.volume_db = -1.45
+	burned_ap.bus = "Sfx"
+	burned_ap.stream = burned_sfx
+	burned_ap.play()
 	
 	var gameover_sprite = AnimatedSprite.new()
 	

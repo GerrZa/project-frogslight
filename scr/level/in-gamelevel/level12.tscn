@@ -407,7 +407,7 @@ position = Vector2( 182.604, 64 )
 position = Vector2( 134.708, 80 )
 
 [node name="extraflies" parent="fireflies_grouper" instance=ExtResource( 9 )]
-position = Vector2( 166.638, 112 )
+position = Vector2( 166.638, 96 )
 
 [node name="extraflies2" parent="fireflies_grouper" instance=ExtResource( 9 )]
 position = Vector2( 182.604, 80 )

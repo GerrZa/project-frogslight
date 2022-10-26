@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=49 format=2]
 
 [ext_resource path="res://scr/level/option/option_buttonindicator.gd" type="Script" id=1]
 [ext_resource path="res://asset/ui/option/option_screen_ref.png" type="Texture" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://asset/ui/option/option_back_selected_border.png" type="Texture" id=11]
 [ext_resource path="res://scr/level/option/back_button.gd" type="Script" id=12]
 [ext_resource path="res://asset/ui/option/option_back.png" type="Texture" id=13]
+[ext_resource path="res://asset/fx/sound_fx/gameover/sfx_gameover_v2.wav" type="AudioStream" id=14]
 
 [sub_resource type="Animation" id=7]
 length = 0.001
@@ -394,6 +395,20 @@ tracks/5/keys = {
 "update": 1,
 "values": [ true ]
 }
+tracks/6/type = "method"
+tracks/6/path = NodePath("../../reveal_sfx")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0.14 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ 0.0 ],
+"method": "play"
+} ]
+}
 
 [node name="Node2D" type="Node2D"]
 
@@ -496,3 +511,13 @@ visible = false
 modulate = Color( 1, 1, 1, 0.266667 )
 texture = ExtResource( 2 )
 centered = false
+
+[node name="reveal_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -4.554
+bus = "Sfx"
+
+[node name="switch_sfx" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 14 )
+volume_db = -4.554
+bus = "Sfx"

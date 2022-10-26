@@ -1161,7 +1161,7 @@ modulate = Color( 0.117647, 0.266667, 0.278431, 1 )
 margin_right = 91.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 39 )
-text = "Press \"R\" to reset data"
+text = "Hold \"R\" to reset data"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/menu_gui/border_extend/label_zindex2/restore_hint"]
 autoplay = "fadeup"
