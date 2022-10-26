@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=2]
+[gd_scene load_steps=62 format=2]
 
 [ext_resource path="res://scr/ui/ingame_option/ingame_menu.gd" type="Script" id=1]
 [ext_resource path="res://asset/ui/option/ingame_option/option_bg_frame.png" type="Texture" id=2]
@@ -21,6 +21,7 @@
 [ext_resource path="res://scr/ui/ingame_option/quitmenu.gd" type="Script" id=19]
 [ext_resource path="res://asset/ui/option/ingame_option/spr_retry.png" type="Texture" id=20]
 [ext_resource path="res://scr/ui/ingame_option/retry.gd" type="Script" id=21]
+[ext_resource path="res://asset/fx/sound_fx/menu_sfx/ingame/sfx_ingamechange_v1.wav" type="AudioStream" id=22]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
@@ -328,3 +329,8 @@ position = Vector2( 157, 83 )
 frames = SubResource( 35 )
 centered = false
 offset = Vector2( -11, 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="ingame_menu"]
+stream = ExtResource( 22 )
+volume_db = 13.854
+bus = "Sfx"

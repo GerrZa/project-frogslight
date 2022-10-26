@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=2]
+[gd_scene load_steps=71 format=2]
 
 [ext_resource path="res://scr/level/mainmenu/menu_buttons.gd" type="Script" id=1]
 [ext_resource path="res://asset/level/prototyping_level/prototype_room_border.png" type="Texture" id=2]
@@ -38,7 +38,7 @@
 [ext_resource path="res://asset/fx/sound_fx/menu_sfx/sfx_select.wav" type="AudioStream" id=36]
 [ext_resource path="res://asset/fx/sound_fx/menu_sfx/sfx_restored.wav" type="AudioStream" id=37]
 
-[sub_resource type="DynamicFont" id=39]
+[sub_resource type="DynamicFont" id=44]
 size = 8
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 33 )
@@ -639,6 +639,12 @@ tracks/14/keys = {
 "values": [ 12.9, 12.9, 0.0 ]
 }
 
+[sub_resource type="DynamicFont" id=39]
+size = 8
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 33 )
+
 [sub_resource type="Animation" id=41]
 length = 0.001
 tracks/0/type = "value"
@@ -1160,8 +1166,8 @@ z_index = 3
 modulate = Color( 0.117647, 0.266667, 0.278431, 1 )
 margin_right = 91.0
 margin_bottom = 14.0
-custom_fonts/font = SubResource( 39 )
-text = "Hold \"R\" to reset data"
+custom_fonts/font = SubResource( 44 )
+text = "Hold \"R\" to reset progress"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/menu_gui/border_extend/label_zindex2/restore_hint"]
 autoplay = "fadeup"
@@ -1169,6 +1175,7 @@ anims/RESET = SubResource( 43 )
 anims/fadeup = SubResource( 42 )
 
 [node name="logo" type="Node2D" parent="CanvasLayer/menu_gui"]
+pause_mode = 2
 position = Vector2( 13, 50 )
 z_index = 2
 
@@ -1281,7 +1288,7 @@ bus = "Sfx"
 margin_right = 91.0
 margin_bottom = 14.0
 custom_fonts/font = SubResource( 39 )
-text = "Data restored!"
+text = "Progress reseted!"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/label_zindex"]
 anims/RESET = SubResource( 41 )

@@ -3,7 +3,12 @@ extends Node2D
 var scene_opener = preload("res://scr/ui/openup_level/openup_level.tscn")
 var hold_r_time = 0.0
 
+var prototype_song = preload("res://asset/ost/prototype_music.mp3")
+
 func _ready():
+	if GlobalMusic.player.playing == false:
+		GlobalMusic.player.playing = true
+	
 	Saveload.connect("restore_default",self,"on_restore_def")
 	
 	if Global.first_start == true:

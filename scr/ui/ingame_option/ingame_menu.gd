@@ -1,6 +1,11 @@
 extends ButtonIndicator
 
+var clicked_sfx = preload("res://asset/fx/sound_fx/menu_sfx/ingame/sfx_ingameclicked_v3.wav")
+
 func _ready():
+	connect("button_clicked",self,"on_button_clicked")
+	connect("button_change",self,"on_button_changed")
+	
 	set_process_unhandled_input(false)
 	
 	get_tree().paused = true
@@ -24,3 +29,10 @@ func _unhandled_input(event):
 		
 		get_tree().current_scene.is_paused = false
 		owner.queue_free()
+
+func on_button_clicked():
+	GlobalSfx.play_sfx(clicked_sfx)
+	print("sfx play")
+
+func on_button_changed():
+	$AudioStreamPlayer.play()

@@ -58,11 +58,14 @@ var first_start = true
 
 func _ready():
 	Saveload.load_game()
+	
+	pause_mode = PAUSE_MODE_PROCESS
 
 func _process(delta):
 	AudioServer.set_bus_mute(2,!setting["sfx"])
 	AudioServer.set_bus_mute(1,!setting["music"])
 	
+	print(setting["music"])
 
 func global_save():
 	var save_dic = {

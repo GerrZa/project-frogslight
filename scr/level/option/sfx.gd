@@ -16,6 +16,8 @@ func on_button_clicked():
 	$blinker2/AnimationPlayer.play("blink")
 
 func switch():
+	$AudioStreamPlayer.play()
+	
 	Global.setting["sfx"] = !Global.setting["sfx"]
 	
 	match Global.setting["sfx"]:

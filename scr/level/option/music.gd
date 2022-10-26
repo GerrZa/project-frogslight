@@ -16,6 +16,8 @@ func on_button_clicked():
 	$blinker/AnimationPlayer.play("blink")
 
 func switch():
+	$AudioStreamPlayer.play()
+	
 	Global.setting["music"] = !Global.setting["music"]
 	
 	match Global.setting["music"]:

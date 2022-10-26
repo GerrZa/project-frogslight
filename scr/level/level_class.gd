@@ -23,6 +23,7 @@ var overlay_menu = preload("res://scr/ui/gameover/gameover_overlay_menu/gameover
 
 var winning = false #is winning animation playing
 var win_overlay = preload("res://scr/ui/win_overlay/win_overlay.tscn")
+var win_sfx = preload("res://asset/fx/sound_fx/win/win_sfx.wav")
 
 var ingame_menu = preload("res://scr/ui/ingame_option/ingame_option.tscn")
 var is_paused = false
@@ -173,6 +174,7 @@ func win():
 	winning = true
 	
 	var win_overlay_ins = win_overlay.instance()
+	GlobalSfx.play_sfx(win_sfx)
 	
 	add_child(win_overlay_ins)
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/prototype_music.mp3-3a2a3f4b01cb511e951687029ade5f91.mp3str"
+
+[deps]
+
+source_file="res://asset/ost/prototype_music.mp3"
+dest_files=[ "res://.import/prototype_music.mp3-3a2a3f4b01cb511e951687029ade5f91.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

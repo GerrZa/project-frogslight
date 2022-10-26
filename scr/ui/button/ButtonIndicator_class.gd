@@ -12,6 +12,7 @@ onready var selector : Object = null
 var indicator_tween_time = 0.1
 
 signal button_change
+signal button_clicked
 
 func _ready():
 	
@@ -37,6 +38,7 @@ func _input(event):
 	
 	if Input.is_action_just_pressed("ui_tongue"):
 		button.on_button_clicked()
+		emit_signal("button_clicked")
 	
 
 func change_button(new_button):

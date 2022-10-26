@@ -37,8 +37,6 @@ func _ready():
 
 func _physics_process(delta):
 	
-	print(total_light,light_array)
-	
 	var tongue_match = $"%tongue_tip".global_position == global_position
 	$"%tongue_tip".visible = not tongue_match
 	
@@ -95,8 +93,6 @@ func add_light(extra_light:bool):
 		get_tree().current_scene.emit_signal("froggy_eat",false)
 
 func on_light_change(target_size):
-	print(target_size)
-	
 	light_target_size = target_size
 	if target_size > 0:
 		$Light2D.enabled = true
