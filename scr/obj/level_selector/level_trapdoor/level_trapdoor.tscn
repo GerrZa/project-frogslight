@@ -36,6 +36,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 0, 1, 2, 3, 4, 5, 9, 10, 11, 12, 13, 14 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.14, 1.47 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [ "open" ],
+"method": "play_sfx"
+}, {
+"args": [ "close" ],
+"method": "play_sfx"
+} ]
+}
 
 [sub_resource type="CanvasItemMaterial" id=2]
 light_mode = 2
@@ -127,3 +144,7 @@ collide_with_bodies = false
 position = Vector2( 0, -1 )
 texture = ExtResource( 4 )
 centered = false
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+volume_db = -5.073
+bus = "Sfx"

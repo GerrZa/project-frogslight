@@ -3,6 +3,7 @@ extends ButtonClass
 var changer = preload("res://scr/tool/scene_changer/scene_changer.tscn")
 
 func on_button_clicked():
+	get_tree().root.set_disable_input(true)
 	
 	var changer_ins = changer.instance()
 	

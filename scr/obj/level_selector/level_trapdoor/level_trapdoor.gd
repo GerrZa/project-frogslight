@@ -7,6 +7,11 @@ var selector = null
 
 var level_status_ui_frame = 0
 
+var open_sfx = preload("res://asset/fx/sound_fx/obj_sfx/sfx_opendoor_v1.wav")
+var close_sfx = preload("res://asset/fx/sound_fx/obj_sfx/sfx_closedoor_v1.wav")
+
+var locked_sfx = preload("res://asset/fx/sound_fx/menu_sfx/sfx_not_unlocked.wav")
+
 func _process(delta):
 	
 	if$right_ray.is_colliding():
@@ -31,7 +36,6 @@ func _process(delta):
 			$trapdoor_sprite.modulate = Color(1,1,1,1)
 			level_status_ui_frame = 0
 	
-	
 
 func choose_level():
 	
@@ -45,4 +49,16 @@ func choose_level():
 		$number_indicator/AnimationPlayer.play("selected")
 		get_tree().root.set_disable_input(false)
 	else:
-		pass
+		$AudioStreamPlayer.stream = locked_sfx
+		$AudioStreamPlayer.play()
+
+func play_sfx(sound_name : String):
+	
+	match sound_name:
+		"open":
+			$AudioStreamPlayer.stream = open_sfx
+			$AudioStreamPlayer.play()
+		"close":
+			$AudioStreamPlayer.stream = close_sfx
+			$AudioStreamPlayer.play()
+	

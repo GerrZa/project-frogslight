@@ -10,6 +10,8 @@ signal change_hovering
 func _ready():
 	connect("change_hovering",self,"on_hovering_change")
 	
+	get_tree().root.set_disable_input(false)
+	
 	hovering_level = $levelselector_bg/trapdoor/trapdoor_level_0
 	
 	for node in $levelselector_bg/trapdoor.get_children():

@@ -32,7 +32,6 @@ func _unhandled_input(event):
 
 func on_button_clicked():
 	GlobalSfx.play_sfx(clicked_sfx)
-	print("sfx play")
 
 func on_button_changed():
 	$AudioStreamPlayer.play()

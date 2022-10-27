@@ -64,8 +64,6 @@ func _ready():
 func _process(delta):
 	AudioServer.set_bus_mute(2,!setting["sfx"])
 	AudioServer.set_bus_mute(1,!setting["music"])
-	
-	print(setting["music"])
 
 func global_save():
 	var save_dic = {
