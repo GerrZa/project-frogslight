@@ -27,10 +27,12 @@ func custom_unhandled_input(event):
 			hovering_level = hovering_level.right_neighbor
 			tween_selector()
 			$levelselector_bg/selector_root.play_anim(true)
+			$AudioStreamPlayer.play()
 		elif Input.is_action_just_pressed("ui_left") and hovering_level.left_neighbor != null:
 			hovering_level = hovering_level.left_neighbor
 			tween_selector()
 			$levelselector_bg/selector_root.play_anim(false)
+			$AudioStreamPlayer.play()
 	
 	if Input.is_action_just_pressed("ui_tongue"):
 		hovering_level.choose_level()

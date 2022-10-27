@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://asset/ui/level_select/level_selector_bg.png" type="Texture" id=1]
 [ext_resource path="res://asset/ui/level_select/level_selector_border.png" type="Texture" id=2]
@@ -8,6 +8,13 @@
 [ext_resource path="res://asset/ui/level_select/level_number/spr_text_masking_tex.png" type="Texture" id=6]
 [ext_resource path="res://asset/ui/level_select/spr_levelstatus_v1.png" type="Texture" id=7]
 [ext_resource path="res://scr/tool/fireflies_particle/ff_spawner.tscn" type="PackedScene" id=8]
+[ext_resource path="res://asset/ui/Mystery Font.ttf" type="DynamicFontData" id=9]
+[ext_resource path="res://asset/fx/sound_fx/froggy_sfx/sfx_froggymove_v3.wav" type="AudioStream" id=10]
+
+[sub_resource type="DynamicFont" id=4]
+size = 8
+outline_color = Color( 0.106372, 0.251953, 0.233187, 1 )
+font_data = ExtResource( 9 )
 
 [sub_resource type="CanvasItemMaterial" id=3]
 light_mode = 1
@@ -88,6 +95,16 @@ centered = false
 hframes = 2
 
 [node name="spawner" parent="CanvasLayer/levelselector_border" instance=ExtResource( 8 )]
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+modulate = Color( 0.145098, 0.333333, 0.345098, 1 )
+margin_top = 13.0
+margin_right = 398.0
+margin_bottom = 29.0
+custom_fonts/font = SubResource( 4 )
+text = "Press\"ESC\" to back to menu"
+align = 1
+valign = 1
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.239216, 0.239216, 0.443137, 1 )
@@ -227,3 +244,8 @@ color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
 autoplay = "wipe_up"
 anims/RESET = SubResource( 2 )
 anims/wipe_up = SubResource( 1 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 10 )
+volume_db = -8.35
+bus = "Sfx"

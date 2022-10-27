@@ -2,6 +2,9 @@ extends Node2D
 
 var menu = preload("res://scr/level/mainmenu/menu.tscn")
 
+var long_whoosh_sfx = preload("res://asset/fx/sound_fx/menu_sfx/sfx_longwhoosh_v1.wav")
+var short_whoosh_sfx = preload("res://asset/fx/sound_fx/menu_sfx/sfx_shortwhoosh_v1.wav")
+
 signal start
 
 func _ready():
@@ -38,7 +41,17 @@ func _ready():
 
 func _input(event):
 	if event.is_action_pressed("skip_splash"):
+		play_whoosh(false)
 		get_tree().change_scene_to(menu)
 	if event.is_action_pressed("ui_tongue"):
 		emit_signal("start")
+	
+
+func play_whoosh(long_whoosh : bool):
+	
+	match long_whoosh:
+		true:
+			GlobalSfx.play_sfx(long_whoosh_sfx)
+		false:
+			GlobalSfx.play_sfx(short_whoosh_sfx)
 	

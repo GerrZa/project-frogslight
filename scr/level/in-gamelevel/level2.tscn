@@ -336,9 +336,9 @@ extents = Vector2( 208, 16 )
 [sub_resource type="CanvasItemMaterial" id=55]
 blend_mode = 1
 
-[node name="level5" type="Node2D"]
+[node name="level2" type="Node2D"]
 script = SubResource( 1 )
-level_number = 2
+level_number = 1
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

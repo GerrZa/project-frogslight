@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://scr/level/level_selecter/level_selector.gd" type="Script" id=1]
 [ext_resource path="res://asset/ui/cartoony_blackcircle/solid_light_tex.png" type="Texture" id=6]
@@ -166,6 +166,83 @@ tracks/2/keys = {
 "values": [ true, true, false ]
 }
 
+[sub_resource type="Animation" id=7]
+resource_name = "close"
+length = 0.71
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/riser_parent/ColorRect:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.56 ),
+"transitions": PoolRealArray( -2.2974, -2.2974 ),
+"update": 0,
+"values": [ Vector2( 0, 224 ), Vector2( 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CanvasLayer/riser_parent/ColorRect2:rect_position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.08, 0.6 ),
+"transitions": PoolRealArray( -2.2974, -2.2974 ),
+"update": 0,
+"values": [ Vector2( 41, 224 ), Vector2( 41, 0 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CanvasLayer/riser_parent/ColorRect3:rect_position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.03, 0.52 ),
+"transitions": PoolRealArray( -2.2974, -2.2974 ),
+"update": 0,
+"values": [ Vector2( 61, 224 ), Vector2( 61, 0 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CanvasLayer/riser_parent/ColorRect4:rect_position")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0.12, 0.64 ),
+"transitions": PoolRealArray( -2.2974, -2.2974 ),
+"update": 0,
+"values": [ Vector2( 194, 224 ), Vector2( 194, 0 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("CanvasLayer/riser_parent/ColorRect5:rect_position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0.05, 0.6 ),
+"transitions": PoolRealArray( -2.2974, -2.2974 ),
+"update": 0,
+"values": [ Vector2( 270, 224 ), Vector2( 270, 0 ) ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("CanvasLayer/riser_parent/ColorRect6:rect_position")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.57 ),
+"transitions": PoolRealArray( -2.2974, -2.2974 ),
+"update": 0,
+"values": [ Vector2( 312, 224 ), Vector2( 312, 0 ) ]
+}
+
 [sub_resource type="Animation" id=6]
 resource_name = "open"
 length = 0.71
@@ -241,20 +318,6 @@ tracks/5/keys = {
 "transitions": PoolRealArray( -2.2974, 1 ),
 "update": 0,
 "values": [ Vector2( 312, 0 ), Vector2( 312, 224 ) ]
-}
-tracks/6/type = "method"
-tracks/6/path = NodePath("CanvasLayer/riser_parent")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/keys = {
-"times": PoolRealArray( 0.71 ),
-"transitions": PoolRealArray( 1 ),
-"values": [ {
-"args": [  ],
-"method": "queue_free"
-} ]
 }
 
 [node name="level_select" type="Node2D"]
@@ -351,4 +414,5 @@ color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
 autoplay = "open"
 anims/RESET = SubResource( 5 )
 anims/circle_close = SubResource( 4 )
+anims/close = SubResource( 7 )
 anims/open = SubResource( 6 )

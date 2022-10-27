@@ -1,0 +1,23 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_longwhoosh_v1.wav-f0749f9d378c2a4467f3b1cfac613550.sample"
+
+[deps]
+
+source_file="res://asset/fx/sound_fx/menu_sfx/sfx_longwhoosh_v1.wav"
+dest_files=[ "res://.import/sfx_longwhoosh_v1.wav-f0749f9d378c2a4467f3b1cfac613550.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

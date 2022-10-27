@@ -25,6 +25,8 @@ func load_game():
 			file.close()
 			
 			Global.global_load(player_dat)
+	else:
+		Global.level_unlocked = Global.default_level_unlocked
 
 func default_save():
 	var def_dat = {
