@@ -25,7 +25,10 @@ func _unhandled_input(event):
 		
 		get_tree().paused = false
 		
+		owner.set_band_db(false)
+		
 		yield(get_tree().create_timer(0.0001),"timeout")
+		
 		
 		get_tree().current_scene.is_paused = false
 		owner.queue_free()

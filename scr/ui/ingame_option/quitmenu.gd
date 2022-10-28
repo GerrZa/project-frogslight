@@ -11,5 +11,7 @@ func on_button_clicked():
 	
 	yield(changer_ins,"finish_transition")
 	
+	owner.set_band_db(false)
+	
 	get_tree().paused = false
 	get_tree().change_scene("res://scr/level/mainmenu/menu.tscn")

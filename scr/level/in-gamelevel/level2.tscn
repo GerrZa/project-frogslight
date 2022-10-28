@@ -338,7 +338,7 @@ blend_mode = 1
 
 [node name="level2" type="Node2D"]
 script = SubResource( 1 )
-level_number = 1
+level_number = 2
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 

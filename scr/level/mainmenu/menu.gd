@@ -6,6 +6,14 @@ var hold_r_time = 0.0
 var prototype_song = preload("res://asset/ost/prototype_music.mp3")
 
 func _ready():
+	
+	#Set music effect back to default
+	var effect = AudioServer.get_bus_effect(1,0)
+	var band_count = effect.get_band_count()
+	
+	for i in band_count:
+		effect.set_band_gain_db(i,0)
+	
 	if GlobalMusic.player.playing == false:
 		GlobalMusic.player.playing = true
 	
