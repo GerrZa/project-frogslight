@@ -2,7 +2,7 @@ extends Node
 
 var current_level = 0
 
-var level_unlocked = [ #current level count : 20
+var level_unlocked = [ #current level count : 24
 	1,
 	0,
 	0,
@@ -23,9 +23,13 @@ var level_unlocked = [ #current level count : 20
 	0,
 	0,
 	0,
+	0,
+	0,
+	0,
+	0
 ]
 
-var default_level_unlocked  = [ #current level count : 20
+var default_level_unlocked  = [ #current level count : 24
 	1,
 	0,
 	0,
@@ -46,6 +50,10 @@ var default_level_unlocked  = [ #current level count : 20
 	0,
 	0,
 	0,
+	0,
+	0,
+	0,
+	0
 ]
 
 var setting = {
@@ -76,4 +84,9 @@ func global_save():
 func global_load(load_dic):
 	setting = load_dic["setting"]
 	level_unlocked = load_dic["level_unlock"]
+	
+	if level_unlocked.size() != default_level_unlocked.size():
+		level_unlocked = default_level_unlocked
+		
+		print("data version not match, loaded to default data.")
 

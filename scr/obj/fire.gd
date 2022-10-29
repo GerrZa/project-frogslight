@@ -42,6 +42,8 @@ func start_flame_tween():
 	var new_tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_IN_OUT)
 	new_tween.tween_property($flame_anchor,"scale",Vector2(1,1),0.2)
 	
+	FlamePlayer.start_play()
+	
 	$Light2D/AnimationPlayer.play("start")
 	yield($Light2D/AnimationPlayer,"animation_finished")
 	$Light2D/AnimationPlayer.play("normal")

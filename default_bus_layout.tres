@@ -2,7 +2,6 @@
 
 [sub_resource type="AudioEffectEQ" id=2]
 resource_name = "EQ"
-band_db/10000_hz = -36.4
 
 [sub_resource type="AudioEffectReverb" id=1]
 resource_name = "Reverb"

@@ -227,6 +227,18 @@ position = Vector2( 767, 128 )
 [node name="trapdoor_level_19" parent="levelselector_bg/trapdoor" instance=ExtResource( 5 )]
 position = Vector2( 799, 128 )
 
+[node name="trapdoor_level_20" parent="levelselector_bg/trapdoor" instance=ExtResource( 5 )]
+position = Vector2( 831, 128 )
+
+[node name="trapdoor_level_21" parent="levelselector_bg/trapdoor" instance=ExtResource( 5 )]
+position = Vector2( 863, 128 )
+
+[node name="trapdoor_level_22" parent="levelselector_bg/trapdoor" instance=ExtResource( 5 )]
+position = Vector2( 895, 128 )
+
+[node name="trapdoor_level_23" parent="levelselector_bg/trapdoor" instance=ExtResource( 5 )]
+position = Vector2( 927, 128 )
+
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 

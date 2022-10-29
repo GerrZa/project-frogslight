@@ -525,10 +525,10 @@ centered = false
 
 [node name="reveal_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
-volume_db = -4.554
+volume_db = -8.0
 bus = "Sfx"
 
 [node name="switch_sfx" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 14 )
-volume_db = -4.554
+volume_db = -8.0
 bus = "Sfx"

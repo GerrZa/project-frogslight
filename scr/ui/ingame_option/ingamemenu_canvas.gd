@@ -20,11 +20,10 @@ func set_band_db(is_effect_on:bool):
 			
 			for i in band_count:
 				effect.set_band_gain_db(i,band_bass_db[i])
-				
+			
 		false:
 			var effect = AudioServer.get_bus_effect(1,0)
 			var band_count = effect.get_band_count()
 			
 			for i in band_count:
 				effect.set_band_gain_db(i,0)
-				
