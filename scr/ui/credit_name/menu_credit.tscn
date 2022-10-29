@@ -53,7 +53,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=3]
 resource_name = "start"
-length = 12.447
+length = 16.0
 step = 0.05
 tracks/0/type = "value"
 tracks/0/path = NodePath("RichTextLabel:modulate")
@@ -62,10 +62,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 0.8, 2.1, 2.4, 2.5, 2.8, 4.1, 4.4, 4.5, 4.8, 6.1, 6.4, 6.5, 6.8, 8.1, 8.4, 8.5, 8.8, 9.8, 10.1, 10.2, 10.5, 11.5, 11.8 ),
-"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.5, 0.8, 2.1, 2.4, 2.5, 2.8, 4.1, 4.4, 4.5, 4.8, 6.1, 6.4, 6.5, 6.8, 8.1, 8.4, 8.5, 8.8, 10.1, 10.4, 10.5, 10.8, 12.1, 12.4, 12.5, 12.8, 13.8, 14.1, 14.2, 14.5, 15.5, 15.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("RichTextLabel:rect_position")
@@ -74,10 +74,10 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 2.45, 4.45, 6.45, 8.45, 10.15 ),
-"transitions": PoolRealArray( 0, 0, 0, 0, 0, 0, 0 ),
+"times": PoolRealArray( 0, 0.5, 2.45, 4.45, 6.45, 8.45, 10.45, 12.45, 14.15 ),
+"transitions": PoolRealArray( 0, 0, 0, 0, 0, 0, 0, 0, 0 ),
 "update": 0,
-"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -163 ), Vector2( 0, -332 ), Vector2( 0, -513 ), Vector2( 0, -675 ), Vector2( 0, -849 ) ]
+"values": [ Vector2( 0, 0 ), Vector2( 0, 0 ), Vector2( 0, -163 ), Vector2( 0, -316 ), Vector2( 0, -472 ), Vector2( 0, -647 ), Vector2( 0, -828 ), Vector2( 0, -994 ), Vector2( 0, -1164 ) ]
 }
 tracks/2/type = "method"
 tracks/2/path = NodePath(".")
@@ -86,7 +86,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 12.3 ),
+"times": PoolRealArray( 16 ),
 "transitions": PoolRealArray( 1 ),
 "values": [ {
 "args": [  ],
@@ -127,7 +127,7 @@ text = "press \"ESC\" or start button to back to menu"
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_right = 398.0
-margin_bottom = 1508.0
+margin_bottom = 1534.0
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
 bbcode_text = "
@@ -146,6 +146,18 @@ trizg_
 
 
 
+[shake rate=30 level=10]sound design[/shake]
+trizg_
+
+
+
+
+[wave amp=20 freq=5]music[/wave]
+trizg_
+
+
+
+
 [shake rate=3 level=20]design[/shake]
 trizg_
 nattanan lertwannawit
@@ -153,7 +165,7 @@ nattanan lertwannawit
 
 
 
-[shake rate = 35]level design[/shake]
+[shake rate=40 level=15]level design[/shake]
 trizg_
 nattanan lertwannawit
 
@@ -188,6 +200,18 @@ trizg_
 
 
 art
+trizg_
+
+
+
+
+sound design
+trizg_
+
+
+
+
+music
 trizg_
 
 

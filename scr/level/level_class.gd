@@ -64,6 +64,8 @@ func _input(event):
 		
 		yield(changer_ins,"finish_transition")
 		
+		FlamePlayer.stop_play()
+		
 		get_tree().reload_current_scene()
 
 	
@@ -74,6 +76,8 @@ func _process(delta):
 			win()
 
 func normal_gameover(frog_global_pos,frog_offset):
+	
+	FlamePlayer.stop_play()
 	
 	for node in get_tree().current_scene.get_children():
 		if node.name != "gameover_bg_zindex" and node.get_class() != "CanvasModulate" :
@@ -102,7 +106,7 @@ func normal_gameover(frog_global_pos,frog_offset):
 	
 	var ap = AudioStreamPlayer.new()
 	add_child(ap)
-	ap.volume_db = -1.45
+	ap.volume_db = -5.45
 	ap.bus = "Sfx"
 	ap.stream = normal_gameover_sfx
 	ap.play()

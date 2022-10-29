@@ -68,6 +68,7 @@ Global="*res://scr/tool/singletons/global.gd"
 Saveload="*res://scr/tool/saveload/saveload.gd"
 GlobalSfx="*res://scr/tool/sound/global_sfx.tscn"
 GlobalMusic="*res://scr/tool/sound/global_music.tscn"
+FlamePlayer="*res://scr/tool/sound/flame_player.tscn"
 
 [display]
 

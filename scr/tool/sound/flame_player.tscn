@@ -1,0 +1,66 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://asset/fx/sound_fx/obj_sfx/sfx_fire_v1.wav" type="AudioStream" id=1]
+[ext_resource path="res://scr/tool/sound/flame_player.gd" type="Script" id=2]
+
+[sub_resource type="Animation" id=1]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("flame_player:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ -80.0 ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "start_play"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("flame_player:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -80.0, -30.0 ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "stop_play"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath("flame_player:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -30.0, -80.0 ]
+}
+
+[node name="flameplayer" type="Node"]
+script = ExtResource( 2 )
+
+[node name="flame_player" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -80.0
+autoplay = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/RESET = SubResource( 1 )
+anims/start_play = SubResource( 2 )
+anims/stop_play = SubResource( 3 )
+
+[node name="Tween" type="Tween" parent="."]

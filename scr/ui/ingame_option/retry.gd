@@ -10,5 +10,7 @@ func on_button_clicked():
 	
 	yield(changer_ins,"finish_transition")
 	
+	FlamePlayer.stop_play()
+	
 	get_tree().paused = false
 	get_tree().reload_current_scene()

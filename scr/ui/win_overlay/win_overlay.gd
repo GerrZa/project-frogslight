@@ -11,3 +11,6 @@ func _ready():
 	yield($AnimationPlayer,"animation_finished")
 	
 	get_tree().change_scene("res://scr/level/in-gamelevel/level" + String(Global.current_level + 1) + ".tscn")
+
+func stop_flame_sfx():
+	FlamePlayer.stop_play()

@@ -11,6 +11,8 @@ func on_button_clicked():
 	
 	yield(changer_ins,"finish_transition")
 	
+	FlamePlayer.stop_play()
+	
 	owner.set_band_db(false)
 	
 	get_tree().paused = false
