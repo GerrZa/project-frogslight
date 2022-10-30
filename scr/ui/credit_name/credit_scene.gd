@@ -7,6 +7,8 @@ var menu_scene = preload("res://scr/level/mainmenu/menu.tscn")
 
 func _ready():
 	Global.first_start = true
+	
+	get_tree().root.set_disable_input(false)
 
 func _process(delta):
 	

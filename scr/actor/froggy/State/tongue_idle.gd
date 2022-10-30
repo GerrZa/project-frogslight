@@ -9,7 +9,7 @@ func enter(msg := {}):
 		get_tree().current_scene.emit_signal("tongue",true)
 	
 	if $"%burn_zone".get_overlapping_areas().empty() == false:
-		set_process_unhandled_input(false)
+		state_machine.transition_to("burned")
 	
 
 func unhandled_input(event):
