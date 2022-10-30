@@ -167,6 +167,6 @@ fit_content_height = true
 scroll_active = false
 
 [node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="text_holder"]
-position = Vector2( 209, 1840 )
+position = Vector2( 209, 2064 )
 
 [connection signal="screen_entered" from="text_holder/VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered"]

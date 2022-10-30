@@ -5,6 +5,9 @@ var is_stopped = false
 
 var menu_scene = preload("res://scr/level/mainmenu/menu.tscn")
 
+func _ready():
+	Global.first_start = true
+
 func _process(delta):
 	
 	if stopping_thanks == false:
