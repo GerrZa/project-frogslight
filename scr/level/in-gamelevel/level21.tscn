@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=17 format=2]
 
+[ext_resource path="res://scr/actor/firefly/regular_flies/firefly.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scr/actor/froggy/Froggy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scr/ui/basic_ui.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scr/tool/fireflies_particle/ff_spawner.tscn" type="PackedScene" id=4]
@@ -338,7 +339,9 @@ extents = Vector2( 208, 16 )
 blend_mode = 1
 
 [node name="level5" type="Node2D"]
+rotation = -0.000729865
 script = SubResource( 1 )
+flame_exist = true
 level_number = 21
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -349,13 +352,13 @@ level_number = 21
 
 [node name="wall_tile" type="TileMap" parent="."]
 position = Vector2( 7, 0 )
-z_index = -3
+z_index = 1
 tile_set = SubResource( 59 )
 cell_size = Vector2( 16, 16 )
 collision_layer = 4
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 18, 0, 3, 65554, 0, 65539, 131077, 0, 3, 131090, 0, 131075, 196613, 0, 131076, 196614, 0, 2, 196627, 0, 3, 262149, 0, 65536, 262150, 0, 131077, 262151, 0, 1, 262152, 0, 2, 262163, 0, 131075, 327683, 0, 196608, 327684, 0, 6, 327685, 0, 131078, 327686, 0, 65537, 327687, 0, 65537, 327688, 0, 131077, 327689, 0, 1, 327690, 0, 1, 327691, 0, 1, 327692, 0, 1, 327693, 0, 5, 327694, 0, 196610, 393220, 0, 65536, 393221, 0, 65537, 393222, 0, 65537, 393223, 0, 65537, 393224, 0, 65537, 393225, 0, 65537, 393226, 0, 65541, 393227, 0, 131073, 393228, 0, 131073, 393229, 0, 131074, 458755, 0, 4, 458756, 0, 196614, 458757, 0, 65542, 458758, 0, 65537, 458759, 0, 65541, 458760, 0, 131073, 458761, 0, 131073, 458762, 0, 131074, 524291, 0, 131075, 524293, 0, 65536, 524294, 0, 65537, 524295, 0, 65538, 524301, 0, 0, 524302, 0, 1, 524303, 0, 1, 524304, 0, 1, 524305, 0, 1, 524306, 0, 2, 589829, 0, 65536, 589830, 0, 65537, 589831, 0, 65538, 589837, 0, 65536, 589838, 0, 65537, 589839, 0, 65541, 589840, 0, 131073, 589841, 0, 131073, 589842, 0, 131074, 655364, 0, 0, 655365, 0, 131078, 655366, 0, 65537, 655367, 0, 131077, 655368, 0, 1, 655369, 0, 1, 655370, 0, 1, 655371, 0, 2, 655373, 0, 131072, 655374, 0, 131073, 655375, 0, 131074, 720900, 0, 65536, 720901, 0, 65537, 720902, 0, 65537, 720903, 0, 65537, 720904, 0, 65537, 720905, 0, 65537, 720906, 0, 65537, 720907, 0, 65538, 720913, 0, 3, 786436, 0, 65536, 786437, 0, 65537, 786438, 0, 65537, 786439, 0, 65537, 786440, 0, 65537, 786441, 0, 65537, 786442, 0, 65537, 786443, 0, 262149, 786444, 0, 196610, 786448, 0, 0, 786449, 0, 131080, 786450, 0, 2, 851972, 0, 131072, 851973, 0, 131073, 851974, 0, 131073, 851975, 0, 131073, 851976, 0, 131073, 851977, 0, 131073, 851978, 0, 131073, 851979, 0, 131074, 851983, 0, 196608, 851984, 0, 196614, 851985, 0, 131073, 851986, 0, 131074 )
+tile_data = PoolIntArray( 4, 0, 3, 12, 0, 0, 13, 0, 1, 14, 0, 1, 15, 0, 1, 16, 0, 1, 17, 0, 1, 18, 0, 2, 65540, 0, 131075, 65548, 0, 131072, 65549, 0, 65542, 65550, 0, 65537, 65551, 0, 65537, 65552, 0, 65537, 65553, 0, 65537, 65554, 0, 262149, 65555, 0, 196610, 131085, 0, 131072, 131086, 0, 131073, 131087, 0, 65542, 131088, 0, 65537, 131089, 0, 65537, 131090, 0, 65538, 131092, 0, 3, 196612, 0, 196611, 196623, 0, 131072, 196624, 0, 65542, 196625, 0, 65537, 196626, 0, 131077, 196627, 0, 5, 196628, 0, 196616, 196629, 0, 196609, 196630, 0, 196610, 262149, 0, 0, 262150, 0, 2, 262160, 0, 131072, 262161, 0, 65542, 262162, 0, 65537, 262163, 0, 65538, 327685, 0, 65536, 327686, 0, 131077, 327687, 0, 2, 327697, 0, 131072, 327698, 0, 131073, 327699, 0, 196613, 327700, 0, 196610, 393221, 0, 65536, 393222, 0, 65537, 393223, 0, 131077, 393224, 0, 2, 458755, 0, 196611, 458757, 0, 65536, 458758, 0, 65537, 458759, 0, 65537, 458760, 0, 131077, 458761, 0, 2, 458765, 0, 3, 524292, 0, 0, 524293, 0, 131078, 524294, 0, 65537, 524295, 0, 65537, 524296, 0, 65541, 524297, 0, 131074, 524301, 0, 65539, 589828, 0, 65536, 589829, 0, 65537, 589830, 0, 65537, 589831, 0, 65537, 589832, 0, 65538, 589837, 0, 65539, 655364, 0, 65536, 655365, 0, 65537, 655366, 0, 65537, 655367, 0, 65537, 655368, 0, 131077, 655369, 0, 2, 655373, 0, 131076, 655374, 0, 2, 720900, 0, 65536, 720901, 0, 65537, 720902, 0, 65537, 720903, 0, 65537, 720904, 0, 65541, 720905, 0, 131074, 720908, 0, 0, 720909, 0, 131078, 720910, 0, 65538, 786436, 0, 65536, 786437, 0, 65537, 786438, 0, 65537, 786439, 0, 65537, 786440, 0, 65538, 786444, 0, 65536, 786445, 0, 65537, 786446, 0, 65538, 851972, 0, 131072, 851973, 0, 131073, 851974, 0, 131073, 851975, 0, 131073, 851976, 0, 131074, 851980, 0, 131072, 851981, 0, 131073, 851982, 0, 131074, 851987, 0, 196611 )
 
 [node name="room" type="StaticBody2D" parent="."]
 z_index = -3
@@ -393,27 +396,24 @@ shape = SubResource( 54 )
 
 [node name="froggy" parent="." instance=ExtResource( 2 )]
 unique_name_in_owner = true
-position = Vector2( 151, 48 )
+position = Vector2( 199, 112 )
 scale = Vector2( 1.00217, 1 )
 
 [node name="fireflies_grouper" type="Node2D" parent="."]
 scale = Vector2( 1.00217, 1 )
 z_index = 5
 
+[node name="fireflies" parent="fireflies_grouper" instance=ExtResource( 1 )]
+position = Vector2( 230.418, 112.169 )
+
+[node name="fireflies2" parent="fireflies_grouper" instance=ExtResource( 1 )]
+position = Vector2( 182.499, 144.134 )
+
+[node name="fireflies3" parent="fireflies_grouper" instance=ExtResource( 1 )]
+position = Vector2( 198.511, 80.1452 )
+
 [node name="extraflies" parent="fireflies_grouper" instance=ExtResource( 9 )]
-position = Vector2( 134.708, 144 )
-
-[node name="extraflies4" parent="fireflies_grouper" instance=ExtResource( 9 )]
-position = Vector2( 198.569, 144 )
-
-[node name="extraflies2" parent="fireflies_grouper" instance=ExtResource( 9 )]
-position = Vector2( 230.5, 96 )
-
-[node name="extraflies5" parent="fireflies_grouper" instance=ExtResource( 9 )]
-position = Vector2( 278.396, 96 )
-
-[node name="extraflies3" parent="fireflies_grouper" instance=ExtResource( 9 )]
-position = Vector2( 214.534, 176 )
+position = Vector2( 246.36, 144.18 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.239216, 0.239216, 0.443137, 1 )
@@ -448,19 +448,9 @@ margin_bottom = 224.0
 color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
 
 [node name="warp_hole1-1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 183, 144 )
+position = Vector2( 230.907, 128.169 )
 target_hole = NodePath("../warp_hole1-2")
 
 [node name="warp_hole1-2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 183, 48 )
+position = Vector2( 182.871, 176.134 )
 target_hole = NodePath("../warp_hole1-1")
-
-[node name="warp_hole2-1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 215, 112 )
-target_hole = NodePath("../warp_hole2-2")
-hole_type = 1
-
-[node name="warp_hole2-2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 151, 144 )
-target_hole = NodePath("../warp_hole2-1")
-hole_type = 1
