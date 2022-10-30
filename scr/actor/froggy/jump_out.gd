@@ -19,6 +19,10 @@ func enter(msg := {}):
 	get_tree().root.set_disable_input(false)
 	
 	$"%hole_check".get_child(0).disabled = true
+	
+	
+	if $"%burn_zone".get_overlapping_areas().empty() == false:
+		state_machine.transition_to("burned")
 
 func unhandled_input(event):
 	

@@ -1,15 +1,14 @@
-[gd_scene load_steps=22 format=2]
+[gd_scene load_steps=17 format=2]
 
-[ext_resource path="res://asset/level/prototyping_level/prototype_room.png" type="Texture" id=1]
-[ext_resource path="res://asset/level/tileset/prototype_tileset/prototype_tileset.png" type="Texture" id=2]
+[ext_resource path="res://scr/actor/firefly/regular_flies/firefly.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scr/actor/froggy/Froggy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scr/ui/basic_ui.tscn" type="PackedScene" id=3]
-[ext_resource path="res://asset/level/prototyping_level/prototype_room_border.png" type="Texture" id=4]
-[ext_resource path="res://scr/actor/froggy/Froggy.tscn" type="PackedScene" id=5]
-[ext_resource path="res://scr/tool/fireflies_particle/ff_spawner.tscn" type="PackedScene" id=6]
-[ext_resource path="res://scr/actor/firefly/regular_flies/firefly.tscn" type="PackedScene" id=7]
-[ext_resource path="res://asset/ui/hint/space_bar.png" type="Texture" id=9]
-[ext_resource path="res://asset/ui/hint/wasd.png" type="Texture" id=10]
-[ext_resource path="res://asset/ui/hint/arrow.png" type="Texture" id=11]
+[ext_resource path="res://scr/tool/fireflies_particle/ff_spawner.tscn" type="PackedScene" id=4]
+[ext_resource path="res://asset/level/prototyping_level/prototype_room_border.png" type="Texture" id=5]
+[ext_resource path="res://asset/level/prototyping_level/prototype_room.png" type="Texture" id=6]
+[ext_resource path="res://asset/level/tileset/prototype_tileset/prototype_tileset.png" type="Texture" id=7]
+[ext_resource path="res://scr/obj/warp_hole.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scr/actor/firefly/extra_flies/extrafly.tscn" type="PackedScene" id=9]
 
 [sub_resource type="GDScript" id=1]
 script/source = "extends Level
@@ -21,7 +20,7 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 
 [sub_resource type="TileSet" id=59]
 0/name = "prototype_tileset.png 0"
-0/texture = ExtResource( 2 )
+0/texture = ExtResource( 7 )
 0/tex_offset = Vector2( 0, 0 )
 0/modulate = Color( 1, 1, 1, 1 )
 0/region = Rect2( 0, 0, 176, 80 )
@@ -339,79 +338,15 @@ extents = Vector2( 208, 16 )
 [sub_resource type="CanvasItemMaterial" id=55]
 blend_mode = 1
 
-[sub_resource type="Animation" id=60]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=61]
-resource_name = "idle"
-loop = true
-step = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0, 1 ]
-}
-
-[sub_resource type="Animation" id=63]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
-"update": 0,
-"values": [ 0 ]
-}
-
-[sub_resource type="Animation" id=62]
-resource_name = "idle"
-loop = true
-step = 0.5
-tracks/0/type = "value"
-tracks/0/path = NodePath(".:frame")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5 ),
-"transitions": PoolRealArray( 1, 1 ),
-"update": 1,
-"values": [ 0, 1 ]
-}
-
-[node name="level2" type="Node2D"]
+[node name="level5" type="Node2D"]
 script = SubResource( 1 )
-level_number = 1
+level_number = 23
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="basic_ui" parent="CanvasLayer" instance=ExtResource( 3 )]
 
-[node name="spawner" parent="CanvasLayer" instance=ExtResource( 6 )]
+[node name="spawner" parent="CanvasLayer" instance=ExtResource( 4 )]
 
 [node name="wall_tile" type="TileMap" parent="."]
 position = Vector2( 7, 0 )
@@ -421,7 +356,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 4
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 2, 0, 196611, 9, 0, 0, 10, 0, 1, 11, 0, 1, 12, 0, 1, 13, 0, 2, 16, 0, 0, 17, 0, 1, 18, 0, 2, 65544, 0, 0, 65545, 0, 131078, 65546, 0, 65537, 65547, 0, 65537, 65548, 0, 65541, 65549, 0, 131074, 65552, 0, 131072, 65553, 0, 65542, 65554, 0, 65538, 131077, 0, 0, 131078, 0, 1, 131079, 0, 1, 131080, 0, 131078, 131081, 0, 65537, 131082, 0, 65537, 131083, 0, 65541, 131084, 0, 131074, 131089, 0, 65536, 131090, 0, 65538, 196610, 0, 196611, 196613, 0, 65536, 196614, 0, 65537, 196615, 0, 65537, 196616, 0, 65537, 196617, 0, 65537, 196618, 0, 65537, 196619, 0, 65538, 196625, 0, 65536, 196626, 0, 65538, 262148, 0, 0, 262149, 0, 131078, 262150, 0, 65537, 262151, 0, 65537, 262152, 0, 65541, 262153, 0, 131073, 262154, 0, 131073, 262155, 0, 131074, 262161, 0, 131072, 262162, 0, 65543, 327684, 0, 65536, 327685, 0, 65537, 327686, 0, 65537, 327687, 0, 65541, 327688, 0, 131074, 327698, 0, 131075, 393220, 0, 65536, 393221, 0, 65537, 393222, 0, 65541, 393223, 0, 131074, 458755, 0, 196608, 458756, 0, 196614, 458757, 0, 65542, 458758, 0, 65538, 524293, 0, 65536, 524294, 0, 65538, 589828, 0, 0, 589829, 0, 65545, 589830, 0, 131074, 589834, 0, 3, 655364, 0, 131072, 655365, 0, 65543, 655369, 0, 0, 655370, 0, 131079, 655377, 0, 0, 655378, 0, 2, 720901, 0, 65539, 720903, 0, 196608, 720904, 0, 6, 720905, 0, 131078, 720906, 0, 65538, 720912, 0, 0, 720913, 0, 131078, 720914, 0, 131077, 720915, 0, 2, 786437, 0, 131075, 786440, 0, 65536, 786441, 0, 65537, 786442, 0, 131077, 786443, 0, 2, 786446, 0, 0, 786447, 0, 1, 786448, 0, 131078, 786449, 0, 65537, 786450, 0, 65541, 786451, 0, 131074, 851975, 0, 196608, 851976, 0, 196614, 851977, 0, 131073, 851978, 0, 131073, 851979, 0, 196613, 851980, 0, 196610, 851982, 0, 131072, 851983, 0, 131073, 851984, 0, 131073, 851985, 0, 131073, 851986, 0, 131074 )
+tile_data = PoolIntArray( 196629, 0, 196608, 196630, 0, 196610 )
 
 [node name="room" type="StaticBody2D" parent="."]
 z_index = -3
@@ -434,7 +369,7 @@ __meta__ = {
 
 [node name="PrototypingRoom" type="Sprite" parent="room"]
 z_index = -3
-texture = ExtResource( 1 )
+texture = ExtResource( 6 )
 centered = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="room"]
@@ -457,20 +392,23 @@ visible = false
 position = Vector2( 199, 224 )
 shape = SubResource( 54 )
 
-[node name="froggy" parent="." instance=ExtResource( 5 )]
+[node name="froggy" parent="." instance=ExtResource( 2 )]
 unique_name_in_owner = true
-position = Vector2( 215, 112 )
+position = Vector2( 231, 144 )
 scale = Vector2( 1.00217, 1 )
 
 [node name="fireflies_grouper" type="Node2D" parent="."]
 scale = Vector2( 1.00217, 1 )
 z_index = 5
 
-[node name="fireflies" parent="fireflies_grouper" instance=ExtResource( 7 )]
-position = Vector2( 262.431, 112 )
+[node name="fireflies" parent="fireflies_grouper" instance=ExtResource( 1 )]
+position = Vector2( 198.569, 160 )
 
-[node name="fireflies2" parent="fireflies_grouper" instance=ExtResource( 7 )]
-position = Vector2( 166.638, 112 )
+[node name="fireflies2" parent="fireflies_grouper" instance=ExtResource( 1 )]
+position = Vector2( 150.673, 144 )
+
+[node name="extraflies" parent="fireflies_grouper" instance=ExtResource( 9 )]
+position = Vector2( 198.569, 128 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.239216, 0.239216, 0.443137, 1 )
@@ -478,7 +416,7 @@ color = Color( 0.239216, 0.239216, 0.443137, 1 )
 [node name="border" type="Sprite" parent="."]
 light_mask = 0
 z_index = 8
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 centered = false
 __meta__ = {
 "_edit_group_": true,
@@ -489,7 +427,7 @@ __meta__ = {
 light_mask = 0
 material = SubResource( 55 )
 z_index = 3
-texture = ExtResource( 4 )
+texture = ExtResource( 5 )
 centered = false
 
 [node name="gameover_bg_zindex" type="Node2D" parent="."]
@@ -504,31 +442,30 @@ margin_right = 398.0
 margin_bottom = 224.0
 color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
 
-[node name="wasd" type="Sprite" parent="."]
-position = Vector2( 159, 44 )
-z_index = 1
-texture = ExtResource( 10 )
-centered = false
-hframes = 2
+[node name="warp_hole1-1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 247, 176 )
+target_hole = NodePath("../warp_hole1-2")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="wasd"]
-autoplay = "idle"
-anims/RESET = SubResource( 60 )
-anims/idle = SubResource( 61 )
+[node name="warp_hole1-2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 151, 96 )
+target_hole = NodePath("../warp_hole1-1")
 
-[node name="Sprite" type="Sprite" parent="wasd"]
-position = Vector2( -18, 8 )
-texture = ExtResource( 11 )
-centered = false
+[node name="warp_hole2-1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 151, 96 )
+target_hole = NodePath("../warp_hole2-2")
+hole_type = 1
 
-[node name="SpaceBar" type="Sprite" parent="."]
-position = Vector2( 105, 49 )
-z_index = 1
-texture = ExtResource( 9 )
-centered = false
-hframes = 2
+[node name="warp_hole2-2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 151, 96 )
+target_hole = NodePath("../warp_hole2-1")
+hole_type = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="SpaceBar"]
-autoplay = "idle"
-anims/RESET = SubResource( 63 )
-anims/idle = SubResource( 62 )
+[node name="warp_hole3-1" parent="." instance=ExtResource( 8 )]
+position = Vector2( 151, 96 )
+target_hole = NodePath("../warp_hole2-1")
+hole_type = 2
+
+[node name="warp_hole3-2" parent="." instance=ExtResource( 8 )]
+position = Vector2( 151, 96 )
+target_hole = NodePath("../warp_hole2-1")
+hole_type = 2
