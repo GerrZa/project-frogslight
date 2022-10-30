@@ -73,6 +73,13 @@ func _process(delta):
 	AudioServer.set_bus_mute(2,!setting["sfx"])
 	AudioServer.set_bus_mute(1,!setting["music"])
 
+func _input(event):
+	
+	if Input.is_action_pressed("ui_alt"):
+		if Input.is_action_just_pressed("ui_accept"):
+			OS.window_fullscreen = !OS.window_fullscreen
+			
+
 func global_save():
 	var save_dic = {
 		"setting" : setting,
@@ -89,4 +96,3 @@ func global_load(load_dic):
 		level_unlocked = default_level_unlocked
 		
 		print("data version not match, loaded to default data.")
-
