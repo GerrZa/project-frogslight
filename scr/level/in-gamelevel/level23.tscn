@@ -340,6 +340,7 @@ blend_mode = 1
 
 [node name="level5" type="Node2D"]
 script = SubResource( 1 )
+flame_exist = true
 level_number = 23
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
@@ -356,7 +357,7 @@ cell_size = Vector2( 16, 16 )
 collision_layer = 4
 collision_mask = 0
 format = 1
-tile_data = PoolIntArray( 196629, 0, 196608, 196630, 0, 196610 )
+tile_data = PoolIntArray( 5, 0, 0, 6, 0, 1, 7, 0, 5, 8, 0, 196609, 9, 0, 196610, 13, 0, 196611, 15, 0, 0, 16, 0, 1, 17, 0, 1, 18, 0, 2, 65540, 0, 0, 65541, 0, 131078, 65542, 0, 65541, 65543, 0, 131074, 65551, 0, 65536, 65552, 0, 65537, 65553, 0, 65537, 65554, 0, 65538, 131076, 0, 131072, 131077, 0, 65542, 131078, 0, 65538, 131087, 0, 65536, 131088, 0, 65537, 131089, 0, 65537, 131090, 0, 65538, 196613, 0, 65536, 196614, 0, 65538, 196622, 0, 0, 196623, 0, 131078, 196624, 0, 65537, 196625, 0, 65541, 196626, 0, 131074, 196629, 0, 196608, 196630, 0, 196610, 262148, 0, 0, 262149, 0, 131078, 262150, 0, 131077, 262151, 0, 1, 262152, 0, 1, 262153, 0, 1, 262154, 0, 1, 262155, 0, 1, 262156, 0, 1, 262157, 0, 1, 262158, 0, 131078, 262159, 0, 65541, 262160, 0, 131073, 262161, 0, 131074, 327684, 0, 131072, 327685, 0, 131073, 327686, 0, 131073, 327687, 0, 131073, 327688, 0, 131073, 327689, 0, 131073, 327690, 0, 131073, 327691, 0, 131073, 327692, 0, 131073, 327693, 0, 65542, 327694, 0, 65541, 327695, 0, 131074, 393229, 0, 65536, 393230, 0, 65538, 458765, 0, 65536, 458766, 0, 65538, 524297, 0, 196608, 524298, 0, 196609, 524299, 0, 196609, 524300, 0, 6, 524301, 0, 131078, 524302, 0, 65538, 589836, 0, 131072, 589837, 0, 131073, 589838, 0, 131074, 589842, 0, 3, 655364, 0, 0, 655365, 0, 1, 655366, 0, 2, 655378, 0, 65539, 720900, 0, 131072, 720901, 0, 65542, 720902, 0, 131077, 720903, 0, 2, 720913, 0, 0, 720914, 0, 131079, 786437, 0, 65536, 786438, 0, 65537, 786439, 0, 131077, 786440, 0, 1, 786441, 0, 1, 786442, 0, 2, 786449, 0, 65536, 786450, 0, 65538, 851973, 0, 131072, 851974, 0, 131073, 851975, 0, 131073, 851976, 0, 131073, 851977, 0, 131073, 851978, 0, 131074, 851983, 0, 196608, 851984, 0, 196609, 851985, 0, 196614, 851986, 0, 131074 )
 
 [node name="room" type="StaticBody2D" parent="."]
 z_index = -3
@@ -394,7 +395,7 @@ shape = SubResource( 54 )
 
 [node name="froggy" parent="." instance=ExtResource( 2 )]
 unique_name_in_owner = true
-position = Vector2( 231, 144 )
+position = Vector2( 279, 112 )
 scale = Vector2( 1.00217, 1 )
 
 [node name="fireflies_grouper" type="Node2D" parent="."]
@@ -402,13 +403,22 @@ scale = Vector2( 1.00217, 1 )
 z_index = 5
 
 [node name="fireflies" parent="fireflies_grouper" instance=ExtResource( 1 )]
-position = Vector2( 198.569, 160 )
+position = Vector2( 262.431, 96 )
 
 [node name="fireflies2" parent="fireflies_grouper" instance=ExtResource( 1 )]
-position = Vector2( 150.673, 144 )
+position = Vector2( 182.604, 48 )
+
+[node name="fireflies4" parent="fireflies_grouper" instance=ExtResource( 1 )]
+position = Vector2( 198.569, 16 )
+
+[node name="fireflies3" parent="fireflies_grouper" instance=ExtResource( 1 )]
+position = Vector2( 150.673, 112 )
 
 [node name="extraflies" parent="fireflies_grouper" instance=ExtResource( 9 )]
-position = Vector2( 198.569, 128 )
+position = Vector2( 102.777, 144 )
+
+[node name="extraflies2" parent="fireflies_grouper" instance=ExtResource( 9 )]
+position = Vector2( 246.465, 112 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.239216, 0.239216, 0.443137, 1 )
@@ -443,29 +453,29 @@ margin_bottom = 224.0
 color = Color( 0.00392157, 0.00784314, 0.054902, 1 )
 
 [node name="warp_hole1-1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 247, 176 )
+position = Vector2( 199, 32 )
 target_hole = NodePath("../warp_hole1-2")
 
 [node name="warp_hole1-2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 151, 96 )
+position = Vector2( 279, 96 )
 target_hole = NodePath("../warp_hole1-1")
 
 [node name="warp_hole2-1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 151, 96 )
+position = Vector2( 119, 112 )
 target_hole = NodePath("../warp_hole2-2")
 hole_type = 1
 
 [node name="warp_hole2-2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 151, 96 )
+position = Vector2( 151, 16 )
 target_hole = NodePath("../warp_hole2-1")
 hole_type = 1
 
 [node name="warp_hole3-1" parent="." instance=ExtResource( 8 )]
-position = Vector2( 151, 96 )
-target_hole = NodePath("../warp_hole2-1")
+position = Vector2( 167, 32 )
+target_hole = NodePath("../warp_hole3-2")
 hole_type = 2
 
 [node name="warp_hole3-2" parent="." instance=ExtResource( 8 )]
-position = Vector2( 151, 96 )
-target_hole = NodePath("../warp_hole2-1")
+position = Vector2( 247, 128 )
+target_hole = NodePath("../warp_hole3-1")
 hole_type = 2

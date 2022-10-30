@@ -12,11 +12,10 @@ func enter(msg := {}):
 	else:
 		froggy.animtree.travel("idle")
 	
-	if $"%burn_zone".get_overlapping_areas().empty() == false:
-		state_machine.transition_to("burned")
-	
 	if $"%hole_check".get_overlapping_areas().empty() == false:
 		state_machine.transition_to("jump_in")
+	elif $"%burn_zone".get_overlapping_areas().empty() == false:
+		state_machine.transition_to("burned")
 
 func unhandled_input(event):
 	
