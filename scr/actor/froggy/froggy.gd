@@ -23,6 +23,8 @@ onready var fsm = null
 
 onready var animtree = $froggy_spr/AnimationTree.get("parameters/playback")
 
+onready var burn_zone = !$"%burn_zone".get_overlapping_areas().empty()
+
 func _ready():
 	
 	fsm = $fsm
