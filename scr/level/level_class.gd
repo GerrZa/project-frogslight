@@ -71,7 +71,7 @@ func _input(event):
 	
 
 func _process(delta):
-	if get_node_or_null("fireflies_grouper") != null:
+	if get_node_or_null("fireflies_grouper") != null and $"%froggy".burn_zone == false:
 		if get_node("fireflies_grouper").get_children().empty() and winning == false:
 			win()
 
@@ -122,6 +122,11 @@ func normal_gameover(frog_global_pos,frog_offset):
 	
 
 func burned_gameover():
+	
+	var win_overlay = get_node_or_null("win_overlay")
+	if win_overlay != null:
+		win_overlay.queue_free()
+	
 	
 	var ap = AudioStreamPlayer.new()
 	add_child(ap)

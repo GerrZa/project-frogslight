@@ -36,6 +36,7 @@ func custom_unhandled_input(event):
 	
 	if Input.is_action_just_pressed("ui_tongue"):
 		hovering_level.choose_level()
+		get_tree().root.set_disable_input(true)
 
 func tween_selector():
 	var tween = create_tween().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_QUAD)

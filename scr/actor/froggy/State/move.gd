@@ -48,7 +48,9 @@ func enter(msg := {}):
 		
 		$"%hole_check".get_child(0).disabled = false
 		
-		if $"%consume_hitbox".get_overlapping_areas().empty() == true:
+		if $"%consume_hitbox".get_overlapping_areas().empty() == true and $"%burn_zone".get_overlapping_areas().empty() == false:
 			state_machine.transition_to("idle")
-		else:
+		elif $"%consume_hitbox".get_overlapping_areas().empty() == true and $"%burn_zone".get_overlapping_areas().empty() == false:
+			state_machine.transition_to("burned")
+		elif $"%consume_hitbox".get_overlapping_areas().empty() == false:
 			state_machine.transition_to("eat")
