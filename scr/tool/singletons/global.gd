@@ -79,6 +79,9 @@ func _input(event):
 		if Input.is_action_just_pressed("ui_accept"):
 			OS.window_fullscreen = !OS.window_fullscreen
 			
+	
+	if event is InputEventKey and event.pressed:
+		print(OS.get_scancode_string(event.scancode))
 
 func global_save():
 	var save_dic = {
