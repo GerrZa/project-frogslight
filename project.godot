@@ -76,7 +76,6 @@ FlamePlayer="*res://scr/tool/sound/flame_player.tscn"
 
 window/size/width=398
 window/size/height=224
-window/size/resizable=false
 window/size/test_width=1194
 window/size/test_height=672
 window/stretch/mode="viewport"
