@@ -84,7 +84,7 @@ func _process(delta):
 		
 		if OS.window_fullscreen == false:
 			OS.window_size = Vector2(1194,672)
-			
+		
 		
 		can_fullscreen = false
 		
