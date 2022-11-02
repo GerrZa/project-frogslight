@@ -47,10 +47,13 @@ func enter(msg := {}):
 		yield(tween,"finished")
 		
 		$"%hole_check".get_child(0).disabled = false
-		
-		if $"%consume_hitbox".get_overlapping_areas().empty() == true and $"%burn_zone".get_overlapping_areas().empty() == false:
+		if $"%hole_check".get_overlapping_areas().empty() == false:
+			state_machine.transition_to("jump_in")
+		elif $"%consume_hitbox".get_overlapping_areas().empty() == true and $"%burn_zone".get_overlapping_areas().empty() == true:
 			state_machine.transition_to("idle")
 		elif $"%consume_hitbox".get_overlapping_areas().empty() == false and $"%burn_zone".get_overlapping_areas().empty() == false:
 			state_machine.transition_to("burned")
-		elif $"%consume_hitbox".get_overlapping_areas().empty() == false:
+		elif $"%burn_zone".get_overlapping_areas().empty() == false and $"%consume_hitbox".get_overlapping_areas().empty() == true:
+			state_machine.transition_to("burned")
+		elif $"%burn_zone".get_overlapping_areas().empty() == true and $"%consume_hitbox".get_overlapping_areas().empty() == false:
 			state_machine.transition_to("eat")

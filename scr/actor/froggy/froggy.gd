@@ -39,6 +39,8 @@ func _ready():
 
 func _physics_process(delta):
 	
+	print($fsm.state)
+	
 	var tongue_match = $"%tongue_tip".global_position == global_position
 	$"%tongue_tip".visible = not tongue_match
 	

@@ -48,6 +48,8 @@ func _ready():
 	
 	Global.level_unlocked[level_number] = 1
 	Saveload.save_game()
+	
+	GlobalMusic.resume_music()
 
 func _input(event):
 	if Input.is_action_just_pressed("ui_esc"):
@@ -76,6 +78,8 @@ func _process(delta):
 			win()
 
 func normal_gameover(frog_global_pos,frog_offset):
+	
+	GlobalMusic.pause_music()
 	
 	FlamePlayer.stop_play()
 	
@@ -122,6 +126,8 @@ func normal_gameover(frog_global_pos,frog_offset):
 	
 
 func burned_gameover():
+	
+	GlobalMusic.pause_music()
 	
 	var win_overlay = get_node_or_null("win_overlay")
 	if win_overlay != null:

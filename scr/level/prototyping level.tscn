@@ -714,7 +714,7 @@ scale = Vector2( 1.00217, 1 )
 [node name="fireflies_grouper" type="Node2D" parent="."]
 
 [node name="fireflies" parent="fireflies_grouper" instance=ExtResource( 3 )]
-position = Vector2( 279, 192 )
+position = Vector2( 231, 128 )
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color( 0.239216, 0.239216, 0.443137, 1 )
