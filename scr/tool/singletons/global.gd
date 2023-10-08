@@ -77,23 +77,23 @@ func _process(delta):
 	AudioServer.set_bus_mute(1,!setting["music"])
 	
 	
-	if Input.is_action_pressed("ui_fullscreen") and can_fullscreen:
-		
-		OS.window_fullscreen = !OS.window_fullscreen
-		OS.window_borderless = !OS.window_borderless
-		
-		if OS.window_fullscreen == false:
-			OS.window_size = Vector2(1194,672)
-		
-		
-		can_fullscreen = false
-		
-		yield(get_tree().create_timer(fullscreen_cd),"timeout")
-		
-		can_fullscreen = true
+#	if Input.is_action_pressed("ui_fullscreen") and can_fullscreen:
+#
+#		OS.window_fullscreen = !OS.window_fullscreen
+#		OS.window_borderless = !OS.window_borderless
+#
+#		if OS.window_fullscreen == false:
+#			OS.window_size = Vector2(1194,672)
+#
+#
+#		can_fullscreen = false
+#
+#		yield(get_tree().create_timer(fullscreen_cd),"timeout")
+#
+#		can_fullscreen = true
 	
-	print(ProjectSettings.get("display/window/size/width"))
-	print(ProjectSettings.get("display/window/size/height"))
+#	print(ProjectSettings.get("display/window/size/width"))
+#	print(ProjectSettings.get("display/window/size/height"))
 
 func global_save():
 	var save_dic = {
