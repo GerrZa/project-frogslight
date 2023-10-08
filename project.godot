@@ -61,7 +61,7 @@ run/main_scene="res://scr/ui/splash_screen/splash_screen.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="frogs_light"
 boot_splash/show_image=false
-boot_splash/bg_color=Color( 0.00392157, 0.00784314, 0.054902, 1 )
+boot_splash/bg_color=Color( 0, 0, 0, 1 )
 config/icon="res://asset/export/project_icon.png"
 
 [autoload]
@@ -76,8 +76,8 @@ FlamePlayer="*res://scr/tool/sound/flame_player.tscn"
 
 window/size/width=398
 window/size/height=224
-window/size/test_width=1194
-window/size/test_height=672
+window/size/test_width=796
+window/size/test_height=448
 window/stretch/mode="viewport"
 window/stretch/aspect="keep"
 
@@ -186,5 +186,4 @@ common/enable_pause_aware_picking=true
 
 [rendering]
 
-environment/default_clear_color=Color( 0.0666667, 0.0666667, 0.0666667, 1 )
 environment/default_environment="res://default_env.tres"
